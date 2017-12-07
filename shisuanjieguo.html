@@ -1,0 +1,1574 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+
+		<!-- [portable options] -->
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />-->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		<title>贷款定价试算结果</title>
+
+		<!-- [loading stylesheets] -->
+		<link type="text/css" rel="stylesheet" href="css/style1.css" />
+
+		<!-- [loading scripts] -->
+		<style type="text/css">
+			/*#zr_ziti {
+				font-size: 100%;
+				font-weight: 700;
+			}
+
+			#dyplx1 {
+				font-size: 13px;
+			}
+
+			label#lblSelect.label-15::after {
+				display: none;
+			}
+
+			#zr_jisuan {
+				position: absolute;
+				right: 0;
+				bottom: 5px;
+			}
+
+			.zr_yangshi {
+				border: 2px solid #C0C0C0;
+				position: relative;
+			}
+
+			.zr_a_yangshi {
+				position: absolute;
+				right: 30px;
+				bottom: 2px;
+			}
+
+			.zr_ul{
+				display: flex
+			}
+			.zr_li{
+
+				border-right: 1px solid #C0C0C0;
+				width: 100%;
+				text-align: center;
+			}
+			.zr_lilu{
+				border-bottom: 3px solid #C0C0C0;
+				margin-bottom: 4px;
+			}*/
+
+			#zr_ziti {
+				font-size: 100%;
+				font-weight: 700;
+			}
+
+			#dyplx1,
+			#pc_dyplx1 {
+				font-size: 0.13rem;
+			}
+
+			label#lblSelect.label-15::after {
+				display: none;
+			}
+			/*#zr_jisuan {
+				position: absolute;
+				right: 0;
+				bottom: -0.05rem;
+				background: #e6e6e6;
+			}*/
+
+			.zr_yangshi {
+				border: 0.02rem solid #C0C0C0;
+				position: relative;
+			}
+
+			.zr_a_yangshi,
+			.pc_zr_a_yangshi {
+				position: absolute;
+				right: 0.03rem;
+				bottom: 0.02rem;
+			}
+
+			.zr_ul {
+				display: flex
+			}
+
+			.zr_li {
+				border-right: 0.01rem solid #C0C0C0;
+				width: 100%;
+				text-align: center;
+			}
+
+			.zr_lilu {
+				border-bottom: 0.03rem solid #C0C0C0;
+				margin-bottom: 0.04rem;
+			}
+			/*蒙板样式*/
+
+			#mengbanbeij {
+				position: absolute;
+				width: 100%;
+				height: 15rem;
+				background-color: rgba(9, 9, 9, 0.63);
+				z-index: 1000;
+				display: none;
+			}
+
+			.zr_wrapper-kong {
+				width: 100%;
+				height: 0.2rem;
+				background: #7db2e9;
+			}
+
+			#tanchuk {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				width: 2rem;
+				height: 1.4rem;
+				background: white;
+				margin-left: -1rem;
+				margin-top: -0.75rem;
+				border-radius: 5%;
+			}
+
+			#tank_text {
+				width: 100%;
+				height: 1rem;
+				border-bottom: 0.01rem solid black;
+				text-align: center;
+				line-height: 1rem;
+			}
+
+			#tanchuk>span {
+				display: inline-block;
+				width: 0.95rem;
+				text-align: center;
+				padding-top: 0.1rem;
+			}
+
+			#tank_no {
+				height: 0.3rem;
+				border-right: 0.01rem solid black;
+			}
+			/*加载动画*/
+
+			.zr_main {
+				position: fixed;
+				top: 1rem;
+				width: 100%;
+				height: auto;
+			}
+
+			.loadEffect {
+				width: 120px;
+				height: 120px;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+
+			.loadEffect span {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background: white;
+				position: absolute;
+				-webkit-animation: load 1.04s ease infinite;
+			}
+
+			@-webkit-keyframes load {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0.2;
+				}
+			}
+
+			.loadEffect span:nth-child(1) {
+				left: 0;
+				top: 50%;
+				margin-top: -8px;
+				-webkit-animation-delay: 0.13s;
+			}
+
+			.loadEffect span:nth-child(2) {
+				left: 14px;
+				top: 14px;
+				-webkit-animation-delay: 0.26s;
+			}
+
+			.loadEffect span:nth-child(3) {
+				left: 50%;
+				top: 0;
+				margin-left: -8px;
+				-webkit-animation-delay: 0.39s;
+			}
+
+			.loadEffect span:nth-child(4) {
+				top: 14px;
+				right: 14px;
+				-webkit-animation-delay: 0.52s;
+			}
+
+			.loadEffect span:nth-child(5) {
+				right: 0;
+				top: 50%;
+				margin-top: -8px;
+				-webkit-animation-delay: 0.65s;
+			}
+
+			.loadEffect span:nth-child(6) {
+				right: 14px;
+				bottom: 14px;
+				-webkit-animation-delay: 0.78s;
+			}
+
+			.loadEffect span:nth-child(7) {
+				bottom: 0;
+				left: 50%;
+				margin-left: -8px;
+				-webkit-animation-delay: 0.91s;
+			}
+
+			.loadEffect span:nth-child(8) {
+				bottom: 14px;
+				left: 14px;
+				-webkit-animation-delay: 1.04s;
+			}
+
+			.loadEffect {
+				transform: scale(0.5)
+			}
+			/*综合业务和配存业务input框对齐*/
+			.zr_duiqi3{
+				float: right;
+				margin-right: 0.5rem;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<section id="page-wrapper" >
+			<!--新增蒙板-->
+			<div id="mengbanbeij">
+				<div id="tanchuk">
+					<p id="tank_text">请确认保存！！</p>
+					<span id="tank_no" onclick="closeModel()">取消</span>
+					<!--去除空格
+
+					--><span id="tank_yes">确认</span>
+				</div>
+				<!--加载动画-->
+				<div class="zr_main" style="display: none;">
+					<div class="loadEffect">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+
+			</div>
+
+			<section id="menu-wrapper">
+
+				<!-- .menu -->
+
+			</section>
+			<!-- #menu-wrapper -->
+
+			<section id="content-wrapper">
+
+				<section id="header">
+
+					<div id="header-left">
+						<a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+					</div>
+
+					<div id="header-title">
+						<h1>试算结果</h1>
+					</div>
+				</section>
+				<!-- #header -->
+
+				<section id="content">
+					<!---->
+					<div class="content-divc">
+
+						<form action="#" method="get">
+
+
+								<div class="wrapper-div-form1">
+									<h3  style="border-radius: 0.1rem
+
+0.1rem 0 0;">目标利率</h3>
+									<div class="content-wrapper-div">
+										<ul>
+											<li id="cust_id1">资
+
+金成本率：<span id="zjcbl">0.120</span></li>
+											<li id="cust_name">
+
+运营成本率：<span id="yycbl">0.317</span></li>
+											<li
+
+id="ci_cust_level">风险成本率：<span id="fxcbl"></span>0.782</li>
+											<li
+
+id="ci_cust_indu_name">税收成本率: <span id="sscbl">0.651</span></li>
+											<li
+
+id="dci_up_indu_id">资本成本率: <span id="zbcbl">0.732</span></li>
+											<li
+
+id="ci_cust_scale_name">经济利润率：<span id="jjlrv">0.891</span></li>
+										</ul>
+
+									</div>
+							</div>
+<!-- 其他信息 -->
+								<div class="content-wrapper-divkh">
+									<h3>其他信息</h3>
+									<div class="content-wrapper-div">
+										<ul>
+											<li id="cust_id1">资
+
+金成本率：<span id="mblv">0.014</span></li>
+											<li id="cust_name">
+
+资本利息回扣：<span id="mblvfdbl">6.5</span></li>
+											<li
+
+id="ci_cust_level">违约概率：<span id="mblvEVA">223</span></li>
+											<span id="">
+											<li
+
+id="weiyibiaoshi">违约损失率：<span id="pricing_info_id"></span></li>
+											<li
+
+id="jiekoubiaoshi">经济资本系统：<span id="webservice_id"></span></li>
+											<li id="dingjiadan">
+
+增值税率：<span id="pricingSheetId">11</span></li>
+											<li id="kehuid">增值
+
+税附加率：<span id="cust_id">00017010</span></li>
+											<li id="kehumingc">
+
+最低要求回报：<span id="cust_name111">****</span></li>
+											<li id="">目标收益率
+
+：<span id="daik_rqi">1.1</span></li>
+
+										</ul>
+									</div>
+								</div>
+<!-- 历史优惠信息 -->
+								<div class="wrapper-div-form1">
+									<h3>历史优惠信息</h3>
+									<div class="content-wrapper-div">
+										<ul>
+											<li id="cust_id1">客
+
+户分类信息：<span id="mblv">0.014</span></li>
+											<li
+
+id="cust_name">EVA贡献排序：<span id="mblvfdbl">6.5</span></li>
+											<li
+
+id="ci_cust_level">EVA贡献总数：<span id="mblvEVA">223</span></li>
+											<span id="">
+											<li
+
+id="weiyibiaoshi">历史优惠BP：<span id="pricing_info_id">1</span></li>
+										</ul>
+									</div>
+								</div>
+								<div class="wrapper-div-form1" id="zr_paisheng">
+									<h3 style="margin-bottom:0px;">存款派生业务</h3>
+									<div class="wrapper-form-div-btng" id="xzdypxx1">
+										<div name="message" id="zr_zanwuxinxi" style="display: none;text-align: center;margin-top: 0.1rem;">暂无信息*</div><br />
+										<form action="#" method="get">
+											<div class="paisheng-btnt-div" style="display: none;">
+												<h2>新增存款派生业务</h2>
+												<ul id="zr_ziti">
+													<!--<li><span style="float: left;">&nbsp&nbsp&nbsp组织机构代码:</span><input type="text" name="" id="zuzjgdm1" value="" style="width: 1.6rem; margin-left: 0.14rem;line-height: 0.1rem;" /><br />
+													</li><br />
+													<li><span style="float: left;">&nbsp&nbsp&nbsp客户号:</span><input type="text" name="" id="kehuhao1" value="" style="width: 1.6rem; margin-left: 0.14rem;line-height: 0.1rem;" /><br />
+													</li><br />
+													<li><span style="float: left;">&nbsp&nbsp&nbsp客户名称:</span><input type="text" name="" id="kehumingc1" value="" style="width: 1.6rem; margin-left: 0.14rem;line-height: 0.1rem;" /><br />
+													</li><br />-->
+													<li><span>存款派生业务类型:</span>
+														<select id="dyplx1" class="selectPointOfInterest " title="Select points of interest nearby" style="width: 1.7rem; float: right;margin-right: 0.2rem;">
+															<option value="" selected="selected">--请选择--</option><option value="010012">11</option>
+															<option value="020002">22</option>
+														</select>
+													</li>
+													</br>
+													<li><span>条线:</span>
+													<select id="dyplx1" class="selectPointOfInterest " title="Select points of interest nearby" style="width: 1.7rem; float: right;margin-right: 0.2rem;">
+															<option value="" selected="selected">--请选择--</option><option value="010012">11</option>
+															<option value="020002">22</option>
+														</select>
+													</li><br />
+
+												<li class="label-13 zr_duiqi1"><span>
+                                        期限(月)：</span>
+                                        <input class="meeting zr_duiqi2" id="zr_qxr" type="text" value="" style="width: 1.6rem;float: right;border: 1px solid black; background: white;line-height: 0.1rem;margin-right: 0.2rem;" />
+												</li>
+													</br>
+
+													<li class="label-13 zr_duiqi1" ><span>
+                                        派生业务金额(元):</span><input class="meeting zr_duiqi2" id="zr_zhongzr" type="date" value="2017-01-13" style="width: 1.67rem;float: right;height:0.2rem;border: 1px solid black;background: white;line-height: 0.1rem;margin-right: 0.2rem;" />
+													</li>
+													</br>
+													<li id="zr_fuxil"><span style="float: left;">承诺客户利率(%):</span><input type="text" name="" id="zr_fxl" value="" style="float: right;width: 1.6rem; line-height: 0.1rem;margin-right: 0.2rem;" /><br />
+													</li><br />
+													<li id="zr_fuxil"><span style="float: left;">起息日:</span><input type="text" name="" id="zr_fxl" value="" style="float: right;width: 1.6rem; line-height: 0.1rem;margin-right: 0.2rem;" /><br />
+													</li><br />
+												</ul>
+											</div>
+										</form>
+										<input type="button" id="paisheng-btn" class="xinzen-btn" value="新增" />
+										<!-- <input type="button" class="xinzen-btn" id="khpsxz" value="新增"/> -->
+									</div>
+									<div class="content-wrapper-div">
+										<ul style="margin-top: 0.2rem;">
+											<li style="display: none;"><span id="cust_id1">派生优惠BP ：<span id="discount_derived">0BP</span></span>
+											</li>
+										</ul>
+										<span id="zr_quediquxiao" style="display: none;">
+                                             <input type="button" id="dypCancle1" value="取消" class="xinzen-btn2" style="width: 0.6rem;height:0.28rem;display: inline-block;color: red;"/>
+                                             <input type="button" id="dypConfirm1" value="确定" class="xinzen-btn2" style="width: 0.6rem;height:0.28rem;display: inline-block;color: red;" />
+                                       	</span>
+									</div>
+								</div>
+								<!-- 8888888888888888888888888888888 -->
+								<div class="wrapper-div-form1" id="pc_zr_paisheng">
+									<h3 style="margin-bottom:0px;">中间业务派生业务</h3>
+									<div class="wrapper-form-div-btng" id="pc_xzdypxx1">
+										<div name="message" id="pc_zr_zanwuxinxi" style="display: none;text-align: center;margin-top: 0.1rem;">暂无信息*</div><br />
+										<form action="#" method="get">
+											<div class="pc_paisheng-btnt-div" style="display: none;">
+												<h2>新增中间业务派生</h2>
+												<ul id="zr_ziti">
+													<li><span style="float: left;">中间业务派生类别:</span>
+													<select id="pc_zuzjgdm1" class="selectPointOfInterest " title="Select points of interest nearby" style="width: 1.7rem; float: right;margin-right: 0.1rem;">
+															<option value="" selected="selected">--请选择--</option><option value="010012">11</option>
+															<option value="020002">22</option>
+														</select><br />
+													</li><br />
+													<li><span>条线:</span>
+													<select id="pc_tx" class="selectPointOfInterest " title="Select points of interest nearby" style="width: 1.7rem; float: right;margin-right: 0.1rem;">
+															<option value="" selected="selected">--请选择--</option><option value="010012">11</option>
+															<option value="020002">22</option>
+														</select>
+													</li><br />
+													<li><span style="float: left;">派生业务金额(元):</span><input type="text" name="" id="pc_kehumingc1" value="" style="width: 1.6rem; line-height: 0.1rem;float: right;margin-right: 0.1rem;" /><br />
+													</li>
+												</ul>
+											</div>
+										</form>
+										<input type="button" id="pc_paisheng-btn" class="xinzen-btn" value="新增" />
+										<!-- <input type="button" class="xinzen-btn" id="khpsxz" value="新增"/> -->
+									</div>
+									<div class="content-wrapper-div">
+										<ul style="margin-top: 0.2rem;">
+											<li style="display: none;"><span id="cust_id1">派生优惠BP ：<span id="discount_derived">0BP</span></span>
+											</li>
+										</ul>
+										<span id="pc_zr_quediquxiao" style="display: none;">
+                                             <input type="button" id="pc_dypCancle1" value="取消" class="xinzen-btn2" style="width: 0.6rem;height:0.28rem;display: inline-block;color: red;"/>
+                                             <input type="button" id="pc_dypConfirm1" value="确定" class="xinzen-btn2" style="width: 0.6rem;height:0.28rem;display: inline-block;color: red;" />
+                                       	</span>
+									</div>
+								</div>
+
+								<!-- 8888888888888888888888888888888-->
+
+								<div class="wrapper-div-form1" id="zr_zhuanxiang">
+									<h3 style="margin-bottom:10px;">专项调整信息</h3>
+									<div class="wrapper-form-div-btng" id="xzdypxx">
+										<form action="#" method="get">
+											<div class="xinzen-btnt-div" style="display: none;">
+												<h2>新增专项调整</h2>
+												<label id="lblSelect" class="label-15" style="display:block;">
+                                                    <ul>
+                                                        <li><span>专项调整类型</span>：
+                                                         <select id="dyplx" class="selectPointOfInterest" title="Select points of interest nearby" style="width: 1.7rem;">
+                                                            <option value="" selected="selected">--请选择--</option>
+
+                                                        </select></li>
+                                                        <li><span>专项调整评分</span>：<input id="dypxx" type="text" style="margin-left:0.12rem;" />
+                                                       </li>
+                                                        <li><span style="display:block">专项调整理由：</span><textarea name="message" placeholder="" id="textArea" style="width:270px;height:50px; border:1px solid;resize: none;text-align:left;border-radius: 6px;"></textarea></li>
+                                                    </ul>
+                                                    <span id="pc_zr_zx" style="display: none;">
+                                                        <input type="button" id="dypCancle" value="取消" class="xinzen-btn1" style="margin-top:0"/>
+                                                        <input type="button" id="dypConfirm" value="确定" class="xinzen-btn1" style="margin-top:0" />
+                                                    </span>
+
+                                                </label>
+											</div>
+										</form>
+										<input type="button" class="xinzen-btn" value="新增" id="zr_xinzeng" />
+									</div>
+									<div class="content-wrapper-div">
+										<ul>
+											<li id="cust_id1">专项调整BP ：<span id="discount_special">0BP</span></li>
+										</ul>
+									</div>
+
+								</div>
+
+								<div class="wrapper-div-form1">
+									<h3>价格调整</h3>
+									<div class="content-wrapper-div">
+										<ul>
+											<li id="cust_id1">价格调整总计：<span id="jgtzzj"></span></li>
+										</ul>
+									</div>
+									<input type="button" id="zr_jisuan" class="xinzen-btn" value="计算" />
+									<!--<span id="zr_jisuan" style="width: 0.45rem;height: 0.2rem;">计算</span>-->
+									<!--<button id="zr_jisuan"  style="width: 0.45rem;height: 0.2rem;">计算</button>-->
+								</div>
+<!-- 利率信息汇总 -->
+								<div class="wrapper-div-form1">
+									<h3>利率信息汇总</h3>
+									<div class="content-wrapper-div">
+										<ul class="zr_lilu"
+
+style="display: none;">
+											<li id="cust_id1">利
+
+率类型：<span>基准利率</span></li>
+											<li id="cust_name">
+
+利率值 ：<span id="jzlvz">0.12</span></li>
+											<li
+
+id="ci_cust_level">浮动比例 ：<span id="jzfdbl">11</span></li>
+											<li
+
+id="ci_cust_indu_name">EVA : <span id="jzEVA">2.2</span></li>
+											<li
+
+id="zr_RAROC">RAROC : <span id="jzRAROC">0.32</span></li>
+										</ul>
+										<ul class="zr_lilu">
+											<li id="cust_id1">利
+
+率类型：<span>目标利率</span></li>
+											<li id="cust_name">
+
+利率值 ：<span id="mblvz">0.12</span></li>
+											<li
+
+id="ci_cust_level">浮动比例 ：<span id="mbfdbl">122</span></li>
+											<li
+
+id="ci_cust_indu_name">EVA : <span id="mbEVA">0.22</span></li>
+											<li
+
+id="zr_RAROC">RAROC : <span id="mbRAROC">32</span></li>
+										</ul>
+										<ul class="zr_lilu">
+											<li id="cust_id1">利
+
+率类型：<span>保本利率</span></li>
+											<li id="cust_name">
+
+利率值 ：<span id="baobll">0.22</span></li>
+											<li
+
+id="ci_cust_level">浮动比例 ：<span id="baobfd">0.33</span></li>
+											<li
+
+id="ci_cust_indu_name">EVA : <span id="baobEVA">22</span></li>
+											<li
+
+id="zr_RAROC">RAROC : <span id="baobRAROC">33</span></li>
+										</ul>
+
+										<ul class="zr_lilu"
+
+style="display: none;">
+											<li id="cust_id1">利
+
+率类型：<span>价格调整</span></li>
+											<li id="cust_name">
+
+利率值 ：<span id="jglvz"></span></li>
+										</ul>
+										<ul class="zr_lilu">
+											<li id="cust_id1">利
+
+率类型：<span>优惠利率</span></li>
+											<li id="cust_name">
+
+利率值 ：<span id="yhlvz">0.78</span></li>
+											<li
+
+id="ci_cust_level">浮动比例 ：<span id="yhfdbl">0.43</span></li>
+											<li
+
+id="ci_cust_indu_name">EVA : <span id="yhEVA">31</span></li>
+											<li
+
+id="zr_RAROC">RAROC : <span id="yhRAROC">11</span></li>
+										</ul>
+										<ul class="zr_lilu">
+											<li id="cust_id1">利
+
+率类型：<span>执行利率</span></li>
+											<li id="cust_name">
+
+利率值&nbsp;&nbsp;&nbsp;：<input type="text" id="zxlvz" style="width: 0.8rem;" />
+											</li>
+											<li
+
+id="ci_cust_level">浮动比例：<input type="text" id="zxlvz" style="width: 0.8rem;" /></li>
+											<li
+
+id="ci_cust_indu_name">EVA : <span id="zxEVA">51</span></li>
+											<li
+
+id="zr_RAROC">RAROC : <span id="zxRAROC">0.44</span></li>
+											<li id="zr_zhixing">
+												<a
+
+href="javascript:;" style="color: red;">计算</a>
+											</li>
+										</ul>
+									</div>
+									<input type="button" value="保存"
+
+style="margin-left: 0.65rem;" class="btn1" id="cli" onclick="showModel()" />
+								</div>
+							</div>
+						</form>
+
+					</div>
+
+				</section>
+				<!-- #content -->
+				<div class="zr_wrapper-kong" style="height:0.45rem;"></div>
+			</section>
+			<!-- #content-wrapper -->
+		</section>
+		<!-- #page-wrapper -->
+		<!--<div class="houtai-footer-ding">
+			<a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a>
+		</div>-->
+		<!--回到顶部-->
+		<!--<div class="houtai-footer1"></div>
+		<div class="houtai-footer">
+			<ul class="houtai-box">
+
+			</ul>
+		</div>-->
+	</body>
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
+	<script type="text/javascript" src="js/foot.js"></script>
+	<script>
+		//获取系统时间
+			function p(s) {
+				return s < 10 ? '0' + s : s;
+			}
+
+			var myDate = new Date();
+			//获取当前年
+			var year = myDate.getFullYear();
+			//获取当前月
+			var month = myDate.getMonth() + 1;
+			//获取当前日
+			var date666 = myDate.getDate();
+
+			var shijian = year + '-' + p(month) + "-" + p(date666);
+			$("#pc_zr_qxr").val(shijian);
+			$("#pc_zr_zhongzr").val(shijian);
+			$("#zr_qxr").val(shijian);
+			$("#zr_zhongzr").val(shijian);
+
+
+			//		$("#hkrq").val(shijian);
+
+		//综合业务 下拉框校验
+		$('#dyplx1').click(function(){
+			var zr_str = $("#dyplx1").val();
+			//var yanzheng = '6';
+//			function isContains(zr_str, yanzheng) {
+//				return zr_str.indexOf(yanzheng) >= 0;
+//			}
+//			if(isContains(zr_str, yanzheng)){
+//				$('#zr_fuxil').hide();
+//			}else{
+//				$('#zr_fuxil').show();
+//			}
+			var pand = zr_str.indexOf('6');
+			if(pand==0){
+				$('#zr_fuxil').hide();
+			}else{
+				$('#zr_fuxil').show();
+			}
+
+		});
+
+
+
+		//蒙板和弹出框
+		function showModel() {
+			$('#mengbanbeij').show();
+			$('#tank_yes').click(function() {
+				$('#tanchuk').hide();
+				$('.zr_main').show();
+				shisuan();
+
+			})
+		}
+
+		function closeModel() {
+			$('#mengbanbeij').hide();
+		}
+
+		$(function() {
+			/*  debugger;*/
+			var str = unescape(location.href);
+			//取得整个地址栏
+
+			var data = {};
+			if(str.indexOf("?") > -1) {
+				var num = str.indexOf("?");
+				str = str.substr(num + 1); //提取
+				data = eval(str);
+			}
+
+			if(JSON.stringify(data) != "{}") {
+				//目标价格
+				debugger;
+				$("#mblv").html(data.pricingResultKColl.loanTargetPrice);
+				$("#mblvfdbl").html(data.pricingResultKColl.loanTargetPriceOfPencent);
+				$("#mblvEVA").html(data.pricingResultKColl.targetPriceEva);
+
+				//历史优惠信息
+				//				$("#dim_name").html(data.lsyhJson[0].dim_name);
+				//				$("#classifyindex").html(data.lsyhJson[0].classifyindex);
+				//				$("#dhp_bp").html(data.lsyhJson[0].dhp_bp);
+
+				//过程参数
+				$("#zjcbl").html(data.pricingResultKColl.ftp_price);
+				$("#yycbl").html(data.pricingResultKColl.operatingRate);
+				$("#fxcbl").html(data.pricingResultKColl.expectedLossRate);
+				$("#sscbl").html(data.pricingResultKColl.taxRate);
+				$("#zbcbl").html(data.pricingResultKColl.capitalCostRate);
+				$("#jjlrv").html(data.pricingResultKColl.targetRate);
+
+				//价格调整
+				$("#jgtzzj").html(data.pricingResultKColl.discount_total + "BP");
+
+				//利率信息汇总
+				$("#jzlvz").html(data.pricingResultKColl.baseLinePriceRateOfPercnet + "%");
+				$("#jzEVA").html(data.pricingResultKColl.baseLinePriceRateEVA);
+				$("#jzRAROC").html(data.pricingResultKColl.baseLinePriceRateRAROC);
+				$("#jzfdbl").html(data.pricingResultKColl.baseLinePriceRate);
+				//隐藏，不显示
+				$("#pricing_info_id").html(data.pricingResultKColl.pricing_info_id); //唯一标识号
+				$("#webservice_id").html(data.pricingResultKColl.webservice_id); //接口标识
+				$("#pricingSheetId").html(data.pricingResultKColl.pricingSheetId); //定价单
+				$("#cust_id").html(data.pricingResultKColl.cust_id); //客户id
+				$("#cust_name111").html(data.pricingResultKColl.cust_name); //客户名称
+
+				$("#mblvz").html(data.pricingResultKColl.loanTargetPrice);
+				$("#mbfdbl").html(data.pricingResultKColl.loanTargetPriceOfPencent);
+				$("#mbEVA").html(data.pricingResultKColl.targetPriceEva);
+				$("#mbRAROC").html(data.pricingResultKColl.targetPriceRAROC);
+
+				$("#jglvz").html(data.pricingResultKColl.discount_total + "BP");
+				//优惠
+				$("#yhlvz").html(data.pricingResultKColl.favoratePriceRate);
+				$("#yhfdbl").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+				$("#yhEVA").html(data.pricingResultKColl.favoratePricingRateEVA);
+				$("#yhRAROC").html(data.pricingResultKColl.favoratePricingRateRAROC);
+				//执行
+				$("#zxlvz").val(data.pricingResultKColl.favoratePriceRate);
+				$("#zxfdbl").html(data.pricingResultKColl.excutePricingRatePercentOfPercent);
+				$("#zxEVA").html(data.pricingResultKColl.excutePricingRateEVA);
+				$("#zxRAROC").html(data.pricingResultKColl.excutePricingRateRAROC);
+
+				//保本利率
+				$("#baobll").html(data.pricingResultKColl.bottomLinePriceLoans);
+				$("#baobEVA").html(data.pricingResultKColl.bottomLinePriceLoansEVA);
+				$("#baobfd").html(data.pricingResultKColl.bottomLinePriceLoansPer);
+				$("#baobRAROC").html(data.pricingResultKColl.bottomLinePriceLoansRAROC);
+				//lrp
+				$("#baoblrp").html(data.pricingResultKColl.lrpBottom); //保本
+				$("#yhlpr").html(data.pricingResultKColl.lrpFavorate); //优惠
+				$("#mblpr").html(data.pricingResultKColl.lrpTarget); //目标
+				$("#zxlpr").html(data.pricingResultKColl.lrpZhixing); //执行
+				$("#lprll").html(data.pricingResultKColl.lrprate); //基准
+
+				//贷款期限
+
+				$("#daik_rqi").html(data.pricingResultKColl.start_date);//贷款日期
+				$("#daik_shichang").html(data.pricingResultKColl.designated);//贷款时长
+				$("#daik_daoqir").html(data.pricingResultKColl.end_date);//贷款到期日
+
+				//$("#zxEVA").html(data.pricingResultKColl.favoratePricingRateEVA);
+
+				//综合业务下拉列表
+				$.each(data.derivedBusinessListICollJson, function(i, v) {
+					//console.log(v.optionid);
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#dyplx1');
+				});
+
+				$.each(data.derivedPcIColl, function(i, v) {
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#pc_dyplx1');
+				});
+
+
+
+			}
+
+		});
+
+
+
+
+		//校验
+		var jishuqi = 0;
+		//新增综合费率(派生)
+		$("#paisheng-btn").click(function() {
+
+			jishuqi++ //计数器加1
+			//alert(jishuqi);
+			if($(".paisheng-btnt-div").css("display") == "none") {
+				$(".paisheng-btnt-div").show();
+				//$("#zr_zanwuxinxi").hide();
+				$("#zr_quediquxiao").show();
+			} else {
+				$(".paisheng-btnt-div").hide();
+				if(!$('#zr_pdpaish').length > 0) {
+					//	alert(1);
+					//$("#zr_zanwuxinxi").show();
+				}
+				$("#zr_quediquxiao").hide();
+			}
+
+			if(12 == 1) {
+
+				//alert('发起请求');
+				var zr_dt = JSON.parse(localStorage.getItem("home"));
+				var params = getCommonParams(zr_dt);
+
+				params.class = "newCreditCustomerPricingCalculateQuery";
+
+				//				params.pricing_info_id = $("#pricing_info_id").text();
+				//				params.webservice_id = $("#webservice_id").text();
+				//				params.pricingSheetId = $("#pricingSheetId").text();
+				//				params.cust_id = $("#cust_id").text();
+				//				params.cust_name = $("#cust_name111").text();
+				params.flag = "1";
+				console.log(params);
+				$.ajax({
+					url: port,
+					data: params,
+					dataType: 'json',
+					cache: false,
+					success: function(r) {
+						debugger;
+						if(r.status) {
+							console.log(r);
+							$.each(r.result.derivedBusinessListICollJson, function(i, v) {
+								$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#dyplx1');
+							});
+
+						} else {
+							alert(r.message);
+						}
+					},
+					error: function(r) {
+						alert('用户没有权限！');
+					}
+				});
+			}
+
+		});
+
+		//新增配存数据
+		var jishuqi2 = 0;
+		$("#pc_paisheng-btn").click(function() {
+			jishuqi2++;
+			if($(".pc_paisheng-btnt-div").css("display") == "none") {
+				$(".pc_paisheng-btnt-div").show();
+				//$("#pc_zr_zanwuxinxi").hide();
+				$("#pc_zr_quediquxiao").show();
+			} else {
+				$(".pc_paisheng-btnt-div").hide();
+				if(!$('#pc_zr_pdpaish').length > 0) {
+					//	alert(1);
+					//$("#pc_zr_zanwuxinxi").show();
+				}
+				$("#pc_zr_quediquxiao").hide();
+			}
+
+			if(12 == 1) {
+
+				//alert('发起请求');
+				var zr_dt = JSON.parse(localStorage.getItem("home"));
+				var params = getCommonParams(zr_dt);
+
+				params.class = "newCreditCustomerPricingCalculateQuery";
+				//parms.class = 'newCreditCustomerPricingDynamicCalculateOp';
+				//				params.pricing_info_id = $("#pricing_info_id").text();
+				//				params.webservice_id = $("#webservice_id").text();
+				//				params.pricingSheetId = $("#pricingSheetId").text();
+				//				params.cust_id = $("#cust_id").text();
+				//				params.cust_name = $("#cust_name111").text();
+				params.flag = "1";
+
+				$.ajax({
+					url: port,
+					data: params,
+					dataType: 'json',
+					cache: false,
+					success: function(r) {
+						debugger;
+						if(r.status) {
+							console.log(r);
+							$.each(r.result.derivedPcIColl, function(i, v) {
+								$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#pc_dyplx1');
+							});
+
+						} else {
+							alert(r.message);
+						}
+					},
+					error: function(r) {
+						alert('用户没有权限！');
+					}
+				});
+
+			}
+
+		});
+
+
+	//新增z专项
+		var jishuqi3 = 0;
+		$("#zr_xinzeng").click(function() {
+			jishuqi3++;
+			if($(".xinzen-btnt-div").css("display") == "none") {
+				$(".xinzen-btnt-div").show();
+				//$("#pc_zr_zanwuxinxi").hide();
+				$("#pc_zr_zx").show();
+			} else {
+				$(".xinzen-btnt-div").hide();
+				if(!$('#pc_zr_pdpaish').length > 0) {
+					//	alert(1);
+					//$("#pc_zr_zanwuxinxi").show();
+				}
+				$("#pc_zr_zx").hide();
+			}
+
+			if(12 == 1) {
+
+				//alert('发起请求');
+				var zr_dt = JSON.parse(localStorage.getItem("home"));
+				var params = getCommonParams(zr_dt);
+
+				params.class = "newCreditCustomerPricingCalculateQuery";
+				//parms.class = 'newCreditCustomerPricingDynamicCalculateOp';
+				//				params.pricing_info_id = $("#pricing_info_id").text();
+				//				params.webservice_id = $("#webservice_id").text();
+				//				params.pricingSheetId = $("#pricingSheetId").text();
+				//				params.cust_id = $("#cust_id").text();
+				//				params.cust_name = $("#cust_name111").text();
+				params.flag = "1";
+
+				$.ajax({
+					url: port,
+					data: params,
+					dataType: 'json',
+					cache: false,
+					success: function(r) {
+						debugger;
+						if(r.status) {
+							console.log(r);
+							$.each(r.result.derivedPcIColl, function(i, v) {
+								$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#pc_dyplx1');
+							});
+
+						} else {
+							alert(r.message);
+						}
+					},
+					error: function(r) {
+						alert('用户没有权限！');
+					}
+				});
+
+			}
+
+		});
+
+
+
+
+
+
+
+		//新增中间业务
+		$("#pc_dypConfirm1").click(function() {
+
+		/*	var pc_zhongzhr = pc_zhongzhr = $("#pc_zr_zhongzr").val().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+			var daoqr = $("#daik_daoqir").html().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+			var pc_qixir = $("#pc_zr_qxr").val().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+
+
+
+			//判断输入框不能为空
+			if($("#pc_zuzjgdm1").val()==null||$("#pc_zuzjgdm1").val()==''){
+				alert('组织机构代码不能为空');
+				return false
+			}else if($("#pc_kehuhao1").val()==null||$("#pc_kehuhao1").val()==''){
+				alert('客户号不能为空');
+				return false
+			}else if($("#pc_kehumingc1").val()==null||$("#pc_kehumingc1").val()==''){
+				alert('客户名称不能为空');
+				return false
+			}else if($("#pc_dyplx1").val()==null||$("#pc_dyplx1").val()==''){
+				alert('产品不能为空');
+				return false
+			}else if($("#pc_dypxx1").val()==null||$("#pc_dypxx1").val()==''){
+				alert('金额不能为空');
+				return false
+			}else if($("#pc_zr_qxr").val()==null||$("#pc_zr_qxr").val()==''){
+				alert('起息日不能为空');
+				return false
+			}else if($("#pc_zr_zhongzr").val()==null||$("#pc_zr_zhongzr").val()==''){
+				alert('终止日不能为空');
+				return false
+			}else if(pc_zhongzhr > daoqr){
+				alert("终止日不能超过贷款到期日");
+				return false
+			}
+
+			if(pc_qixir > pc_zhongzhr){
+				alert("起息日不能大于终止日");
+				return false
+			}
+
+			var reg = new RegExp("^[0-9]*$");
+			var shur_je = $("#pc_dypxx1").val()
+			if(!reg.test(shur_je)){
+				//alert(shur_je);
+				alert('金额请输入数字');
+				return false
+			}
+
+
+
+
+
+
+			if($("#pc_zr_fxl").val()==null||$("#pc_zr_fxl").val()==''){
+				alert('付息率不能为空');
+				return false
+			}
+*/
+
+
+
+
+
+
+
+
+
+			$(".pc_paisheng-btnt-div").hide();
+			$("#pc_zr_quediquxiao").hide();
+			$("#pc_xzdypxx1").before('<div class="content-wrapper-div zr_yangshi panduan_peicun" id="pc_zr_pdpaish" >' +
+				'<ul>' +
+				'<li id="">中间业务派生类别：<span class="pc_class_zuzjgdm1">' + $("#pc_zuzjgdm1").find("option:selected").text() + '</span></li>' +
+				'<li id="">条线：<span class="pc_class_kehuhao1">' + $("#pc_tx").find("option:selected").text() + '</span></li>' +
+				'<li id="">派生业务金额(元)：<span class="pc_class_kehumingc1">' + $("#pc_kehumingc1").val() + '</span></li>'
+				 +'</ul>' +
+				'<a href="javascript:;" class="pc_zr_a_yangshi">删除</a>' +
+				'</div>');
+			$("#pc_zuzjgdm1").val('');
+			$("#pc_kehuhao1").val('');
+			$("#pc_kehumingc1").val('');
+			$("#pc_dyplx1").val('');
+			$("#pc_dyplx1 option:checked").text('--请选择--');
+			$("#pc_dypxx1").val('');
+			//$("#pc_zr_qxr").val('');
+			//$("#pc_zr_zhongzr").val('');
+			$("#pc_zr_fxl").val('');
+		});
+		//冒泡删除派生信息
+		$("#pc_zr_paisheng").on('click', 'a', function() {
+			$(this).parent().remove();
+			if(!$('#pc_zr_pdpaish').length > 0) {
+				//$("#pc_zr_zanwuxinxi").show();
+			};
+
+		});
+		//配存取消按钮
+		$("#pc_dypCancle1").click(function() {
+			$(".pc_paisheng-btnt-div").hide();
+			$("#pc_zr_quediquxiao").hide();
+		});
+/*新增专项调整*/
+
+		$("#dypConfirm").click(function() {
+
+			$(".xinzen-btnt-div").hide();
+			$("#pc_zr_zx").hide();
+			$("#xzdypxx").before('<div class="content-wrapper-div zr_yangshi panduan_peicun" id="pc_zr_pdpaish" >' +
+				'<ul>' +
+				'<li id="">专项调整类型：<span class="pc_class_zuzjgdm1">' + $("#pc_zuzjgdm1").find("option:selected").text() + '</span></li>' +
+				'<li id="">专项调整评分：<span class="pc_class_kehuhao1">' + $("#pc_tx").find("option:selected").text() + '</span></li>' +
+				'<li id="">专项调整理由：<span class="pc_class_kehumingc1">' + $("#pc_kehumingc1").val() + '</span></li>'
+				 +'</ul>' +
+				'<a href="javascript:;" class="pc_zr_a_yangshi">删除</a>' +
+				'</div>');
+		});
+		//冒泡删除专项信息
+		$("#zr_zhuanxiang").on('click', 'a', function() {
+			$(this).parent().remove();
+			if(!$('#pc_zr_pdpaish').length > 0) {
+				//$("#pc_zr_zanwuxinxi").show();
+			};
+
+		});
+		//配存取消按钮
+		$("#pc_dypCancle1").click(function() {
+			$(".pc_paisheng-btnt-div").hide();
+			$("#pc_zr_quediquxiao").hide();
+		});
+
+
+
+
+		//新增综合业务(派生)
+		$("#dypConfirm1").click(function() {
+
+
+			/*var pd_zhongzhr = $("#zr_zhongzr").val().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+			var daoqr = $("#daik_daoqir").html().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+			var pd_qixir = $("#zr_qxr").val().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+
+			//判断产品或金额不能为空
+			if($("#dyplx1").val()==null||$("#dyplx1").val()==''){
+				alert('产品不能为空');
+				return false;
+			}else if($("#dypxx1").val()==null||$("#dypxx1").val()==''){
+				alert('金额不能为空');
+				return false;
+			}else if($("#zr_qxr").val()==null||$("#zr_qxr").val()==''){
+				alert('起息日不能为空');
+				return false;
+			}else if($("#zr_zhongzr").val()==null||$("#zr_zhongzr").val()==''){
+				alert('终止日不能为空');
+				return false;
+			}else if(pd_zhongzhr > daoqr){
+
+				alert("终止日不能超过贷款到期日");
+				return false
+			}
+
+			if(pd_qixir > pd_zhongzhr){
+				alert("起息日不能大于终止日");
+				return false
+			}
+
+			var reg = new RegExp("^[0-9]*$");
+			var shur_je = $("#dypxx1").val();
+			if(!reg.test(shur_je)){
+				//alert(shur_je);
+				alert('金额请输入数字');
+				return false
+			}
+
+
+
+
+
+
+
+			//判断付息率
+			var fxl = $("#zr_fxl").val()
+			if($('#zr_fuxil').css("display") == "none"){
+				fxl = 0;
+			}else if($("#zr_fxl").val()==null||$("#zr_fxl").val()==''){
+				alert('付息率不能为空');
+				return false;
+			}*/
+			$(".paisheng-btnt-div").hide();
+			$("#zr_quediquxiao").hide();
+			$("#xzdypxx1").before('<div class="content-wrapper-div zr_yangshi panduan_zonghe" id="zr_pdpaish" >' +
+				'<ul>' +
+				//				'<li id="">组织机构代码：<span class="class_zuzjgdm1">' + $("#zuzjgdm1").val() + '</span></li>' +
+				//				'<li id="">客户号：<span class="class_kehuhao1">' + $("#kehuhao1").val() + '</span></li>' +
+				//				'<li id="">客户名称：<span class="class_kehumingc1">' + $("#kehumingc1").val() + '</span></li>' +
+				'<li id="dyplxlistId1"  style="display:-none">存款派生业务类型：<span class="zr_psmc">' + $("#dyplx1").val() + '</span></li>' +
+				'<li id="dyplxlistId2">条线：<span class="zr_psmc2">' + $("#dyplx1 option:checked").text() + '</span></li>' +
+				'<li id="dypxxlist1">期限(月)：<span class="zr_psje">' + $("#dypxx1").val() + '</span></li>' +
+				'<li id="">派生业务金额(元)：<span class="class_zr_qxr">' + $("#zr_qxr").val() + '</span></li>' +
+				'<li id="">承诺客户利率(%)：<span class="class_zr_zhongzr">' + $("#zr_zhongzr").val() + '</span></li>' +
+				'<li id="yc_fxl">起息日：<span class="class_zr_fxl">' + $("#zr_zhongzr").val() + '</span></li>' +
+				'</ul>' +
+				'<a href="javascript:;" class="zr_a_yangshi">删除</a>' +
+				'</div>');
+			$("#dyplx1").val('');
+			$("#dyplx1 option:checked").text('--请选择--');
+			$("#dypxx1").val('');
+			//$("#zr_qxr").val('');
+			//$("#zr_zhongzr").val('');
+			$("#zr_fxl").val('');
+
+//			if(fxl="''"){
+//
+//				$('#yc_fxl').hide();
+//			}
+		});
+		//冒泡删除派生信息
+		$("#zr_paisheng").on('click', 'a', function() {
+			$(this).parent().remove();
+			if(!$('#zr_pdpaish').length > 0) {
+				//$("#zr_zanwuxinxi").show();
+			};
+
+		})
+
+		$("#dypCancle1").click(function() {
+
+			$(".paisheng-btnt-div").hide();
+			//$("#zr_zanwuxinxi").show();
+			$("#zr_quediquxiao").hide();
+		});
+
+		//计算 价格调整
+
+		$("#zr_jisuan").click(function() {
+			/*  debugger;*/
+
+			//综合业务 (派生)
+			var psmc_str = ''; //产品
+			var psje_str = ''; //金额
+
+			var qixir_str = ''; //起息日
+			var zhongzr_str = ''; //终止日
+			var fuxil_str = ''; //付息率
+
+			//alert(1);
+			//  综合业务数据 (原派生)
+			//  综合业务 产品
+			$(".zr_psmc").each(function(i) {
+				psmc_str += $(this).text() + ',';
+			});
+			//console.log(psmc_str.slice(0,psmc_str.length-1));
+			//综合业务 金额
+			$(".zr_psje").each(function(i) {
+				psje_str += $(this).text() + ',';
+			});
+			//综合业务 起息日
+			$(".class_zr_qxr").each(function(i) {
+				//				var zr_rq="";
+				//				zr_rq = $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+				//qixir_str += $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "") + ',';
+				qixir_str += $(this).text() + ',';
+				//console.log(qixir_str)
+			});
+			//综合业务 终止日
+			$(".class_zr_zhongzr").each(function(i) {
+				//zhongzr_str += $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "") + ',';
+				zhongzr_str += $(this).text()+ ',';
+				//console.log(zhongzr_str);
+			});
+			//综合业务 付息率
+			$(".class_zr_fxl").each(function(i) {
+				fuxil_str += $(this).text() + ',';
+			});
+
+			//console.log(psje_str.slice(0,psje_str.length-1));
+			// 综合业务    派生数据
+			var zr_psshuju = '{"businessDataProduct":"' + psmc_str.slice(0, psmc_str.length - 1) +
+				'","businessDataBall":"' + psje_str.slice(0, psje_str.length - 1) + '","businessDataBeginDate":"' + qixir_str.slice(0, qixir_str.length - 1) +
+				'","businessDataEndDate":"' + zhongzr_str.slice(0, zhongzr_str.length - 1) + '","businessDataRate":"' + fuxil_str.slice(0, fuxil_str.length - 1) + '"}';
+
+			//****************************************************
+			//配存业务 配存数据
+			var pc_zuzhijig = '' //组织机构代码
+			var pc_kehuhao = '' //客户号
+			var pc_kehuname = '' //客户名称
+
+			var pc_psmc_str = ''; //产品
+			var pc_psje_str = ''; //金额
+
+			var pc_qixir_str = ''; //起息日
+			var pc_zhongzr_str = ''; //终止日
+			var pc_fuxil_str = ''; //付息率
+
+			//  配存业务  组织机构代码
+			$(".pc_class_zuzjgdm1").each(function(i) {
+				pc_zuzhijig += $(this).text() + ',';
+			});
+			//  配存业务  客户号
+			$(".pc_class_kehuhao1").each(function(i) {
+				pc_kehuhao += $(this).text() + ',';
+			});
+			//  配存业务  客户名称
+			$(".pc_class_kehumingc1").each(function(i) {
+				pc_kehuname += $(this).text() + ',';
+			});
+			//  配存业务 产品
+			$(".pc_zr_psmc").each(function(i) {
+				pc_psmc_str += $(this).text() + ',';
+			});
+			// 配存业务 金额
+			$(".pc_zr_psje").each(function(i) {
+				pc_psje_str += $(this).text() + ',';
+			});
+			//配存业务 起息日
+			$(".pc_class_zr_qxr").each(function(i) {
+				//				var zr_rq="";
+				//				zr_rq = $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+				//pc_qixir_str += $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "") + ',';
+				pc_qixir_str += $(this).text() + ',';
+				console.log(pc_qixir_str)
+			});
+			//配存业务 终止日
+			$(".pc_class_zr_zhongzr").each(function(i) {
+				//pc_zhongzr_str += $(this).text().replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "") + ',';
+				pc_zhongzr_str += $(this).text() + ',';
+				//console.log(zhongzr_str);
+			});
+			//配存业务 付息率
+			$(".pc_class_zr_fxl").each(function(i) {
+				pc_fuxil_str += $(this).text() + ',';
+			});
+
+			// 配存业务
+			var pc_zr_psshuju = '{"pcDataProduct":"' + pc_psmc_str.slice(0, pc_psmc_str.length - 1) +
+				'","pcDataBall":"' + pc_psje_str.slice(0, pc_psje_str.length - 1) + '","pcDataBeginDate":"' + pc_qixir_str.slice(0, pc_qixir_str.length - 1) +
+				'","pcDataEndDate":"' + pc_zhongzr_str.slice(0, pc_zhongzr_str.length - 1) + '","pcDataRate":"' + pc_fuxil_str.slice(0, pc_fuxil_str.length - 1) +
+				'","pcDataGropId":"' + pc_zuzhijig.slice(0, pc_zuzhijig.length - 1) + '","pcDataCustId":"' + pc_kehuhao.slice(0, pc_kehuhao.length - 1) +
+				'","pcDataCustName":"' + pc_kehuname.slice(0, pc_kehuname.length - 1) + '"}';
+
+
+			var zr_dt = JSON.parse(localStorage.getItem("home"));
+			var params = getCommonParams(zr_dt);
+
+			params.class = "newCreditCustomerPricingDynamicCalculateOp";
+			//params.class ="newCreditCustomerPricingCalculateQuery";
+			params.type = "dynamicCalculate";
+			params.pricing_info_id = $("#pricing_info_id").text();
+			params.webservice_id = $("#webservice_id").text();
+			params.pricingSheetId = $("#pricingSheetId").text();
+			params.cust_id = $("#cust_id").text();
+			params.cust_name = $("#cust_name111").text();
+
+			//console.log(zr_psshuju);
+			//console.log(pc_zr_psshuju);
+			//console.log(params);
+
+
+
+
+
+			params.custInfo = {
+				"deriveBusiness": zr_psshuju, //综合
+
+				"speciaIadjust": pc_zr_psshuju //配存
+
+
+			};
+
+			//alert($('#zr_paisheng').find(".panduan_zonghe").length);
+			//alert($('#pc_zr_paisheng').children('.panduan_peicun').length);
+
+			//如果综合业务中没有数据，则删除相应字段
+			if($('#zr_paisheng').find(".panduan_zonghe").length==0){
+				//alert(1);
+				delete(params.custInfo["deriveBusiness"]);
+
+			}
+			//如果配存业务中没有数据，则删除相应字段
+			if($('#pc_zr_paisheng').children('.panduan_peicun').length==0){
+				//alert(2);
+				delete(params.custInfo["speciaIadjust"]);
+
+			}
+			console.log(params);
+			$.ajax({
+				url: port,
+				cache: false,
+				data: params,
+				async: true,
+				dataType: 'json',
+				success: function(r) {
+					debugger;
+					if(r.status) {
+						//console.log(r.result);
+//						$("#discount_derived").html(r.result.discount_derived); //派生优惠
+//						$("#discount_special").html(r.result.discount_special); //专项优惠
+
+						$("#jgtzzj").html(r.result.discount_total); //价格调整总计bp
+
+						$("#yhlvz").html(r.result.favorate_rate); //优惠利率
+						$("#yhEVA").html(r.result.compositeEVA); //优惠利率EVA
+						$("#yhRAROC").html(r.result.compositeRAROC); //优惠利率RAROC
+						$("#yhfdbl").html(r.result.exercise_rate_percent);//优惠利率浮动比例
+						$("#yhlpr").html(r.result.favorateLPR);//优惠利率LPR
+
+						$("#zxlvz").val(r.result.favorate_rate); //执行利率
+						$("#zxfdbl").html(r.result.exercise_rate_percent); //优惠利率基于基准利率百分比
+						$("#zxEVA").html(r.result.compositeEVA);//执行利率EVA
+						$("#zxlpr").html(r.result.exerciseLPR);//执行利率LPR
+						$("#zxRAROC").html(r.result.exerciseRAROC);//执行利率raroc
+
+//						$("#mbEVA").html(r.result.compositeEVA); //目标利率EVA
+//						$("#mbRAROC").html(r.result.compositeRAROC); //目标利率RAROC
+//						$("#mblpr").html(r.result.compositeLPR);//目标利率LPR
+
+					} else {
+						alert(r.message);
+					}
+
+				},
+				error: function(r) {
+					alert('用户没有权限！');
+				}
+			});
+
+		});
+
+		//执行利率底下的动态修改
+		$("#zr_zhixing").on("click", 'a', function() {
+
+			//var params = getCommonParams(document.cookie);
+			var zr_dt = JSON.parse(localStorage.getItem("home"));
+			var params = getCommonParams(zr_dt);
+			params.class = "newCreditCustomerPricingDynamicCalculateOp";
+			params.type = "excuteCalculate";
+
+			//派生名称与派生金额数据获取
+			//			$(".zr_psmc").each(function(i) {
+			//				psmc_str += $(this).text() + ',';
+			//			});
+			//			//console.log(psmc_str.slice(0,psmc_str.length-1));
+			//			$(".zr_psje").each(function(i) {
+			//				psje_str += $(this).text() + ',';
+			//			});
+			//console.log(psje_str.slice(0,psje_str.length-1));
+			//派生数据
+			//var zr_psshuju = '{"loanDerivedProduct":"' +psmc_str.slice(0,psmc_str.length-1) + '","loanDerivedBal":"' + psje_str.slice(0,psje_str.length-1)  + '"}';
+			//专项调整数据
+			//			$(".zr_zxlx").each(function(i) {
+			//				zxlx_str += $(this).text() + ',';
+			//			});
+			//			//console.log(zxlx_str.slice(0,zxlx_str.length-1));
+			//
+			//			$(".zr_zxbp").each(function(i) {
+			//				zxbp_str += $(this).text() + ',';
+			//			});
+			//console.log(zxbp_str.slice(0,zxbp_str.length-1));
+			//专项调整数据
+			//var zr_zxshuju = '{"ResDiscountTypeName":"' +zxlx_str.slice(0,zxlx_str.length-1) + '","loanDerivedBal":"' + zxbp_str.slice(0,zxbp_str.length-1)  + '"}';
+
+			params.pricing_info_id = $("#pricing_info_id").text();
+			params.webservice_id = $("#webservice_id").text();
+			params.pricingSheetId = $("#pricingSheetId").text();
+			params.cust_id = $("#cust_id").text();
+
+			//							params.custInfo={
+			//								"deriveBusiness":zr_psshuju,
+			//								"speciaIadjust":zr_zxshuju,
+			//							};
+			var zxlvz1 = $("#zxlvz").val()
+			var zxlvz2 = zxlvz1.replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\|\>|\/|\?]/g, "");
+
+			params.exercise_rate = zxlvz2
+
+			debugger;
+			$.ajax({
+				url: port,
+				cache: false,
+				data: params,
+				dataType: 'json',
+				success: function(r) {
+					debugger;
+					if(r.status) {
+						console.log(r.result);
+						$("#zxEVA").html(r.result.compositeEVA); //执行利率EVA
+						$("#zxRAROC").html(r.result.compositeRAROC); //执行利率RAROC
+						$("#zxfdbl").html(r.result.exercise_rate_percent)//执行利率浮动比例
+						$("#zxlpr").html(r.result.exerciseLPR)//执行利率LPR
+					} else {
+						alert(r.message);
+					}
+
+				},
+				error: function(r) {
+					alert('用户没有权限！');
+				}
+			});
+
+		})
+
+		function shisuan() {
+
+			//var params = getCommonParams(document.cookie);
+			var zr_dt = JSON.parse(localStorage.getItem("home"));
+			var params = getCommonParams(zr_dt);
+			params.class = "newCreditCustomerPricingUpdateOp";
+			//params.class = "newCreditCustomerPricingAddConfirm";
+			//params.class = "NewCreditCustomerPricingAddConfirmOP";
+			//params.pricingSheetId = data.pricingResultKColl.pricing_info_id;
+			params.pricingSheetId = $("#pricingSheetId").text();
+			debugger;
+			$.ajax({
+				url: port,
+				data: params,
+				dataType: 'json',
+				cache: false,
+				success: function(r) {
+					debugger;
+					if(r.status) {
+
+						setTimeout(function() {
+							window.location.href = "jieguobaocun.html"
+						}, 2000);
+					} else {
+						alert(r.message);
+					}
+				},
+
+				error: function(r) {
+					closeModel();
+					alert('保存失败，请检查网络是否正常连接！');
+					window.location.reload();//刷新当前页面
+				}
+			});
+
+		}
+	</script>
+
+</html>

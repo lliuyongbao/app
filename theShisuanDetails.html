@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>试算单明细</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading scripts] -->
+
+
+    </head>
+
+    <body>
+
+        <section id="page-wrapper">
+
+            <section id="menu-wrapper">
+
+               <!-- .menu -->
+
+            </section> <!-- #menu-wrapper -->
+
+            <section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>试算单明细</h1>
+                    </div>
+                </section> <!-- #header -->
+
+                <section id="content">
+                  <!---->
+
+                  <div class="content-divc">
+
+                    <form action="#" method="get">
+                        <div class="content-div-form1g">
+
+                              <div class="content-wrapper-divkh">
+                                <h3>贷款定价单</h3>
+                                <div class="content-wrapper-div">
+                                    <ul>
+                                        <li id="cust_id">定价编号：<span id="djbh"></span></li>
+                                        <li id="cust_name">定价单状态：<span id="djdzt"></span></li>
+                                        <li id="ci_cust_level">机构：<span id="jg"></span></li>
+                                        <li id="cust_name">定价日期:<span id="djrq"></span></li>
+                                        <li id="ci_cust_level">操作员：<span id="czy"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="wrapper-div-form1">
+                                <h3>客户信息</h3>
+                                <div class="content-wrapper-div">
+                                    <ul>
+                                        <li id="cust_id">客户号：<span id="khh"></span></li>
+                                        <li id="cust_name">客户名称：<span id="khmc"></span></li>
+                                        <li id="ci_cust_level">行业：<span id="hy"></span></li>
+                                        <li id="ci_cust_indu_name">客户规模: <span id="khgm"></span></li>
+                                        <li id="ci_cust_scale_name">信用等级：<span id="xydj"></span></li>
+                                        <li id="dci_up_indu_id">条线: <span id="khfl"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                          <div class="wrapper-div-form1">
+                              <h3>贷款信息</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">产品名称：<span id="cpmc"></span></li>
+                                       <li id="ci_cust_scale_name">起息日：<span id="qxr"></span></li>
+                                      <li id="cust_id">币种：<span id="bz"></span></li>
+                                      <li id="ci_cust_level">贷款金额(元)：<span id="dkje"></span></li>
+                                      <li id="ci_cust_indu_name">贷款期限): <span id="dkqx"></span></li>
+                                       <li id="ci_cust_indu_name">期限单位: <span id="dkdw">月</span></li>
+
+                                       <li id="ci_cust_indu_name">利率类型: <span id="dkdw">月</span></li>
+                                        <li id="ci_cust_indu_name">浮动频率: <span id="dkdw">月</span></li>
+                                      <li id="ci_cust_indu_name">还款方式: <span id="hkfs"></span></li>
+                                      <li id="dci_up_indu_id">还款频率: <span id="lvtzfs"></span></li>
+                                      <li id="ci_cust_scale_name">主担保方式：<span id="lvtzzq"></span></li>
+                                      <li id="dci_up_indu_id">通道费率: <span id="zfpl"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>定价结果</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">保本利率：<span id="bblv"></span></li>
+                                      <li id="cust_name">保本利率浮动比例：<span id="bblvfdbl"></span></li>
+                                      <li id="ci_cust_level">保本利率EVA(元)：<span id="bblveva"></span></li>
+                                      <li id="ci_cust_level">保本利率的RAROC：<span id="bblveva"></span></li>
+                                  <!--     <li id="ci_cust_indu_name">基准利率: <span id="jzlv"></span></li>
+                                  <li id="dci_up_indu_id">基准利率浮动比例: <span id="jzlvfdbl"></span></li>
+                                  <li id="ci_cust_scale_name">基准利率EVA(元)：<span id="jzlveca"></span></li> -->
+                                      <li id="ci_cust_indu_name">目标价格: <span id="mblv"></span></li>
+                                      <li id="dci_up_indu_id">目标利率浮动比例: <span id="mblvfdbl"></span></li>
+                                      <li id="ci_cust_scale_name">目标利率EVA(元)：<span id="mblvrva"></span></li>
+                                       <li id="ci_cust_scale_name">目标利率RAROC：<span id="mblvrva"></span></li>
+
+                                      <li id="ci_cust_indu_name">优惠利率: <span id="yhlv"></span></li>
+                                      <li id="dci_up_indu_id">优惠利率浮动比例: <span id="yhlvfdbl"></span></li>
+                                      <li id="ci_cust_scale_name">优惠利率EVA(元)：<span id="yhlveva"></span></li>
+                                      <li id="ci_cust_scale_name">优惠利率RAROC：<span id="yhlveva"></span></li>
+                                      <li id="ci_cust_indu_name">执行利率: <span id="zxlv"></span></li>
+                                      <li id="dci_up_indu_id">执行利率浮动比例: <span id="zxlvfdbl"></span></li>
+                                      <li id="ci_cust_scale_name">执行利率EVA(元)：<span id="zxlveva"></span></li>
+                                      <li id="ci_cust_scale_name">执行利率RAROC：<span id="zxlveva"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>过程参数</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">资金成本率：<span id="zjcbl"></span></li>
+                                      <li id="cust_name">运营成本率：<span id="yycbl"></span></li>
+                                      <li id="ci_cust_level">风险成本率：<span id="fxcbl"></span></li>
+                                      <li id="ci_cust_indu_name">税收成本率: <span id="sscbl"></span></li>
+                                      <li id="dci_up_indu_id">资本成本率: <span id="zjcbl"></span></li>
+                                      <li id="ci_cust_scale_name">目标收益率：<span id="jjlrl"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                           <div class="wrapper-div-form1">
+                              <h3>担保品</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">抵押名称：<span id="dymc"></span></li>
+                                      <li id="cust_name">担保类型：<span id="dblx"></span></li>
+                                      <li id="ci_cust_level">抵押品类型：<span id="dyplx"></span></li>
+                                      <li id="ci_cust_level">抵押品价值(元)：<span id="dypjz"></span></li>
+                                      <li id="ci_cust_level">担保金额(元)：<span id="dzje"></span></li>
+                                      <li id="ci_cust_level">担保总金额(元)：<span id="dbzje"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>历史优惠</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">客户分类信息：<span id="khflxx"></span></li>
+                                      <li id="cust_name">EVA贡献排序：<span id="evagxb"></span></li>
+                                      <li id="cust_name">EVA贡献总数：<span id="evagxb"></span></li>
+                                      <li id="ci_cust_level">历史优惠BP：<span id="lsyh"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>存款业务派生承诺</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">存款派生业务类型：<span id="psywlx"></span></li><li id="cust_id">条线：<span id="psywlx"></span></li>
+                                      <li id="cust_id">期限(月)：<span id="psywlx"></span></li>
+                                      <li id="cust_name">派生业务金额(元)：<span id="psywje"></span></li>
+                                      <li id="cust_name">承诺客户利率(%)：<span id="psywje"></span></li>
+                                      <li id="cust_name">起息日：<span id="psywje"></span></li>
+
+                                  </ul>
+                              </div>
+                          </div>
+                           <div class="wrapper-div-form1">
+                              <h3>中间业务派生承诺</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">中间业务派生业务类型：<span id="psywlx"></span></li><li id="cust_id">条线：<span id="psywlx"></span></li>
+                                      <li id="cust_name">派生业务金额(元)：<span id="psywje"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>专项优惠</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li id="cust_id">专项调整类型：<span id="zxtzlx"></span></li>
+                                      <li id="cust_name">专项调整评分：<span id="zxtz"></span></li>
+                                      <li id="cust_name">专项调整理由：<span id="zxtzly"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                 </div>
+
+                </section>
+            <!-- #content -->
+            </section>
+            <div style="width:100%;height:45px;">
+
+             </div> <!-- #content-wrapper -->
+        </section> <!-- #page-wrapper -->
+     <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div><!--回到顶部-->
+        <div class="houtai-footer1"></div>
+          <div class="houtai-footer">
+            <ul class="houtai-box">
+                <li class="houtai-flex">
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                        <p>公告信息</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                        <p>对公贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html" >
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="cunkuandingjia.html" >
+                        <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                        <p>存款定价</p>
+                     </a>
+                </li>
+            </ul>
+          </div>
+    </body>
+   <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+   <script>
+       var str=unescape(location.href);
+        //取得整个地址栏
+
+        var data = {};
+        if(str.indexOf("?") > -1){
+           var num=str.indexOf("?");
+           str=str.substr(num+1);
+           data = eval(str);
+       }
+        var params = getCommonParams(document.cookie);
+        params.class = "retailPricingBillLView";
+        //params.lps_sht_id="SHT201506060003074179";
+         if(JSON.stringify(data) != "{}"){
+                            //贷款定价单
+                            $("#djbh").html(data.lps_sht_id);
+                            $("#djdzt").html(data.lps_bs_status_name);
+                            $("#jg").html(data.lps_bs_org_name);
+                            $("#djrq").html(data.pricing_date);
+                            $("#czy").html(data.lps_bs_org_no);
+                            //客户信息
+                            $("#khh").html(data.lps_bs_cust_id);
+                            $("#khmc").html(data.lps_bs_cust_name);
+                            $("#hy").html(data.industry_name);
+                            $("#khgm").html(data.cust_scale_code);
+                            $("#khfl").html(data.cust_classified_name);
+                            $("#xydj").html(data.ci_cust_level);
+
+                            //贷款信息
+                            $("#bz").html(data.loan_currency);
+                            $("#dkzl").html(data.lps_ln_product_name);
+                            $("#dkje").html(data.lps_ln_used_bal);
+                            $("#hkfs").html(data.loan_repayment_type);
+                            $("#lvtzfs").html(data.loan_repayment_type);
+                          /* $("#lvtzzq").html(data.pricingResultKColl.targetRate);
+                            $("#zfpl").html(data.pricingResultKColl.targetRate);*/
+                            $("#dkqx").html(data.lps_ln_term);
+                            $("#qxq").html(data.lps_ln_value_date);
+                            //定价结果
+                            $("#bblv").html(data.lps_rt_bottom_price);
+                           // $("#bblvfdbl").html(data.lps_bs_cust_name);
+                           /* $("#bblveva").html(data.pricingResultKColl.expectedLossRate);
+                            $("#jzlv").html(data.pricingResultKColl.taxRate);
+                            $("#jzlvfdbl").html(data.pricingResultKColl.capitalCostRate);
+                            $("#jzlveca").html(data.pricingResultKColl.targetRate);*/
+                            $("#mblv").html(data.lps_rt_target_price);
+                            /*$("#mblvfdbl").html(data.pricingResultKColl.targetRate);
+                            $("#mblvrva").html(data.pricingResultKColl.targetRate);
+
+                             $("#lsyh").html(data.pricingResultKColl.taxRate);
+                            $("#zxtz").html(data.pricingResultKColl.capitalCostRate);
+                            $("#psyh").html(data.pricingResultKColl.targetRate);*/
+                            $("#yhlv").html(data.lps_rt_favor_price);
+                            $("#yhlvfdbl").html(data.pricingResultKColl.targetRate);
+                            $("#yhlveva").html(data.pricingResultKColl.targetRate);
+
+                            $("#zxlv").html(data.lps_rt_strike_price);
+                            $("#zxlvfdbl").html(data.pricingResultKColl.targetRate);
+                            $("#zxlveva").html(data.lps_rt_strike_eva);
+                    /*        //过程参数
+                            $("#zjcbl").html(data.pricingResultKColl.favoratePriceRate);
+                            $("#yycbl").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+                            $("#fxcbl").html(data.pricingResultKColl.favoratePricingRateEVA);
+
+                            $("#sscbl").html(data.pricingResultKColl.favoratePriceRate);
+                            $("#zjcbl").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+                            $("#jjlrl").html(data.pricingResultKColl.favoratePricingRateEVA);
+                            //历史优惠
+                            $("#khflxx").html(data.pricingResultKColl.baseLinePriceRateOfPercnet + "%");
+                            $("#evagxb").html(data.pricingResultKColl.baseLinePriceRateEVA);
+                            $("#lsyh").html(data.pricingResultKColl.loanTargetPrice);
+                             //派生承诺
+                            $("#psywlx").html(data.pricingResultKColl.loanTargetPriceOfPencent);
+                            $("#psywje").html(data.pricingResultKColl.targetPriceEva);
+                            $("#jglvz").html(data.pricingResultKColl.discount_total + "BP");
+                            //专项优惠
+                            $("#zxtzlx").html(data.pricingResultKColl.favoratePriceRate);
+                            $("#zxtz").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+                            $("#zxtzly").html(data.pricingResultKColl.favoratePricingRateEVA);*/
+                         }
+        /*$(function(){
+            $.ajax({
+                url:port,
+                data:params,
+                dataType:'json',
+                cache:false,
+                success:(r)=>{
+                    if (r.status){
+                        var jsonData=r.result.AddData;
+                        console.log(jsonData)
+                       if(JSON.stringify(data) != "{}"){
+                            //贷款定价单
+                            $("#djbh").html(data.lps_sht_id);
+                            $("#djdzt").html(data.lps_bs_status_name);
+                            $("#jg").html(data.lps_bs_org_name);
+                            $("#djrq").html(data.pricing_date);
+                            $("#czy").html(data.lps_bs_org_no);
+                            //客户信息
+                            $("#khh").html(data.lps_bs_cust_id);
+                            $("#dkzl").html(data.lps_bs_cust_name);
+                            $("#hy").html(data.pricingResultKColl.expectedLossRate);
+                            $("#khgm").html(data.pricingResultKColl.taxRate);
+                            $("#khfl").html(data.pricingResultKColl.capitalCostRate);
+                            $("#xydj").html(data.pricingResultKColl.targetRate);
+
+                            //贷款信息
+                            $("#bz").html(data.lps_bs_cust_id);
+                            $("#khmc").html(data.lps_bs_cust_name);
+                            $("#dkje").html(data.pricingResultKColl.expectedLossRate);
+                            $("#hkfs").html(data.pricingResultKColl.taxRate);
+                            $("#lvtzfs").html(data.pricingResultKColl.capitalCostRate);
+                            $("#lvtzzq").html(data.pricingResultKColl.targetRate);
+                            $("#dkqx").html(data.pricingResultKColl.capitalCostRate);
+                            $("#zfpl").html(data.pricingResultKColl.targetRate);
+                            $("#qxq").html(data.pricingResultKColl.targetRate);
+                            //定价结果
+                            $("#bblv").html(data.lps_bs_cust_id);
+                            $("#bblvfdbl").html(data.lps_bs_cust_name);
+                            $("#bblveva").html(data.pricingResultKColl.expectedLossRate);
+                            $("#jzlv").html(data.pricingResultKColl.taxRate);
+                            $("#jzlvfdbl").html(data.pricingResultKColl.capitalCostRate);
+                            $("#jzlveca").html(data.pricingResultKColl.targetRate);
+                            $("#mbjg").html(data.pricingResultKColl.capitalCostRate);
+                            $("#mblvfdbl").html(data.pricingResultKColl.targetRate);
+                            $("#mblvrva").html(data.pricingResultKColl.targetRate);
+
+                             $("#lsyh").html(data.pricingResultKColl.taxRate);
+                            $("#zxtz").html(data.pricingResultKColl.capitalCostRate);
+                            $("#psyh").html(data.pricingResultKColl.targetRate);
+                            $("#yhlv").html(data.pricingResultKColl.capitalCostRate);
+                            $("#yhlvfdbl").html(data.pricingResultKColl.targetRate);
+                            $("#yhlveva").html(data.pricingResultKColl.targetRate);
+
+                            $("#zxlv").html(data.pricingResultKColl.capitalCostRate);
+                            $("#zxlvfdbl").html(data.pricingResultKColl.targetRate);
+                            $("#zxlveva").html(data.pricingResultKColl.targetRate);
+                            //过程参数
+                            $("#zjcbl").html(data.pricingResultKColl.favoratePriceRate);
+                            $("#yycbl").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+                            $("#fxcbl").html(data.pricingResultKColl.favoratePricingRateEVA);
+
+                            $("#sscbl").html(data.pricingResultKColl.favoratePriceRate);
+                            $("#zjcbl").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+                            $("#jjlrl").html(data.pricingResultKColl.favoratePricingRateEVA);
+                            //历史优惠
+                            $("#khflxx").html(data.pricingResultKColl.baseLinePriceRateOfPercnet + "%");
+                            $("#evagxb").html(data.pricingResultKColl.baseLinePriceRateEVA);
+                            $("#lsyh").html(data.pricingResultKColl.loanTargetPrice);
+                             //派生承诺
+                            $("#psywlx").html(data.pricingResultKColl.loanTargetPriceOfPencent);
+                            $("#psywje").html(data.pricingResultKColl.targetPriceEva);
+                            $("#jglvz").html(data.pricingResultKColl.discount_total + "BP");
+                            //专项优惠
+                            $("#zxtzlx").html(data.pricingResultKColl.favoratePriceRate);
+                            $("#zxtz").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+                            $("#zxtzly").html(data.pricingResultKColl.favoratePricingRateEVA);
+                         }
+                    }else{
+                        alert(r.message);
+                    }
+                },error:(r)=>{
+                    alert('用户没有权限！');
+                }
+            });*/
+
+        /*});*/
+    </script>
+</html>

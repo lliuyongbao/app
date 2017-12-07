@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>用信单查询</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/portfolio-default.css" />
+    <link type="text/css" rel="stylesheet" href="css/portfolio-component.css" />
+
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper" >
+
+        	<section id="menu-wrapper">
+             <!-- .menu -->
+
+          </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu">
+                          <img src="img/icons/menu.png" alt="menu" /></a>
+                    </div>
+                    <div id="header-title">
+                        <h1>用信定价单查询</h1>
+                    </div>
+
+                </section> <!-- #header -->
+
+        	<section id="content">
+
+            <div class="wrapper">
+            <!---->
+            	 <div class="wrapper-div-form1c">
+                        <h2>查询条件</h2>
+                        <form action="#" method="get">
+                            <div class="wrapper-form-div">
+
+                               <label>
+                                  <span>机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构&nbsp;</span>: <input id="dateInfo" type="text" value="" placeholder="模态框多级联动显示" style="height:.24rem;margin-bottom:0.1rem;"/>
+                                </label>
+                               </br>
+
+                               <label for="customerInfo">
+                                <span>客&nbsp;户&nbsp;经&nbsp;理&nbsp;</span>:
+                                <input type="text" name="" value="" id="customerInfo" style="height:.24rem;margin-bottom:0.1rem;"/>
+                              </labeel>
+                              </br>
+
+                              <label>
+                               <span>定&nbsp;价&nbsp;日&nbsp;期&nbsp;</span>: <input id="dateInfo" type="date" value="2017-01-13"  style="height:.24rem;margin-bottom:0.1rem;width:1.7rem;border:0.01rem solid #000;" /></label>
+                              </br>
+
+                               <label for="customerInfo">
+                                <span>客&nbsp;户&nbsp;名&nbsp;称&nbsp;</span>:
+                                <input type="text" name="" value="" id="customerInfo" style="height:.24rem;margin-bottom:0.1rem;" />
+                              </label>
+                               </br>
+                               <label>
+                                  <span>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品&nbsp;</span>: <input id="dateInfo" type="text" value="" placeholder="模态框多级联动显示" style="height:.24rem;margin-bottom:0.1rem;" />
+                                </label>
+                               </br>
+                            </div>
+                            <div align="center">
+                                <input type="button" value="查询" class="chaxun" id="query" style="border:none;margin-left: 15%; width:30%;float: left;" />
+                               <input type="button" value="重置" class="chaxun" id="reset" style="border:none;margin-left: 15%; width:30%;float:left;" />
+                            </div>
+
+                        </form>
+                    </div>
+            <!---->
+            </div>
+
+          <div class="content-wrapper-div">
+                     <ul>
+                       <li>机构：<span>2017-01-13</span></li>
+                       <li>客户经理：<span>0001</span></li>
+                       <li>定价日期：<span>******</span></li>
+                       <li>客户名称：<span>对公条线</span></li>
+                       <li>产品：<span>整存整取</span></li>
+                       <li>金额：<span>150000</span></li>
+                       <li>期限：<span>1000</span></li>
+                       <li>保本利率：<span>50000</span></li>
+                       <li>目标利率：<span>10000</span></li>
+                       <li>优惠利率：<span>100000</span></li>
+                       <li>执行利率：<span>30000</span></li>
+                       <li>状态：<span>已完成</span></li>
+                     </ul>
+         </div>
+        </section> <!-- #content-wrapper -->
+          <div style="width:100%;height:50px;">
+
+            </div><!-- #content-wrapper -->
+
+    	</section> <!-- #page-wrapper -->
+
+         <!-- [loading scripts] -->
+
+        <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div><!--回到顶部-->
+        <div class="houtai-footer1"></div>
+          <div class="houtai-footer">
+            <ul class="houtai-box">
+
+                <li class="houtai-flex">
+
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                        <p>公告信息</p>
+                    </a>
+
+                </li>
+
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                        <p>对公贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html" >
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="cunkuandingjia.html" >
+                        <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                        <p>存款定价</p>
+                     </a>
+                </li>
+            </ul>
+        </div>
+       <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+       <script>
+           //var $ = jQuery.noConflict();
+               /*$(window).load(function() {
+                   Grid.init();
+               });*/
+
+			$(function(){
+        $('#content-wrapper').css('min-height',$(window).height())
+			/*	$("#clk").click(function(){
+				var params = getCommonParams(document.cookie);
+                params.class = "depsoitfabupricingList";
+                params.RQ =$("#meeting").val();
+                params.TX =$("#tx option:selected").val();
+                params.JG1=params.S_organno;
+                params.CP =$("#cp option:selected").val();
+                  $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+                          debugger;
+                          if (r.status){
+                              $.each(r.result,function(i,v){
+                              $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                     +'<li>机构：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>客户经理：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>定价日期：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>客户名称：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>产品：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>金额：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>期限：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>保本利率：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>目标利率：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>优惠利率：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>执行利率：<span>'+v.as_of_date+'</span></li>'
+                                     +'<li>状态：<span>'+v.as_of_date+'</span></li>'
+                                    +'</ul>'
+                            +'</div>').appendTo('#content');
+                         $(".wrapper-kong").css("height",0)
+
+                        });
+                        }else{
+                            alert(r.message);
+                          }
+                    },error:function(r){
+                      alert('用户没有权限！');
+                    }
+              });
+
+            })*/
+              $("#clk").click(function(){
+
+                              $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                      +'<li>计算日期：<span>2017-01-13</span></li>'
+                                      +'<li>机构号：<span>0001</span></li>'
+                                      +'<li>机构名称：<span>******</span></li>'
+                                      +'<li>条线：<span>对公条线</span></li>'
+                                      +'<li>产品名称：<span>整存整取</span></li>'
+                                      +'<li>资金价值：<span>150000</span></li>'
+                                      +'<li>流动性成本：<span>1000</span></li>'
+                                      +'<li>运营成本：<span>50000</span></li>'
+                                      +'<li>存款保险：<span>10000</span></li>'
+                                      +'<li>目标收益率：<span>100000</span></li>'
+                                      +'<li>存款价格：<span>30000</span></li>'
+                                    +'</ul>'
+                                     +' <div align="right" style="">'
+                                       +'<input type="button" name="" value="提交审批" style="width: 30%;margin:0 10px 10px 0;line-height:2px;border: 1px solid #6cf; color:red;background: #ccc;">'
+                                    +'</div>'
+                            +'</div>').appendTo('#content');
+                         $(".wrapper-kong").css("height",0)
+
+                        });
+
+     $("#content-wrapper").on('click','.content-wrapper-div',function(){
+                            //alert($(this).index()-2)
+                          window.location.href = "theyongxinDetails.html";
+             })
+
+    })
+       </script>
+       <script type="text/javascript" src="js/modernizr.custom.js"></script>
+       <script type="text/javascript" src="js/grid.js"></script>
+       <script type="text/javascript" src="js/main.js"></script>
+      <script src="js/cookie.js"></script>
+       <script type="text/javascript" src="js/public.js"></script>
+    </body>
+
+</html>

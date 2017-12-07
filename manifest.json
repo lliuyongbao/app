@@ -1,0 +1,562 @@
+{
+    "@platforms": ["android", "iPhone", "iPad"],
+    "id": "H5F36BCDE",/*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name": "天津金城",/*应用名称，程序桌面图标名称*/
+    "version": {
+        "name": "1.0",/*应用版本名称*/
+        "code": ""
+    },
+    "description": "",/*应用描述信息*/
+    "icons": {
+        "72": "icon.png"
+    },
+    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer": {
+        "name": "",/*开发者名称*/
+        "email": "",/*开发者邮箱地址*/
+        "url": ""/*开发者个人主页地址*/
+    },
+    "permissions": {
+        
+         "Runtime": {
+        "description": "运行环境"
+    },
+        
+        "Cache": {
+            "description": "管理应用缓存"
+        },
+        
+        "Console": {
+            "description": "跟踪调试输出日志"
+        },
+        
+        
+        
+        "Events": {
+            "description": "应用扩展事件"
+        },"Speech":{},"Camera":{},"Device":{},"Storage":{},"Uploader":{},"Contacts":{},"NativeObj":{},"Downloader":{},"Invocation":{},"Geolocation":{},"Messaging":{},"Orientation":{},"Webview":{}
+    },
+    "plus": {
+        "splashscreen": {
+            "autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting": true/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
+        },
+        "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+        "runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保���给应用签名，暂不使用*/
+        "distribute": {
+            "apple": {
+                "appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision": "",/*iOS应用打包配置文件*/
+                "password": "",/*iOS应用打包个人证书导入密码*/
+                "p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "frameworks":[
+                ]/*调用Native.js调用原生Objective-c API需要引用的FrameWork，如需调用GameCenter，则添加"GameKit.framework"*/
+            },
+            "google": {
+                "packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore": "",/*Android应用打包使用的密钥库文件*/
+                "password": "",/*Android应用打包使用密钥库中证书的密码*/
+                "aliasname": "",/*Android应用打包���用密钥库中证书的别名*/
+               "permissions": ["<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
+				/*使用Native.js调用原生安卓API需要使用到的系统权限*/
+            },
+            "orientation": [
+                "portrait-primary"
+            ],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons": {
+                "ios": {
+                    "prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+                    "auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone": {
+                        "normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+                        "retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+                        "retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+			"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+                        "spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+                        "spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+                        "settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+			"settings-retina8": "unpackage/res/icons/87x87.png" /*iPhone6Plus设置页面程序图标，分辨率：87x87*/
+                    },
+                    "ipad": {
+                        "normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+                        "normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+                        "retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+                        "spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+                        "spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+                        "settings-retina": "unpackage/res/icons/58x58.png" /*iPad高分屏设置页面程序图标，分辨率：58x58*/
+                    }
+                },
+                "android": {
+                    "mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/192x192.png"/*1080P 高分屏程序图标，分辨率：144x144*/
+                }
+            },
+            "splashscreen": {
+                "ios": {
+                    "iphone": {
+                        "default": "", /*iPhone3启动图片选，分辨率：320x480*/
+                        "retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+                        "retina40": "",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+                        "retina47": "",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+                        "retina55": "",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+                        "retina55l": ""/*5.5 英寸设备(iPhone6 Plus)横屏启动图片，分辨率：2208x1242*/
+                    },
+                    "ipad": {
+                        "portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
+                        "portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                        "landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+                        "landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                        "portrait7": "", /*iPad iOS7竖屏启动图��，分辨率：768x1024*/
+                        "portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                        "landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        "landscape-retina7": ""/*iPad iOS7高分屏横屏启动图片，分辨率：2048x1536*/
+                    }
+                },
+                "android": {
+                    "mdpi": "", /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi": "", /*大屏启动图片，分辨率：320x442*/
+                    "hdpi": "img/img1/480762.png", /*高分屏启动图片，分辨率：480x762*/
+                    "xhdpi": "img/img1/7201242.png", /*720P高分屏启动图片，分辨率：720x1242*/
+                    "xxhdpi": "img/img1/10801882.png"/*1080P高分屏启动图片，分辨率：1080x1882*/
+                }
+            }
+        }
+    },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"js/cookie.js",
+					"assets/js/jquery-1.8.2.min.js",
+					"assets/img/logo.png",
+					"assets/js/scripts.js",
+					"assets/css/style.css",
+					"assets/css/reset.css",
+					"assets/js/index.js",
+					"assets/css/supersized.css",
+					"shouye.html",
+					"daikuanshisuan.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"shouye.html": {
+				"resources": [
+					"img/icons/20091003100600651.png",
+					"js/main.js",
+					"img/icons/menu.png",
+					"img/icons/20091003100600325.png",
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"js/public.js",
+					"js/jquery-2.0.3.min.js",
+					"js/jquery.flexslider-min.js",
+					"css/flexslider.css",
+					"css/style.css",
+					"daikuanshisuan.html",
+					"gerendaikuan.html",
+					"cunkuandingjia.html",
+					"kehuxinxi.html",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"img/img1/grdkdj.png",
+					"img/img1/microLoan.png",
+					"img/icons/submenu.png",
+					"img/img1/bbfx.png",
+					"img/img1/xwdkdj.png",
+					"img/icons/dot.png",
+					"img/img1/xtgl.png",
+					null,
+					"daikuandingjia.html",
+					"theTrialOrder.html",
+					"out.html",
+					"js/cookie.js",
+					"js/mui.js",
+					"index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"daikuanshisuan.html": {
+				"resources": [
+					"img/img1/shang.png",
+					"gerendaikuan.html",
+					"cunkuandingjia.html",
+					"kehuxinxi.html",
+					"img/icons/20091003100600651.png",
+					"js/main.js",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"js/public.js",
+					"img/img1/grdkdj.png",
+					"css/style.css",
+					"img/img1/microLoan.png",
+					"img/icons/submenu.png",
+					"img/icons/menu.png",
+					"img/icons/20091003100600325.png",
+					"js/cookie.js",
+					"img/icons/20091003100559341.png",
+					"img/img1/bbfx.png",
+					"img/icons/20091003100600258.png",
+					"img/img1/xwdkdj.png",
+					"js/jquery-2.0.3.min.js",
+					"img/icons/dot.png",
+					"img/img1/xtgl.png",
+					"js/foot.js",
+					"js/jquery.searchableSelect.js",
+					"css/jquery.searchableSelect.css",
+					"kehuhao.html",
+					"shisuanjieguo.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"cunkuandingjia.html": {
+				"resources": [
+					"js/grid.js",
+					"css/portfolio-default.css",
+					"js/modernizr.custom.js",
+					"css/portfolio-component.css",
+					"img/img1/shang.png",
+					"img/icons/20091003100600651.png",
+					"js/main.js",
+					"js/public.js",
+					"css/style.css",
+					"img/icons/menu.png",
+					"js/cookie.js",
+					"img/icons/20091003100600325.png",
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"js/jquery-2.0.3.min.js",
+					"gerendaikuan.html",
+					"daikuanshisuan.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"gerendaikuan.html": {
+				"resources": [
+					"cunkuandingjia.html",
+					"img/icons/20091003100600651.png",
+					"js/main.js",
+					"img/icons/menu.png",
+					"js/cookie.js",
+					"img/icons/20091003100600325.png",
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"js/public.js",
+					"js/jquery-2.0.3.min.js",
+					"js/jquery.flexslider-min.js",
+					"css/style.css",
+					"daikuanshisuan.html",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"img/img1/grdkdj.png",
+					"img/img1/microLoan.png",
+					"img/icons/submenu.png",
+					"img/img1/bbfx.png",
+					"img/img1/xwdkdj.png",
+					"img/icons/dot.png",
+					"img/img1/xtgl.png",
+					"shouye.html",
+					null
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"kehuxinxi.html": {
+				"resources": [
+					"shouye.html",
+					"img/img1/shang.png",
+					"daikuanshisuan.html",
+					"gerendaikuan.html",
+					"js/jquery.flexslider-min.js",
+					"css/flexslider.css",
+					"js/jPages.js",
+					"css/jPages.css",
+					"js/main.js",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"js/public.js",
+					"img/img1/grdkdj.png",
+					"css/style.css",
+					"js/foot.js",
+					"img/img1/microLoan.png",
+					"img/icons/menu.png",
+					"js/cookie.js",
+					"js/jquery-2.0.3.min.js",
+					"img/img1/xtgl.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"zhongjianyewu.html": {
+				"resources": [
+					"cunkuanyewu.html",
+					"dingjiadanyewu.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"cunkuanyewu.html": {
+				"resources": [
+					"daikuanyewu.html",
+					"zhongjianyewu.html",
+					"img/icons/20091003100600651.png",
+					"img/icons/20091003100600325.png",
+					"dingjiadanyewu.html",
+					"img/icons/20091003100559341.png",
+					"kehuxinxi.html",
+					"daikuandingjia.html",
+					"img/icons/menu.png",
+					"js/main.js",
+					"js/cookie.js",
+					"js/public.js",
+					"js/jquery-2.0.3.min.js",
+					"css/flexslider.css",
+					"css/style.css",
+					"img/img1/shang.png",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"img/img1/grdkdj.png",
+					"img/img1/xtgl.png",
+					"img/img1/microLoan.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"daikuandingjia.html": {
+				"resources": [
+					"img/img1/shang.png",
+					"js/jPages.js",
+					"css/jPages.css",
+					"js/main.js",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"js/public.js",
+					"img/img1/grdkdj.png",
+					"css/style.css",
+					"js/foot.js",
+					"img/img1/microLoan.png",
+					"img/icons/menu.png",
+					"js/cookie.js",
+					"js/jquery-2.0.3.min.js",
+					"img/img1/xtgl.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"kehuhao.html": {
+				"resources": [
+					"js/jPages.js",
+					"css/flexslider.css",
+					"css/jPages.css",
+					"kehuhao.html",
+					"daikuanshisuan.html",
+					"kehuxinxi.html",
+					"daikuandingjia.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"dingjiadanyewu.html": {
+				"resources": [
+					"daikuanyewu.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"shisuanjieguo.html": {
+				"resources": [
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"daikuandingjia.html",
+					"jieguobaocun.html",
+					"js/main.js",
+					"img/icons/menu.png",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"js/cookie.js",
+					"img/icons/arrow-forward.png",
+					"js/public.js",
+					"js/jquery-2.0.3.min.js",
+					"img/img1/grdkdj.png",
+					"css/style.css",
+					"js/foot.js",
+					"img/img1/xtgl.png",
+					"img/img1/microLoan.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"out.html": {
+				"resources": [
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"css/flexslider.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"jieguobaocun.html": {
+				"resources": [
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"daikuanshisuan.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"theTrialOrder.html": {
+				"resources": [
+					"theTrialOrderDetails.html",
+					"img/img1/shang.png",
+					"index.html",
+					"js/mui.js",
+					"css/mui.css",
+					"img/icons/20091003100600651.png",
+					"js/main.js",
+					"img/icons/search-submit.png",
+					"img/icons/search.png",
+					"img/icons/arrow-forward.png",
+					"js/public.js",
+					"img/img1/grdkdj.png",
+					"css/style.css",
+					"img/img1/microLoan.png",
+					"img/icons/submenu.png",
+					"img/icons/menu.png",
+					"img/icons/20091003100600325.png",
+					"js/cookie.js",
+					"img/icons/20091003100559341.png",
+					"img/icons/20091003100600258.png",
+					"js/jquery-2.0.3.min.js",
+					"img/icons/dot.png",
+					"img/img1/xtgl.png",
+					"shouye.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"theTrialOrderDetails.html": {
+				"resources": [
+					"theTrialOrder.html"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"childView/img/icons/book.png",
+				"childView/shisuanjieguo.html",
+				"childView/img/icons/blog.png",
+				"childView/img/img1/microLoan.png",
+				"childView/kehuyewu.html",
+				"childView/cunkuanyewu.html",
+				"img/img1/ckdjpng.png",
+				"js/common.js",
+				"js/cookie.js.bak",
+				"childView/img/img1/bbfx.png",
+				"js/bootstrap.min.js",
+				"childView/img/img1/ckdjpng.png",
+				"assets/js/supersized-init.js",
+				"childView/dingjiadanyewu.html",
+				"childView/img/icons/box.png",
+				"yongxindingjiamingxidan.html",
+				"childView/shisuanjieguo.html.bak",
+				"childView/img/icons/home.png",
+				"childView/img/icons/20091003100600258.png",
+				"img/icons/share.png",
+				"childView/img/icons/gallery.png",
+				"childView/img/icons/20091003100600286.png",
+				"img/icons/home.png",
+				"childView/img/icons/menu.png",
+				"childView/img/icons/info.png",
+				"childView/js/kehuyewu.js",
+				"img/img1/wdgl.png",
+				"childView/img/icons/plus.png",
+				"assets/js/supersized.3.2.7.min.js",
+				"childView/mubiaoshouyidingjia.html",
+				"assets/js/index.js.bak",
+				"assets/js/cookie.js",
+				"childView/img/img1/wdgl.png",
+				"css/bootstrap.min.css",
+				"assets/img/backgrounds/twitter.png",
+				"img/icons/gallery.png",
+				"assets/img/backgrounds/progress.gif",
+				"assets/img/backgrounds/2.jpg",
+				"css/style.css.bak",
+				"img/icons/book.png",
+				"img/icons/20090903220529485.png",
+				"childView/img/icons/20090903220529485.png",
+				"childView/img/icons/20091003100600651.png",
+				"assets/img/backgrounds/facebook.png",
+				"childView/dongtaidingjia.html",
+				"childView/img/img1/xtgl.png",
+				"childView/yongxindingjiadanmingxi.html",
+				"img/icons/aboutus.html",
+				"childView/img/img1/grgl.png",
+				"js/jquery.slim.min.js",
+				"img/icons/box.png",
+				"assets/img/backgrounds/3.jpg",
+				"childView/css/style.css",
+				"img/icons/plus.png",
+				"img/icons/mail.png",
+				"img/img1/grgl.png",
+				"childView/kehuhao.html",
+				"img/icons/xtgl.png",
+				"img/icons/star.png",
+				"img/img1/khgl.png",
+				"childView/img/img1/shang.png",
+				"childView/img/icons/share.png",
+				"childView/img/icons/xtgl.png",
+				"childView/kehuhao.html.bak",
+				"childView/zhongjianyewu.html",
+				"childView/img/icons/mail.png",
+				"childView/img/img1/khgl.png",
+				"childView/img/img1/Exit.png",
+				"persnshisuanjieguo.html",
+				"childView/img/icons/submenu.png",
+				"childView/img/icons/arrow-forward.png",
+				"img/icons/20091003100600286.png",
+				"childView/img/icons/20091003100559341.png",
+				"img/icons/features.html",
+				"childView/img/icons/dot.png",
+				"childView/img/img1/xwdkdj.png",
+				"childView/img/icons/features.html",
+				"childView/img/img1/grdkdj.png",
+				"childView/img/icons/20091003100600325.png",
+				"assets/img/backgrounds/1.jpg",
+				"childView/xuanzekehu.html",
+				"childView/img/icons/aboutus.html",
+				"img/icons/info.png",
+				"img/img1/Exit.png",
+				"js/shouye.js",
+				"js/jquery.hideseek.min.js",
+				"img/icons/blog.png",
+				"childView/xinxindaikehudingjia.html",
+				"childView/img/icons/star.png",
+				"childView/img/icons/search-submit.png",
+				"childView/img/icons/search.png",
+				"js/require.js"
+			]
+		}
+	}
+}
