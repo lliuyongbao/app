@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>试算定价单</title>
+
+    <!-- [loading stylesheets] -->
+
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/portfolio-default.css" />
+    <link type="text/css" rel="stylesheet" href="css/portfolio-component.css" />
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper" >
+
+        	<section id="menu-wrapper">
+             <!-- .menu -->
+
+          </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+            <section id="header">
+              <div id="header-left">
+                <a href="#" id="a-menu">
+                  <img src="img/icons/menu.png" alt="menu" />
+                </a>
+              </div>
+              <div id="header-title">
+                <h1>试算定价单列表</h1>
+              </div>
+            </section> <!-- #header -->
+
+          	<section id="content">
+              <div class="wrapper">
+                <!---->
+              	<div class="wrapper-div-form1c">
+                    <h2>查询条件</h2>
+                    <form action="#" method="get">
+                         <div class="wrapper-form-div">
+                                <label for="customerInfo">
+                                  <span>客&nbsp;户&nbsp;名&nbsp;称&nbsp;</span>:
+                                  <input type="text" name="" value="" id="customerInfo" style="height:.24rem;"  class="marginbottom"/>
+                                </label>
+                               </br>
+
+                                 <label for="branchId">
+                                  <span>机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构&nbsp;</span>: <input type="text" value="" id="branchId" placeholder="模态框多级联动显示" style="height:.24rem;" />
+                                </label>
+                                 </br>
+
+                                 <label for="productId">
+                                  <span>产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品&nbsp;</span>: <input id="productId" type="text" value="" placeholder="模态框多级联动显示" style="height:.24rem;" />
+                                </label>
+                                 </br>
+                                <label for="dateInfo">
+                                  <span>定&nbsp;价&nbsp;日&nbsp;期&nbsp;</span>:
+                                  <input id="dateInfo" type="date" value="" style="border:0.01rem solid #000; height:.24rem;width:1.7rem" />
+                                </label>
+                               </br>
+                                <label for="operatorName">
+                                  <span>客&nbsp;户&nbsp;经&nbsp;理&nbsp;</span>:
+                                  <input type="text" name="" value="" id="operatorName" style="height:.24rem;margin-bottom: .1rem;" />
+                                </label>
+                               </br></label>
+                                </br>
+
+                              </div>
+                              <div align="center">
+                                  <input type="button" value="查询" class="chaxun" id="query" style="border:none;margin-left: 15%; width:30%;float: left;" />
+                                 <input type="button" value="重置" class="chaxun" id="reset" style="border:none;margin-left: 15%; width:30%;float:left;" />
+                              </div>
+                    </form>
+                </div>
+                <!---->
+              </div>
+            </section> <!-- #content-wrapper -->
+            <div style="width:100%;height:0.5rem;">
+
+            </div>
+    	   </section> <!-- #page-wrapper -->
+      </section>
+         <!-- [loading scripts] -->
+
+      <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div><!--回到顶部-->
+      <div class="houtai-footer1"></div>
+      <div class="houtai-footer">
+        <ul class="houtai-box">
+
+            <li class="houtai-flex">
+
+                <a href="shouye.html">
+                    <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                    <p>公告信息</p>
+                </a>
+
+            </li>
+
+            <li class="houtai-flex" id="public2">
+                <a href="daikuanshisuan.html">
+                    <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                    <p>对公贷款定价</p>
+                </a>
+            </li>
+            <li class="houtai-flex" id="person2">
+                 <a href="gerendaikuan.html" >
+                    <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                     <p>个人贷款定价</p>
+                </a>
+            </li>
+            <li class="houtai-flex">
+                <a href="kehuxinxi.html" >
+                    <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                    <p>客户信息</p>
+                 </a>
+            </li>
+        </ul>
+      </div>
+    <!-- 机构模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius:0.1rem;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size:0.15rem">选择机构</h4>
+            </div>
+            <div class="modal-body">
+              <section>
+                    <label id="lblSelect" class="label-12">
+                      机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;构：
+                        <select class="selectPointOfInterest" id="organ" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+                    <label id="lblSelect" class="label-12">
+                      支行机构：
+                        <select class="selectPointOfInterest" id="organBranch" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+                    <label id="lblSelect" class="label-12">
+                      二级支行：
+                        <select class="selectPointOfInterest" id="organBranchTwo" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+              </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+      </div>
+
+    <!-- 产品模态框 -->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius:0.1rem;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size:0.15rem">选择产品</h4>
+            </div>
+            <div class="modal-body">
+              <section>
+                    <label id="lblSelect" class="label-12">
+                      产&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品：
+                        <select class="selectPointOfInterest" id="product" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+                    <label id="lblSelect" class="label-12">
+                      子&nbsp;&nbsp;产&nbsp;&nbsp;品：
+                        <select class="selectPointOfInterest" id="productBranch" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+                    <label id="lblSelect" class="label-12">
+                      三级产品：
+                        <select class="selectPointOfInterest" id="productBranchTwo" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+              </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm2" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+    </div>
+    </body>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script>
+       $(function(){
+          //机构模态框选择
+          $("#branchId").click(function(event) {
+               $("#myModal").modal();
+          });
+
+          //产品模态框选择
+          $("#productId").click(function(event) {
+               $("#myModal2").modal();
+          });
+
+          //弹出机构模态框
+          $('#myModal').on('shown.bs.modal', function () {
+            $("#organ").children('option[value!=""]').remove();
+            $("#organBranch").children('option[value!=""]').remove();
+            $("#organBranchTwo").children('option[value!=""]').remove();
+                var params={};
+                params.class="appGetOrgList";
+                $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+                      if (r.status){
+                        for(var i=0;i<r.result.length;i++){
+                            var organno=r.result[i].organno;
+                            var organname=r.result[i].organname;
+                            var opt="<option value='" +organno +"'>"+organname+"</option>";
+                            $("#organ").append(opt);
+                        }
+                      }else{
+                        alert(r.message);
+                      }
+                    },error:function(r){
+                      alert('请求失败，请稍候重试！！');
+                    }
+                });
+          });
+
+          //弹出产品模态框
+          $('#myModal2').on('shown.bs.modal', function () {
+            $("#product").children('option[value!=""]').remove();
+            $("#productBranch").children('option[value!=""]').remove();
+            $("#productBranchTwo").children('option[value!=""]').remove();
+                var params={};
+                params.class="appGetProductPubList";
+                params.dp_prod_type=0;
+                $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+                      if (r.status){
+                        console.log(r.result)
+                        for(var i=0;i<r.result.length;i++){
+                             var dp_prod_id=r.result[i].dp_prod_id;
+                             var dp_prod_name=r.result[i].dp_prod_name;
+                             var opt="<option value='" +dp_prod_id +"'>"+dp_prod_name+"</option>";
+                             $("#product").append(opt);
+                         }
+                      }else{
+                        alert(r.message);
+                      }
+                    },error:function(r){
+                      alert('请求失败，请稍候重试！！');
+                    }
+                });
+          });
+
+          //请求产品二级菜单
+          $("#product").change(function(){
+            $("#productBranchTwo").val("");
+            productChioce(this,"appGetProductPubList2","productBranch");
+
+           })
+          //请求产品三级菜单
+          $("#productBranch").change(function(){
+            productChioce(this,"appGetProductPubList2","productBranchTwo");
+          })
+          //请求机构二级菜单
+          $("#organ").change(function(){
+            $("#organBranchTwo").val("");
+            linkageChioce(this,"appGetOrgList2","organBranch");
+
+           })
+          //请求机构三级菜单
+          $("#organBranch").change(function(){
+            linkageChioce(this,"appGetOrgList2","organBranchTwo");
+          })
+          //机构封装调用
+          function linkageChioce(obj,cls,id){
+            $("#"+id).children('option[value!=""]').remove();
+            var electVal=$(obj).children('option:selected').val();
+            var params={};
+             params.class=cls;
+             params.organno=electVal;
+            if(electVal!=""){
+               $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+
+                      if (r.status){
+                        for(var i=0;i<r.result.length;i++){
+                            var organno=r.result[i].organno;
+                            var organname=r.result[i].organname;
+                            var opt="<option value='" +organno +"'>"+organname+"</option>";
+                            $("#"+id).append(opt);
+                        }
+                      }else{
+                        alert(r.message);
+                      }
+                    },error:function(r){
+                      alert('请求失败，请稍候重试！！');
+                    }
+                });
+            }else{
+              alert("请选择机构")
+            }
+          }
+
+          //产品封装调用
+          function productChioce(obj,cls,id){
+            $("#"+id).children('option[value!=""]').remove();
+            var electVal=$(obj).children('option:selected').val();
+            var params={};
+             params.class=cls;
+             params.up_dp_prod_id=electVal;
+             params.dp_prod_type=0;
+            if(electVal!=""){
+               $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+                      if (r.status){
+                        for(var i=0;i<r.result.length;i++){
+                            var dp_prod_id=r.result[i].dp_prod_id;
+                            var dp_prod_name=r.result[i].dp_prod_name;
+                            var opt="<option value='" +dp_prod_id +"'>"+dp_prod_name+"</option>";
+                            $("#"+id).append(opt);
+                        }
+                      }else{
+                        alert(r.message);
+                      }
+                    },error:function(r){
+                      alert('请求失败，请稍候重试！！');
+                    }
+                });
+            }else{
+              alert("请选择产品")
+            }
+          }
+          //机构模态框关闭时返显数据
+          $("#confirm").click(function(){
+            var organVal=$("#organ option:selected").val();//机构value
+            var organTxt=$("#organ option:selected").text();//机构文本
+
+            var organBranchVal=$("#organBranch option:selected").val();//支行value
+            var organBranchTxt=$("#organBranch option:selected").text();//支行文本
+
+            var organBranchTwoVal=$("#organBranchTwo option:selected").val();//二级支行value
+            var organBranchTwoTxt=$("#organBranchTwo option:selected").text();//二级支行文本
+
+            if(organBranchTwoVal!=""){
+             $("#branchId").val(organBranchTwoTxt);
+             $("#branchId").attr("name",organBranchTwoVal);
+            }
+            if(organBranchTwoVal=="" && organBranchVal!=""){
+             $("#branchId").val(organBranchTxt);
+             $("#branchId").attr("name",organBranchVal);
+            }
+
+            if(organBranchTwoVal=="" && organBranchVal=="" && organVal!=""){
+             $("#branchId").val(organTxt);
+             $("#branchId").attr("name",organVal);
+            }
+            if(organBranchTwoVal=="" && organBranchVal=="" && organVal==""){
+               $("#branchId").val("");
+            }
+
+          });
+          //产品模态框关闭时返显数据
+          $("#confirm2").click(function(){
+            var productVal=$("#product option:selected").val();//机构value
+            var productTxt=$("#product option:selected").text();//机构文本
+
+            var productBranchVal=$("#productBranch option:selected").val();//支行value
+            var productBranchTxt=$("#productBranch option:selected").text();//支行文本
+
+            var productBranchTwoVal=$("#productBranchTwo option:selected").val();//二级支行value
+            var productBranchTwoTxt=$("#productBranchTwo option:selected").text();//二级支行文本
+
+            if(productBranchTwoVal!=""){
+             $("#productId").val(productBranchTwoTxt);
+             $("#productId").attr("name",productBranchTwoVal);
+            }
+            if(productBranchTwoVal=="" && productBranchVal!=""){
+             $("#productId").val(productBranchTxt);
+             $("#productId").attr("name",productBranchVal);
+            }
+
+            if(productBranchTwoVal=="" && productBranchVal=="" && productVal!=""){
+             $("#productId").val(productTxt);
+             $("#productId").attr("name",productVal);
+            }
+            if(productBranchTwoVal=="" && productBranchVal=="" && productVal==""){
+               $("#productId").val("");
+            }
+
+          });
+          $('#content-wrapper').css('min-height',$(window).height());
+
+          //点击查询
+          $("#query").click(function(){
+             $(".wrapper-kong").css("height",0)
+             $(".content-wrapper-div").remove();
+             var params = JSON.parse(localStorage.getItem("home"));
+             params.class = "appDjssdjdList";
+             params.dateInfo = $("#dateInfo").val();//定价日期
+             params.customerInfo=$("#customerInfo").val();//客户名称
+             params.branchId=$("#branchId").attr("name");//机构
+             params.productId=$("#productId").attr("name");//产品
+             params.operatorName=$("#operatorName").val();//客户经理
+
+             $.ajax({
+                 url:port,
+                 data:params,
+                 dataType:'json',
+                 cache:false,
+                 success:function(r){
+                     if (r.status){
+                         $.each(r.result,function(i,v){
+                             $('<div class="content-wrapper-div">'
+                                +'<ul>'
+                                    +'<li>定价日期：<span>'+v.lps_bs_pricing_date+'</span></li>'
+                                    +'<li>机构：<span>'+v.lps_bs_branch_name+'</span></li>'
+                                    +'<li>客户经理：<span>'+v.lps_bs_operator_name+'<span></li>'
+                                    +'<li>定价单号：<span>'+v.lps_sht_id+'</span></li>'
+                                    +'<li>客户名称：<span>'+v.lps_bs_cust_name+'</span></li>'
+                                    +'<li>产品：<span>'+v.lps_ln_product_name+'</span></li>'
+                                    +'<li>金额(元)：<span>'+v.lps_ln_used_bal+'</span></li>'
+                                    +'<li>期限：<span>'+v.lps_ln_term+'</span></li>'
+                                    +'<li>保本利率(%)：<span>'+v.lps_rt_bottom_price+'</span></li>'
+                                    +'<li>目标利率(%)：<span>'+v.lps_rt_target_price+'</span></li>'
+                                    +'<li>优惠利率(%)：<span>'+v.lps_rt_favor_price+'</span></li>'
+                                    +'<li>执行利率(%)：<span>'+v.lps_rt_strike_price+'</span></li>'
+                                    +'<li style="display:none">唯一标识：<span>'+v.pricing_info_id+'</span></li>'
+                                    +'<li style="display:none">接口标识：<span>'+v.webservice_id+'</span></li>'
+                                    +'<li style="display:none">客户号：<span>'+v.lps_bs_cust_id+'</span></li>'
+                                    +'<li style="display:none">起息日：<span>'+v.lps_ln_value_date+'</span></li>'
+                                    +'<li style="display:none">状态：<span>'+v.lps_bs_status+'</span></li>'
+                                +'</ul>'
+                                +'</div>'
+                           +'</div>').appendTo('#content');
+                         });
+                     }else{
+
+                         alert(r.message);
+                     }
+
+                 },error:function(r){
+                     alert('用户权限不够！');
+                 }
+             });
+
+          });
+          //重置
+          $("#reset").click(function(){
+            $("#dateInfo").val("");
+            $("#customerInfo").val("");
+            $("#branchId").val("");
+            $("#productId").val("");
+            $("#operatorName").val("");
+          })
+
+          //点击查看详情
+          $("#content-wrapper").on('click','.content-wrapper-div',function(){
+              var lps_sht_id=$(this).find("ul li:eq(3)").find("span").html();
+              var pricing_info_id=$(this).find("ul li:eq(-5)").find("span").html();
+              var webservice_id=$(this).find("ul li:eq(-4)").find("span").html();
+              var lps_bs_cust_id=$(this).find("ul li:eq(-3)").find("span").html();
+              var lps_ln_value_date=$(this).find("ul li:eq(-2)").find("span").html();
+              var lps_bs_status=$(this).find("ul li:last").find("span").html();
+              var params={};
+              params.class="appCreditCustomerPricingBillView";
+              params.lps_sht_id=lps_sht_id;
+              params.pricing_info_id = pricing_info_id;
+              params.webservice_id=webservice_id;
+              params.lps_bs_cust_id=lps_bs_cust_id;
+              params.lps_ln_value_date=lps_ln_value_date;
+              params.lps_bs_status=lps_bs_status;
+              $.ajax({
+                 url:port,
+                 data:params,
+                 dataType:'json',
+                 cache:false,
+                 type:"POST",
+                 success:function(r){
+                     if (r.status){
+                        if(localStorage.getItem("data") == null){
+                             localStorage.setItem("data",JSON.stringify(r.result));
+                          }
+                         //window.location.href = "theShisuanDetails.html?data=" + escape(JSON.stringify(r.result));
+                         window.location.href = "theShisuanDetails.html";
+                     }else{
+
+                         alert(r.message);
+                     }
+
+                 },error:function(r){
+                     alert('用户权限不够！');
+                 }
+             });
+          })
+
+    })
+       </script>
+</html>

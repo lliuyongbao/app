@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>廊坊银行</title>
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/flexslider.css" />
+    <style type="text/css" media="screen">
+        .tile{
+            display:inline-block;
+            min-width: 0.1rem;
+            padding:0 0.07rem;
+            font-weight:200;
+            color:#fff;
+            white-space: nowrap;
+            vertical-align: middle;
+            background-color:#777;
+            border-radius: 0.1rem;
+            text-align:center;
+        }
+    </style>
+
+</head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+               <!-- .menu -->
+            </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="javascript:;" id="a-menu">
+                            <img src="img/icons/menu.png" alt="menu" />
+                        </a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1><a href="javascript:;">廊坊银行</a></h1>
+                    </div>
+                </section> <!-- #header -->
+                <article style="height: 100%;">
+                    <div class="wrapper">
+                        <h2>公告信息</h2>
+                        <p class="prologue" style="margin-bottom: 0.1rem;">欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，欢迎进入廊坊银行，。</p>
+                        <div class="content-wrapper-div">
+                            <ul>
+                                <li style="margin-bottom:0.05rem;">
+                                    <span style="letter-spacing:0.02rem;">消息通知</span> : <a href="theTrialOrder.html" style="vertical-align:middle;">对公待审定价单 <span class="tile" id="sp1">0</span></a>
+                                </li>
+                                <li>
+                                    <span style="letter-spacing:0.02rem;">消息通知</span> : <a href="daishenkehudingjlieb.html">零售待审定价单 <span class="tile" id="sp2">0</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article> <!-- #post -->
+            </section> <!-- #content-wrapper -->
+
+    	</section> <!-- #page-wrapper -->
+
+        <div class="houtai-footer1"></div>
+
+          <div class="houtai-footer">
+
+            <ul class="houtai-box">
+
+                <li class="houtai-flex">
+
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="公告信息" />
+                        <p>公告信息</p>
+                    </a>
+
+                </li>
+
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                        <p>对公贷款定价</p>
+                    </a>
+                </li>
+
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html" >
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="kehuxinxi.html" >
+                        <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                        <p>客户信息</p>
+                     </a>
+                </li>
+
+            </ul>
+
+        </div>
+     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+    <script>
+    	$(function(){
+                //解析地址栏
+            var str = unescape(location.href);
+
+            var data = {};
+            if(str.indexOf("?") > -1) {
+                var num = str.indexOf("?");
+                str = str.substr(num + 1); //提取
+                data = eval(str);
+            }
+            $("#sp1").html(data.creditMessage);
+            $("#sp2").html(data.retailMessage);
+            if(data.role_id == "0013"){
+            	$(".content-wrapper-div").hide();
+            }else{
+            	$(".content-wrapper-div").show();
+            }
+    	})
+	
+  </script>
+    </body>
+
+</html>

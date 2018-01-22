@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>廊坊银行</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/flexslider.css" />
+
+    <!-- [loading scripts] -->
+
+    <style type="text/css" media="screen">
+        #content-wrapper.sp{}
+    </style>
+
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+                 <!-- .menu -->
+            </section><!-- #menu-wrapper -->
+
+        	<section id="content-wrapper"  style="height:600px;">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu">
+                            <img src="img/icons/menu.png" alt="menu" />
+                        </a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>产品定价</h1>
+                    </div>
+
+
+                </section> <!-- #header -->
+                 <!--out-->
+                <div class="content-wrapper-out" style="margin:0.2rem">
+                    <ul>
+                        <li><span style="width:0.8rem; display:inline-block;letter-spacing:0.02rem;">用户角色</span> : <span id="role"></span></li>
+                        <li><span style="width:0.8rem; display:inline-block;letter-spacing:0.02rem;">所属机构ID</span> : <span id="organId"></span></li>
+                        <li><span style="width:0.8rem; display:inline-block;letter-spacing:0.02rem;">所属机构</span> : <span id="organ"></span></li>
+                    </ul>
+                </div>
+                <div style="text-align: center;">
+                    <a href="index.html" style="width: 100%;border:0.01rem solid #ccc;padding: 0.05rem 0.1rem;background-color: #fff;border-radius:0.06rem;">
+                        退出系统
+                    </a>
+                </div>
+            </section> <!-- #content-wrapper -->
+
+    	</section> <!-- #page-wrapper -->
+        <div class="wrapper-kong"></div>
+        <div class="houtai-footer1"></div>
+        <div class="houtai-footer">
+            <ul class="houtai-box">
+                <li class="houtai-flex">
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                        <p>公告信息</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                            <p>对公贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html">
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="kehuxinxi.html" >
+                        <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                        <p>客户信息</p>
+                     </a>
+                </li>
+            </ul>
+        </div>
+     <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>   
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+    </body>
+    <script type="text/javascript">
+         $(function(){
+            var storageJson = JSON.parse(localStorage.getItem("home"));
+            $("#role").html(storageJson.role_name);
+            $("#organId").html(storageJson.branch_id);
+            $("#organ").html(storageJson.organname);
+        })
+    </script>
+</html>

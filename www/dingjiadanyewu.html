@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>廊坊银行</title>
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/flexslider.css" />
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+
+</head>
+       <body>
+
+        <section id="page-wrapper">
+
+            <section id="menu-wrapper">
+
+
+            </section> <!-- #menu-wrapper -->
+
+            <section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu">
+                            <img src="img/icons/menu.png" alt="menu" />
+                        </a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1 style="margin-left:0.4rem">定价单业务
+                        </h1>
+                        <p style="font-size:.0.16rem;float: right;line-height:.5rem;margin-right: 0.1rem;" id="prevBtn">返 回
+                        </p>
+                    </div>
+
+                </section> <!-- #header -->
+
+            </section> <!-- #content-wrapper -->
+
+            <!-- <div class="wrapper-kong"></div> -->
+
+        </section> <!-- #page-wrapper -->
+        <div id="x-goto-top">
+          <a href="#">
+            <div id="x-arrow">
+            </div>
+            <div id="x-stick">
+            </div>
+          </a>
+        </div><!--回到顶部-->
+        <div class="houtai-footer1"></div><!--footer-->
+
+        <div class="houtai-footer">
+            <ul class="houtai-box">
+                <li class="houtai-flex">
+                    <a href="daikuanyewu.html">
+                        <img src="img/icons/20091003100600258.png" alt="贷款" />
+                        <p>贷款</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="cunkuanyewu.html">
+                        <img src="img/icons/20091003100559341.png" alt="存款" />
+                            <p>存款</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                     <a href="zhongjianyewu.html" >
+                        <img src="img/icons/20091003100600651.png" alt="中间业务" />
+                         <p>中间业务</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="dingjiadanyewu.html" >
+                        <img src="img/icons/20091003100600325.png" alt="定价单" />
+                        <p>定价单</p>
+                     </a>
+                </li>
+            </ul>
+        </div>
+
+    </body>
+     <script src="js/cookie.js"></script>
+      <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>   
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+     <script>
+        $(function (){
+            var localStoDetails = JSON.parse(localStorage.getItem("home"));
+            var custInfo=JSON.parse(localStorage.getItem("custInfo"));
+            var params={};
+            params.custID=custInfo.custID;
+            params.mon_flag=custInfo.mon_flag;
+            params.organno=localStoDetails.organno;
+            params.role_id=localStoDetails.role_id;
+            params.currentuserid=localStoDetails.user_id;
+            params.class = "appCutomerInfoListQuery3";
+
+            var infoJson={};
+            infoJson.dateValue=custInfo.dateValue;
+            infoJson.customerInfo=custInfo.customerInfo
+            $("#prevBtn").click(function(){
+                window.location.href = "kehuxinxi.html?data="+escape(JSON.stringify(infoJson));
+            })
+            $.ajax({
+                url:port,
+                data:params,
+                dataType:'json',
+                cache:false,
+                success:function(r){
+                    if (r.status){
+                       if(r.result.length == 0){
+                             $('<div style="margin-left:0.4rem;color:#000;text-align:center;line-height:0.8rem;font-size:.18rem;">暂无定价单业务!</div>').appendTo('#content-wrapper');
+                        }else{
+                            $.each(r.result,function(i,v){
+                                $('<div class="content-wrapper-div">'
+                                        +'<ul>'
+                                          +'<li>定价单号:<span>'+v.lps_sht_id+'</span></li>'
+                                          +'<li>贷款种类：<span>'+v.lps_ln_product_name+'</span></li>'
+                                          +'<li>金额：<span>'+v.lps_ln_used_bal+'</span></li>'
+                                          +'<li>起息日：<span>'+v.lps_ln_value_date+'</span></li>'
+                                          +'<li>期限：<span>'+v.lps_ln_term+'</span></li>'
+                                          +'<li>保本价格:<span>'+v.lps_rt_bottom_price+'</span></li>'
+                                          +'<li>目标价格：<span>'+v.lps_rt_target_price+'</span></li>'
+                                          +'<li>优惠价格：<span>'+v.lps_rt+'</span></li>'
+                                          +'<li>执行价格：<span>'+v.lps_rt_strike_price+'</span></li>'
+                                          +'<li>执行价格下的NI：<span>'+v.lps_rt_strike_ni+'</span></li>'
+                                          +'<li>执行价格下的EVA：<span>'+v.lps_rt_strike_eva+'</span></li>'
+                                        +'</ul>'
+                                    +'</div>').appendTo('#content-wrapper');
+
+                            });
+                      }
+                    }else{
+                        alert(r.message);
+                    }
+
+                },error:function(r){
+                    alert('请求失败!请稍后重试...');
+                }
+            });
+
+        });
+     </script>
+</html>

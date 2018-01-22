@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+
+		<!-- [portable options] -->
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />-->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		<title>客户信息列表</title>
+
+		<!-- [loading stylesheets] -->
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+		<!-- [loading scripts] -->
+
+	</head>
+
+	<body>
+
+		<section id="page-wrapper">
+
+			<section id="menu-wrapper">
+
+				<!-- .menu -->
+
+			</section>
+			<!-- #menu-wrapper -->
+			<!--搜索框-->
+
+			<section id="content-wrapper">
+
+				<section id="header">
+
+					<div id="header-left">
+						<a href="#" id="a-menu">
+							<img src="img/icons/menu.png" alt="menu" />
+						</a>
+					</div>
+
+					<div id="header-title">
+						<h1>客户信息列表</h1>
+					</div>
+
+				</section>
+				<!-- #header -->
+				<section id="content">
+	                <div class="wrapper"> <!---->
+	                    <div class="wrapper-div-form1c">
+	                        <h2>查询条件</h2>
+	                        <form action="#" method="get">
+	                            <div class="wrapper-form-div">
+	                              <label>
+	                               <span>客&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;号&nbsp;</span>: <input type="text" name="" value="" id="cust_id" placeholder="输入客户名称" style="width:1.6rem;height:0.14rem;margin-bottom:0.1rem;" />
+	                              </label>
+	                              </br>
+	                               <label for="customerInfo">
+	                                <span>客&nbsp;户&nbsp;名&nbsp;称&nbsp;</span>:
+	                                <input type="text" name="" value="" id="cust_name" placeholder="输入客户名称" style="width:1.6rem;height:0.14rem;" />
+	                              </label>
+	                            </div>
+	                            <div align="center">
+	                                <input type="button" value="查询" class="chaxun" id="query" style="border:none;margin-left: 15%; width:30%;float: left;" />
+	                               <input type="button" value="重置" class="chaxun" id="reset" style="border:none;margin-left: 15%; width:30%;float:left;" />
+	                            </div>
+
+	                        </form>
+	                    </div>
+	                <!---->
+	                </div>
+                <!-- <div class="wrapper-kong"></div> -->
+            	</section>
+
+			</section>
+			<!-- #content-wrapper -->
+
+			<!-- <div class="wrapper-kong"></div> -->
+
+		</section>
+		<div id="x-goto-top">
+          <a href="#">
+            <div id="x-arrow">
+            </div>
+            <div id="x-stick">
+            </div>
+          </a>
+        </div>
+		<!--footer-->
+
+	</body>
+	<script src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>   
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+	<script type="text/javascript">
+		/*debugger;*/
+	$(function() {
+		searchInfo();
+		//重置
+		$("#reset").click(function() {
+			$("#cust_id").val("");
+			$("#cust_name").val("");
+		});
+		//查询
+		$("#query").click(function() {
+			searchInfo();
+		});
+		function searchInfo(){
+			$(".content-wrapper-div").remove();
+			var params = {};
+			params.cust_id=$("#cust_id").val();
+			params.cust_name=$("#cust_name").val();
+			params.cust_type=1;
+			params.class = "appChoiceCustomer";
+			$.ajax({
+				url: port,
+				data: params,
+				dataType: 'json',
+				cache: false,
+				success: function(r) {
+					if(r.status) {
+
+						$.each(r.result, function(i, v) {
+							$('<div class="content-wrapper-div">' +
+								'<ul>' +
+								'<li id="cust_id">客户编号：<span>' + v.cust_id + '</span></li>' +
+								'<li id="cust_name">客户姓名：<span>' + v.cust_name + '</span></li>' +
+								'<li id="ci_cust_level">信用评级：<span>' + v.ci_cust_level + '</span></li>' +
+								'<li id="ci_cust_indu_name">客户行业: <span>' + v.ci_cust_indu_name + '</span></li>' +
+								'<li id="dci_up_indu_id" style="display:none">客户行业id: <span>' + v.dci_up_indu_id + '</span></li>' +
+								'<li id="ci_cust_scale_name">客户规模：<span>' + v.ci_cust_scale_name + '</span></li>' +
+								'<li id="ci_cust_scale_id" style="display:none">客户规模id: <span>' + v.ci_cust_scale_id + '</span></li>' +
+								'</ul>' +
+								'</div>').appendTo('#content-wrapper');
+						});
+						$("#content-wrapper").on('click', '.content-wrapper-div',function(e) {
+							window.location.href = "daikuanshisuan.html?data=" + escape(JSON.stringify(r.result[$(this).index()-2]));
+						});
+
+					} else {
+						alert(r.message);
+					}
+
+				},
+				error: function(r) {
+					alert('请求失败！请稍后重试...');
+				}
+			});
+		}
+
+
+	});
+	</script>
+
+</html>

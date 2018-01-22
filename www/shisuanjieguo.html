@@ -1,0 +1,1086 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+
+		<!-- [portable options] -->
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />-->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		<title>贷款定价试算结果</title>
+
+		<!-- [loading stylesheets] -->
+		<link type="text/css" rel="stylesheet" href="css/style1.css" />
+		<link rel="stylesheet" type="text/css" href="css/icon.css">
+		<!-- [loading scripts] -->
+		<style type="text/css">
+
+			#zr_ziti {
+				font-size: 100%;
+				font-weight: 700;
+			}
+
+			#dyplx1,
+			#pc_dyplx1 {
+				font-size: 0.13rem;
+			}
+
+			label#lblSelect.label-15::after {
+				display: none;
+			}
+
+			.zr_yangshi {
+				border: 0.02rem solid #C0C0C0;
+				position: relative;
+			}
+
+			.zr_a_yangshi,
+			.pc_zr_a_yangshi {
+				position: absolute;
+				right: 0.03rem;
+				bottom: 0.02rem;
+			}
+
+			.zr_ul {
+				display: flex
+			}
+
+			.zr_li {
+				border-right: 0.01rem solid #C0C0C0;
+				width: 100%;
+				text-align: center;
+			}
+
+			.zr_lilu {
+				border-bottom: 0.03rem solid #C0C0C0;
+				margin-bottom: 0.04rem;
+			}
+			/*蒙板样式*/
+
+			#mengbanbeij {
+				position: absolute;
+				width: 100%;
+				height: 15rem;
+				background-color: rgba(9, 9, 9, 0.63);
+				z-index: 1000;
+				display: none;
+			}
+
+			.zr_wrapper-kong {
+				width: 100%;
+				height: 0.2rem;
+				background: #7db2e9;
+			}
+
+			#tanchuk {
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				width: 2rem;
+				height: 1.4rem;
+				background: white;
+				margin-left: -1rem;
+				margin-top: -0.75rem;
+				border-radius: 5%;
+			}
+
+			#tank_text {
+				width: 100%;
+				height: 1rem;
+				border-bottom: 0.01rem solid black;
+				text-align: center;
+				line-height: 1rem;
+			}
+
+			#tanchuk>span {
+				display: inline-block;
+				width: 0.95rem;
+				text-align: center;
+				padding-top: 0.1rem;
+			}
+
+			#tank_no {
+				height: 0.3rem;
+				border-right: 0.01rem solid black;
+			}
+			/*加载动画*/
+
+			.zr_main {
+				position: fixed;
+				top: 1rem;
+				width: 100%;
+				height: auto;
+			}
+
+			.loadEffect {
+				width: 120px;
+				height: 120px;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+
+			.loadEffect span {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				background: white;
+				position: absolute;
+				-webkit-animation: load 1.04s ease infinite;
+			}
+
+			@-webkit-keyframes load {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0.2;
+				}
+			}
+
+			.loadEffect span:nth-child(1) {
+				left: 0;
+				top: 50%;
+				margin-top: -8px;
+				-webkit-animation-delay: 0.13s;
+			}
+
+			.loadEffect span:nth-child(2) {
+				left: 14px;
+				top: 14px;
+				-webkit-animation-delay: 0.26s;
+			}
+
+			.loadEffect span:nth-child(3) {
+				left: 50%;
+				top: 0;
+				margin-left: -8px;
+				-webkit-animation-delay: 0.39s;
+			}
+
+			.loadEffect span:nth-child(4) {
+				top: 14px;
+				right: 14px;
+				-webkit-animation-delay: 0.52s;
+			}
+
+			.loadEffect span:nth-child(5) {
+				right: 0;
+				top: 50%;
+				margin-top: -8px;
+				-webkit-animation-delay: 0.65s;
+			}
+
+			.loadEffect span:nth-child(6) {
+				right: 14px;
+				bottom: 14px;
+				-webkit-animation-delay: 0.78s;
+			}
+
+			.loadEffect span:nth-child(7) {
+				bottom: 0;
+				left: 50%;
+				margin-left: -8px;
+				-webkit-animation-delay: 0.91s;
+			}
+
+			.loadEffect span:nth-child(8) {
+				bottom: 14px;
+				left: 14px;
+				-webkit-animation-delay: 1.04s;
+			}
+
+			.loadEffect {
+				transform: scale(0.5);
+			}
+			/*综合业务和配存业务input框对齐*/
+			#content .paisheng-btnt-div ul{
+				margin-left:0.15rem;
+			}
+			#content .paisheng-btnt-div ul li{
+				margin-bottom:0.1rem;
+			}
+			#content .wrapper-div-form1 h3{
+				margin-bottom:0.1rem;
+			}
+			#content .wrapper-form-div-btng input{
+                width:1.55rem;
+                height:0.24rem;
+                border:0.02rem solid #ccc;
+                padding:0;
+                float:none;
+                margin-bottom:0rem;
+            }
+            #content .wrapper-form-div-btng select{
+                height:0.26rem;
+                border:0.02rem solid #ccc;
+                width:1.6rem;
+                padding:0;
+            }
+            .wrapper-form-div-btng span{
+                display:inline-block;
+                width:1.1rem;
+                text-align:left;
+                overflow:hidden;
+            }
+             .wrapper-form-div-btng .xinzen-btn{
+             	margin-top:0rem;
+            }
+            #lblSelect .selectPointOfInterest{
+                font-size:.13rem;
+                width:1.52rem;
+            }
+            label#lblSelect{
+                margin-bottom:0;
+            }
+            #x-goto-top{
+                bottom:1.2rem;
+            }
+            #content .content-wrapper-div ul li .sp{
+             	display:inline-block;
+            	width:0.6rem;
+            }
+ 			#content .content-wrapper-div ul li .wh{
+             	display:inline-block;
+            	width:0.8rem;
+            }
+            #content .content-wrapper-div input{
+            width: 0.6rem;height:0.28rem;display: inline-block;color: red;line-height:0.28rem;margin:0rem;padding:0rem;
+             }
+            #content .wrapper-form-div-btng .selectPointOfInterest{
+            	font-size:0.13rem;
+            }
+		</style>
+
+	</head>
+
+	<body>
+
+		<section id="page-wrapper" >
+			<!--新增蒙板-->
+			<div id="mengbanbeij">
+				<div id="tanchuk">
+					<p id="tank_text">请确认保存！！</p>
+					<span id="tank_no" onclick="closeModel()">取消</span>
+					<!--去除空格
+
+					--><span id="tank_yes">确认</span>
+				</div>
+				<!--加载动画-->
+				<div class="zr_main" style="display: none;">
+					<div class="loadEffect">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+
+			</div>
+
+			<section id="menu-wrapper">
+
+				<!-- .menu -->
+
+			</section>
+			<!-- #menu-wrapper -->
+
+			<section id="content-wrapper">
+
+				<section id="header">
+
+					<div id="header-left">
+						<a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+					</div>
+
+					<div id="header-title">
+						<h1>试算结果</h1>
+					</div>
+				</section>
+				<!-- #header -->
+				<section id="content">
+					<!---->
+					<div class="content-divc">
+
+						<form action="#" method="get">
+							<!-- 目标利率 -->
+							<div class="wrapper-div-form1">
+								<h3  style="border-radius: 0.1rem 0.1rem 0 0;">目标利率</h3>
+								<div class="content-wrapper-div">
+									<ul>
+										<li><span class="wh" style="width:0.7rem">资金成本率</span>:<span id="zjcbl"></span></li>
+										<li><span class="wh" style="width:0.7rem">运营成本率</span>:<span id="yycbl"></span></li>
+										<li><span class="wh" style="width:0.7rem">风险成本率</span>:<span id="fxcbl"></span></li>
+										<li><span class="wh" style="width:0.7rem">税收成本率</span>: <span id="sscbl"></span></li>
+										<li id="dci_up_indu_id"><span class="wh" style="width:0.7rem">资本成本率</span>: <span id="zbcbl"></span></li>
+										<li id="ci_cust_scale_name"><span class="wh" style="width:0.7rem">经济利润率</span>:<span id="jjlrv"></span></li>
+									</ul>
+
+								</div>
+							</div>
+							<!-- 其他信息 -->
+							<div class="content-wrapper-divkh">
+								<h3>其他信息</h3>
+								<div class="content-wrapper-div">
+									<ul>
+										<li><span class="wh">资金成本率</span>:<span id="zjcbl2"></span></li>
+										<li><span class="wh">资本利息回扣</span>:<span id="zblxhk"></span></li>
+										<li><span class="wh">违约概率</span>:<span id="wygl"></span></li>
+										<li><span class="wh">违约损失率</span>:<span id="wyssl"></span></li>
+										<li><span class="wh">经济资本系统</span>:<span id="jjzzxt"></span></li>
+										<li><span class="wh">增值税率</span>:<span id="zzsl"></span></li>
+										<l"><span class="wh">增值税附加率</span>:<span id="zzsfjl"></span></li>
+										<li><span class="wh">最低要求回报</span>:<span id="zdyqhb"></span></li>
+										<li><span class="wh">目标收益率</span>:<span id="mbsyl"></span></li>
+									</ul>
+								</div>
+							</div>
+							<!-- 历史优惠信息 -->
+							<div class="wrapper-div-form1">
+								<h3>历史优惠信息</h3>
+								<div class="content-wrapper-div">
+									<ul>
+									<li><span class="wh">客户分类信息</span>:<span id="khflxx"></span></li>
+									<li><span class="wh">EVA贡献排序</span>:<span id="evagxpx"></span></li>
+									<li><span class="wh">EVA贡献总数</span>:<span id="evagxzs"></span></li>
+									<li id="weiyibiaoshi"><span class="wh">历史优惠BP</span>:<span id="lsyhbp"></span></li>
+									</ul>
+								</div>
+							</div>
+							<!-- 存款派生业务 -->
+							<div class="wrapper-div-form1" id="zr_paisheng">
+								<h3>存款派生业务</h3>
+								<div class="wrapper-form-div-btng" id="xzdypxx1">
+									<form action="#" method="get">
+										<div class="paisheng-btnt-div" style="display: none;">
+											<h2>新增存款派生业务</h2>
+											<ul id="zr_ziti" style="margin-left:0.15rem;">
+												<li>
+													<span>存款派生业务类型</span>:
+													<select id="ckpsywlx" class="selectPointOfInterest depositCheck" title="Select points of interest nearby">
+														<option value="" selected="selected">--请选择--</option>
+													</select>
+												</li>
+												<li>
+													<span>条线</span>:
+													<select id="cktx" class="selectPointOfInterest depositCheck" title="Select points of interest nearby">
+														<option value="" selected="selected">--请选择--</option>
+													</select>
+												</li>
+												<li class="label-13 zr_duiqi1">
+													<span>期限(月)</span>:
+													<input class="depositCheck" id="ckqx" type="text" value="" />
+												</li>
+												<li class="label-13 zr_duiqi1" >
+													<span>派生业务金额(元)</span>:
+													<input class="depositCheck" id="psywje" type="text" value=""/>
+												</li>
+												<li>
+													<span>承诺客户利率(%)</span>:
+													<input type="text" class="depositCheck" id="ck_khll" value="" />
+												</li>
+												<li>
+													<span>起息日</span>:
+													<input type="date" class="depositCheck" id="ck_qxr" value="" />
+												</li>
+											</ul>
+										</div>
+									</form>
+									<input type="button" id="paisheng-btn" class="xinzen-btn" value="新增" />
+									</div>
+									<div class="content-wrapper-div" align="center">
+										<p id="zr_quediquxiao" style="display: none;">
+										<input type="button" id="dypCancle1" value="取消" class="xinzen-btn2"/>
+										<input type="button" id="dypConfirm1" value="确定" class="xinzen-btn2" />
+										</p>
+									</div>
+							</div>
+
+							<!-- 中间业务派生业务 -->
+							<div class="wrapper-div-form1" id="pc_zr_paisheng">
+								<h3>中间业务派生业务</h3>
+								<div class="wrapper-form-div-btng" id="pc_xzdypxx1">
+									<form action="#" method="get">
+										<div class="pc_paisheng-btnt-div" style="display: none;">
+											<h2>新增中间业务派生</h2>
+											<ul id="zr_ziti" style="margin-left:0.15rem;">
+												<li>
+													<span>中间业务派生类别</span>:
+													<select id="zjywpslb" class="selectPointOfInterest interCheck">
+														<option value="" selected="selected">--请选择--</option>
+													</select>
+												</li>
+												<li>
+													<span>条线</span>:
+													<select id="zj_tx" class="selectPointOfInterest interCheck">
+														<option value="" selected="selected">--请选择--</option>
+													</select>
+												</li>
+												<li>
+													<span>派生业务金额(元)</span>:
+													<input type="text" class="interCheck" id="zjpsywje" value="" />
+												</li>
+											</ul>
+										</div>
+									</form>
+									<input type="button" id="pc_paisheng-btn" class="xinzen-btn" value="新增" />
+								<!-- <input type="button" class="xinzen-btn" id="khpsxz" value="新增"/> -->
+								</div>
+								<div class="content-wrapper-div">
+									<ul>
+										<li><span id="cust_id1">派生优惠BP :<span id="discount_derived">0BP</span></span>
+										</li>
+									</ul>
+									<p id="pc_zr_quediquxiao" style="display: none;" align="center">
+										<input type="button" id="pc_dypCancle1" value="取消" class="xinzen-btn2" />
+										<input type="button" id="pc_dypConfirm1" value="确定" class="xinzen-btn2" />
+									</p>
+								</div>
+							</div>
+
+							<!-- 专项调整信息-->
+							<div class="wrapper-div-form1" id="zr_zhuanxiang">
+								<h3 style="margin-bottom:10px;">专项调整信息</h3>
+								<div class="wrapper-form-div-btng" id="xzdypxx">
+									<form action="#" method="get">
+										<div class="xinzen-btnt-div" style="display: none;height:100%;">
+											<h2>新增专项调整</h2>
+											<label id="lblSelect" class="label-15" style="display:block;">
+												<ul style="margin-left:0.15rem;">
+													<li>
+														<span>专项调整类型</span>:
+														<select id="zxtzlx" class="selectPointOfInterest specialCheck" style="width:1.6rem;">
+															<option value="" selected="selected">--请选择--</option>
+														</select>
+													</li>
+													<li>
+														<span>专项调整评分</span>:
+														<input id="zxtzpf" type="text" style="width:1.55rem;" class="specialCheck" />
+													</li>
+													<li>
+														<span>专项调整理由</span>:
+														<textarea class="specialCheck" placeholder="" id="textArea" style="width:92%;height:.5rem; border:1px solid;resize: none;text-align:left;border-radius: 0.06rem;"></textarea>
+													</li>
+												</ul>
+											<p id="pc_zr_zx" style="display: none;" align="center">
+												<input type="button" id="dypCancle" value="取消" class="xinzen-btn1" style="width: 0.6rem;height:0.28rem;display: inline-block;color: red;line-height:0.28rem;margin:0rem;padding:0rem;border:0.02rem solid #42474b;border-radius:.1rem;margin-left:0.05rem;float:none" />
+												<input type="button" id="dypConfirm" value="确定" class="xinzen-btn1" style="width: 0.6rem;height:0.28rem;display: inline-block;color: red;line-height:0.28rem;margin:0rem;padding:0rem;border:0.02rem solid #42474b;border-radius:.1rem;margin-left:0.05rem;float:none" />
+											</p>
+											</label>
+										</div>
+									</form>
+									<input type="button" class="xinzen-btn" value="新增" id="zr_xinzeng" />
+								</div>
+								<div class="content-wrapper-div">
+									<ul>
+										<li>专项调整BP :<span id="discount_special">0BP</span></li>
+									</ul>
+								</div>
+							</div>
+							<!-- 价格调整	 -->
+							<div class="wrapper-div-form1">
+								<h3>价格调整</h3>
+								<div class="content-wrapper-div">
+									<ul>
+										<li>价格调整总计:<span id="discount_total"></span></li>
+									</ul>
+								</div>
+								<input type="button" id="zr_jisuan" class="xinzen-btn" value="计算" style="margin-top:0;" />
+							</div>
+							<!-- 利率信息汇总 -->
+							<div class="wrapper-div-form1">
+								<h3>利率信息汇总</h3>
+								<div class="content-wrapper-div">
+									<ul class="zr_lilu">
+										<li><span class="sp">利率类型</span>: <span>基准利率</span></li>
+										<li><span class="sp">利率值</span>: <span id="jzlvz"></span></li>
+										<li><span class="sp">浮动比例</span>: <span id="jzfdbl"></span></li>
+										<li><span class="sp">EVA</span>: <span id="jzEVA"></span></li>
+										<li><span class="sp">RAROC</span>: <span id="jzRAROC"></span></li>
+									</ul>
+									<ul class="zr_lilu">
+										<li><span class="sp">利率类型</span>: <span>目标利率</span></li>
+										<li><span class="sp">利率值</span>: <span id="mblvz"></span></li>
+										<li><span class="sp">浮动比例</span>: <span id="mbfdbl"></span></li>
+										<li><span class="sp">EVA</span>: <span id="mbEVA"></span></li>
+										<li><span class="sp">RAROC</span>: <span id="mbRAROC"></span></li>
+									</ul>
+									<ul class="zr_lilu">
+										<li><span class="sp">利率类型</span>: <span>保本利率</span></li>
+										<li><span class="sp">利率值</span>: <span id="baobll"></span></li>
+										<li><span class="sp">浮动比例</span>: <span id="baobfd"></span></li>
+										<li><span class="sp">EVA</span>: <span id="baobEVA"></span></li>
+										<li><span class="sp">RAROC</span>: <span id="baobRAROC"></span></li>
+									</ul>
+
+									<ul class="zr_lilu" style="display: none;">
+										<li><span class="sp">利率类型</span>: <span>价格调整</span></li>
+										<li><span class="sp">利率值</span>: <span id="jglvz"></span></li>
+										</ul>
+									<ul class="zr_lilu">
+										<li><span class="sp">利率类型</span>: <span>优惠利率</span></li>
+										<li><span class="sp">利率值</span>: <span id="yhlvz"></span></li>
+										<li><span class="sp">浮动比例</span>: <span id="yhfdbl"></span></li>
+										<li><span class="sp">EVA</span>: <span id="yhEVA"></span></li>
+										<li><span class="sp">RAROC</span>: <span id="yhRAROC"></span></li>
+									</ul>
+									<ul class="zr_lilu">
+										<li style="margin-bottom:0.05rem;"><span class="sp">利率类型</span>: <span>执行利率</span></li>
+										<li style="margin-bottom:0.05rem;"><span class="sp">利率值</span>: <input type="text" id="zxlvz" style="width: 0.8rem;height:0.24rem" /> <span>%</span>
+										</li>
+										<li style="margin-bottom:0.05rem;"><span class="sp">浮动比例</span>: <input type="text" id="zxfdbl" style="width: 0.8rem;height:0.24rem;" /><span>%</span>
+										</li>
+										<li style="margin-bottom:0.05rem;"><span class="sp">EVA</span>: <span id="zxEVA"></span></li>
+										<li style="margin-bottom:0.05rem;"><span class="sp">RAROC</span>: <span id="zxRAROC"></span></li>
+									</ul>
+								</div>
+								<input type="button" value="保存" style="margin-left: 0.65rem;" class="btn1" id="cli" />
+
+							</div>
+						</form>
+					</div>
+
+				</section>
+				<!-- #content -->
+				<div class="zr_wrapper-kong" style="height:0.45rem;"></div>
+				<div style="display:none;">
+					<ul>
+						<li id="pricing_info_id"></li>
+						<li id="webservice_id"></li>
+						<li id="pricingSheetId"></li>
+						<li id="cust_id"></li>
+					</ul>
+				</div>
+			</section>
+			<!-- #content-wrapper -->
+			<div id="x-goto-top">
+		      <a href="#">
+		        <div id="x-arrow">
+		        </div>
+		        <div id="x-stick">
+		        </div>
+		      </a>
+		    </div>
+		</section>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>   
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+	<script>
+
+
+
+
+
+		$(function() {
+
+			//解析地址栏
+			var str = unescape(location.href);
+
+			var data = {};
+			if(str.indexOf("?") > -1) {
+				var num = str.indexOf("?");
+				str = str.substr(num + 1); //提取
+				data = eval(str);
+			}
+			if(JSON.stringify(data) != "{}") {
+
+
+				//过程参数
+				$("#zjcbl").html(data.pricingResultKColl.ftp_price);  //资金成本率
+				$("#yycbl").html(data.pricingResultKColl.operatingRate); //运营成本率
+				$("#fxcbl").html(data.pricingResultKColl.expectedLossRate); //风险成本率
+				$("#sscbl").html(data.pricingResultKColl.taxRate);			//税收成本率
+				$("#zbcbl").html(data.pricingResultKColl.capitalCostRate); //资本成本率
+				$("#jjlrv").html(data.pricingResultKColl.targetRate);	//经济利润
+
+				//其他信息
+				$("#zjcbl2").html(data.pricingResultKColl.ftp_costs);  //资金成本率2
+				$("#zblxhk").html(data.pricingResultKColl.capitalInterestRebate); //资金利息回扣
+				$("#wygl").html(data.pricingResultKColl.probabilityOfDefault); //违约概率
+				$("#wyssl").html(data.pricingResultKColl.defaultLossRate); //违约损失率
+				$("#jjzzxt").html(data.pricingResultKColl.capitalAdequacyRate);	//经济资本系统
+				$("#zzsl").html(data.pricingResultKColl.tax_rate); //增值税率
+				$("#zzsfjl").html(data.pricingResultKColl.additional_rate);	//增值税附加率
+				$("#zdyqhb").html(data.pricingResultKColl.economicProfitRate); //最低要求回报
+				$("#mbsyl").html(data.pricingResultKColl.capitalCostRate);	//目标收益率
+
+				//历史优惠信息
+				if(data.hpiColl.length ==0 ){
+					$("#khflxx").html(""); //客户分类信息
+					$("#evagxpx").html(""); //eva贡献榜排序
+					$("#evagxzsp").html(""); //eva贡献榜总数
+					$("#lsyhbp").html(""); //历史优惠bp
+				}else{
+					$("#khflxx").html(data.hpiColl[0].dim_name); //客户分类信息
+					$("#evagxpx").html(data.hpiColl[0].classifyindex); //eva贡献榜排序
+					$("#evagxzsp").html(data.hpiColl[0].classify); //eva贡献榜总数
+					$("#lsyhbp").html(data.hpiColl[0].dhp_bp); //历史优惠bp
+				}
+
+
+				//利率信息汇总--基准利率
+				$("#jzlvz").html(data.pricingResultKColl.baseLinePriceRateOfPercnet + "%");
+				$("#jzfdbl").html(data.pricingResultKColl.baseLinePriceRate);
+				$("#jzEVA").html(data.pricingResultKColl.baseLinePriceRateEVA);
+				$("#jzRAROC").html(data.pricingResultKColl.baseLinePriceRateRAROC);
+
+				//利率信息汇总--目标利率
+				$("#mblvz").html(data.pricingResultKColl.loanTargetPrice);
+				$("#mbfdbl").html(data.pricingResultKColl.loanTargetPriceOfPencent);
+				$("#mbEVA").html(data.pricingResultKColl.targetPriceEva);
+				$("#mbRAROC").html(data.pricingResultKColl.targetPriceEva);
+
+				//利率信息汇总--保本利率
+				$("#baobll").html(data.pricingResultKColl.bottomLinePriceLoans);
+				$("#baobEVA").html(data.pricingResultKColl.bottomLinePriceRateEVA);
+				$("#baobfd").html(data.pricingResultKColl.bottomLinePriceRatePercent);
+				$("#baobRAROC").html(data.pricingResultKColl.bottomLinePriceRateRAROC);
+
+				//利率信息汇总--优惠利率
+				$("#yhlvz").html(data.pricingResultKColl.favoratePriceRate);
+				$("#yhfdbl").html(data.pricingResultKColl.favoratePriceRateOfPercent);
+				$("#yhEVA").html(data.pricingResultKColl.favoratePricingRateEVA);
+				$("#yhRAROC").html(data.pricingResultKColl.favoratePriceRAROC);
+
+				//利率信息汇总--执行利率
+				$("#zxlvz").val(data.pricingResultKColl.favoratePriceRate);
+				$("#zxfdbl").val(data.pricingResultKColl.excutePricingRatePercentOfPercent);
+				$("#zxEVA").html(data.pricingResultKColl.excutePricingRateEVA);
+				$("#zxRAROC").html(data.pricingResultKColl.excutePricingRateRAROC);
+				//专项调整bp
+				$("#discount_special").html(data.pricingResultKColl.discount_special + "BP");
+
+				//隐藏，不显示
+				$("#pricing_info_id").html(data.pricingResultKColl.pricing_info_id); //唯一标识号
+				$("#webservice_id").html(data.pricingResultKColl.webservice_id); //接口标识
+				$("#pricingSheetId").html(data.pricingResultKColl.pricingSheetId); //定价单
+				$("#cust_id").html(data.pricingResultKColl.cust_id); //客户号
+
+				$("#jgtzzj").html(data.pricingResultKColl.discount_total + "BP"); //价格调整总计
+				//存款派生业务下拉列表
+				$.each(data.derivedBusinessListIColl, function(i, v) {
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#ckpsywlx');
+				});
+				//存款条线
+				$.each(data.custLineNameIColl, function(i, v) {
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#cktx');
+				});
+				//中间业务派生
+				$.each(data.derivedBusinessListIColl2, function(i, v) {
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#zjywpslb');
+				});
+				//中间条线
+				$.each(data.custLineNameIColl, function(i, v) {
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#zj_tx');
+				});
+				//专项调整类型
+				$.each(data.specialPreferentialNameIColl, function(i, v) {
+					$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#zxtzlx');
+				});
+
+
+			}
+
+
+		//补0
+		function p(s) {
+			return s < 10 ? '0' + s : s;
+		}
+
+		var myDate = new Date();
+		//获取当前年
+		var year = myDate.getFullYear();
+		//获取当前月
+		var month = myDate.getMonth() + 1;
+		//获取当前日
+		var nowDate = myDate.getDate();
+
+		var nowTime = year + '-' + p(month) + "-" + p(nowDate);
+		var count = 0;
+
+		//新增存款派生计划
+		$("#paisheng-btn").click(function() {
+			//清空新增计划的
+			$("#ckpsywlx").val('');
+			$("#cktx").val('');
+			$("#ckqx").val("");
+			$("#psywje").val("");
+			$("#ck_khll").val("");
+			$("#ck_qxr").val(nowTime);
+			count++ //计数器加1
+			if($(".paisheng-btnt-div").css("display") == "none") {
+				$(".paisheng-btnt-div").show();
+				//$("#zr_zanwuxinxi").hide();
+				$("#zr_quediquxiao").show();
+			} else {
+				$(".paisheng-btnt-div").hide();
+				if(!$('.zr_pdpaish').length > 0) {
+					$("#zr_quediquxiao").hide();
+				}
+			}
+
+		});
+		$("#ck_qxr").change(function(event) {
+               var changeTime = new Date($(this).val().replace(/\-/g,"\/")).getTime();
+               var mydateTime = myDate.getTime();
+               if(changeTime < mydateTime){
+                    alert("起息日不能小于当前日期");
+                    $("#ck_qxr").val(nowTime	);
+               }
+            });
+		//新增中间派生业务计划
+		var count2 = 0;
+		$("#pc_paisheng-btn").click(function() {
+			count2++;
+			$("#zjywpslb").val("");
+			$("#zj_tx").val("");
+			$("#zjpsywje").val("");
+			if($(".pc_paisheng-btnt-div").css("display") == "none") {
+				$(".pc_paisheng-btnt-div").show();
+				$("#pc_zr_quediquxiao").show();
+			} else {
+				$(".pc_paisheng-btnt-div").hide();
+				$("#pc_zr_quediquxiao").hide();
+			}
+
+		});
+		//新增专项调整信息计划
+		var count3 = 0;
+		$("#zr_xinzeng").click(function() {
+			count3++;
+			$("#zxtzlx").val("");
+			$("#zxtzpf").val("");
+			$("#textArea").val("");
+			if($(".xinzen-btnt-div").css("display") == "none") {
+				$(".xinzen-btnt-div").show();
+				$("#pc_zr_zx").show();
+			} else {
+				$(".xinzen-btnt-div").hide();
+				$("#pc_zr_zx").hide();
+			}
+
+		});
+		//专项取消按钮
+		$("#dypCancle").click(function() {
+			$(".xinzen-btnt-div").hide();
+			$("#pc_zr_zx").hide();
+		});
+		//新增中间业务确认
+		$("#pc_dypConfirm1").click(function() {
+			var arr=['中间业务派生类别','条线','派生业务金额'];
+			for(var i=0;i<$(".interCheck").length;i++){
+				if($(".interCheck").eq(i).val()==""){
+					alert(arr[i]+"不能为空");return;
+				}
+			};
+
+			$(".pc_paisheng-btnt-div").hide();
+			$("#pc_zr_quediquxiao").hide();
+			$("#pc_xzdypxx1").before('<div class="content-wrapper-div zr_yangshi panduan_peicun" class="pc_zr_pdpaish" >' +
+				'<ul>' +
+				'<li id="">中间业务派生类别:<span class="zjywpslb">' + $("#zjywpslb").find("option:selected").text() + '</span></li>' +
+				'<li id="">条线:<span class="zj_tx">' + $("#zj_tx").find("option:selected").text() + '</span></li>' +
+				'<li style="display:none">中间业务派生类别ID:<span class="zjywpslbID">' + $("#zjywpslb").find("option:selected").val() + '</span></li>'+
+				'<li style="display:none">条线ID:<span class="zj_txID">' + $("#zj_tx").find("option:selected").val() + '</span></li>'+
+				'<li id="">派生业务金额(元):<span class="zjpsywje">' + $("#zjpsywje").val() + '</span></li>'
+				 +'</ul>' +
+				'<a href="javascript:;" class="pc_zr_a_yangshi">删除</a>' +
+				'</div>');
+		});
+		//冒泡删除派生信息
+		$("#pc_zr_paisheng").on('click', 'a', function() {
+			$(this).parent().remove();
+
+		});
+		//存款取消按钮
+		$("#dypCancle1").click(function() {
+			$(".paisheng-btnt-div").hide();
+			$("#zr_quediquxiao").hide();
+		});
+		/*新增专项调整确认*/
+
+		$("#dypConfirm").click(function() {
+			var arr=['专项调整类型','专项调整评分','专项调整理由'];
+			for(var i=0;i<$(".specialCheck").length;i++){
+				if($(".specialCheck").eq(i).val()==""){
+					alert(arr[i]+"不能为空");return;
+				}
+			};
+			$(".xinzen-btnt-div").hide();
+			$("#pc_zr_zx").hide();
+			$("#xzdypxx").before('<div class="content-wrapper-div zr_yangshi panduan_peicun" class="pc_zr_pdpaish1" >' +
+				'<ul>' +
+				'<li id="">专项调整类型:<span class="zxtzlx">' + $("#zxtzlx").find("option:selected").text() + '</span></li>' +
+				'<li id="">专项调整评分:<span class="zxtzpf">' + $("#zxtzpf").val() + '</span></li>' +
+				'<li style="display:none">专项调整类型ID:<span class="zxtzlxID">' + $("#zxtzlx").find("option:selected").val() + '</span></li>'+
+				'<li id="">专项调整理由:<span class="textArea">' + $("#textArea").val() + '</span></li>'
+				 +'</ul>' +
+				'<a href="javascript:;" class="pc_zr_a_yangshi">删除</a>' +
+				'</div>');
+		});
+		//冒泡删除专项信息
+		$("#zr_zhuanxiang").on('click', 'a', function() {
+			$(this).parent().remove();
+		});
+		//中间业务取消按钮
+		$("#pc_dypCancle1").click(function() {
+			$(".pc_paisheng-btnt-div").hide();
+			$("#pc_zr_quediquxiao").hide();
+		});
+
+		//存款派生业务新增确认(派生)
+		$("#dypConfirm1").click(function() {
+			var arr=['存款派生业务类型','条线','期限','派生业务金额','承诺客户利率','起息日'];
+			for(var i=0;i<$(".depositCheck").length;i++){
+				if($(".depositCheck").eq(i).val()==""){
+					alert(arr[i]+"不能为空");return;
+				}
+			};
+			$(".paisheng-btnt-div").hide();
+			$("#zr_quediquxiao").hide();
+			$("#xzdypxx1").before('<div class="content-wrapper-div zr_yangshi panduan_zonghe" class="zr_pdpaish" >' +
+				'<ul>' +
+				'<li  style="display:-none">存款派生业务类型:<span class="ckpsywlx">' + $("#ckpsywlx option:checked").text() + '</span></li>' +
+				'<li>条线:<span class="cktx">' + $("#cktx option:checked").text() + '</span></li>' +
+				'<li>期限(月):<span class="ckqx">' + $("#ckqx").val() + '</span></li>' +
+				'<li>派生业务金额(元):<span class="psywje">' + $("#psywje").val() + '</span></li>' +
+				'<li>承诺客户利率(%):<span class="ck_khll">' + $("#ck_khll").val() + '</span></li>' +
+				'<li style="display:none">存款派生业务类型ID:<span class="ckpsywlxID">' + $("#ckpsywlx").find("option:selected").val() + '</span></li>'+
+				'<li style="display:none">条线ID:<span class="cktxID">' + $("#cktx").find("option:selected").val() + '</span></li>'+
+				'<li>起息日:<span class="ck_qxr">' + $("#ck_qxr").val() + '</span></li>' +
+				'</ul>' +
+				'<a href="javascript:;" class="zr_a_yangshi">删除</a>' +
+				'</div>');
+		});
+		//冒泡删除派生信息
+		$("#zr_paisheng").on('click', 'a', function() {
+			$(this).parent().remove();
+			if(!$('.zr_pdpaish').length > 0) {
+				//$("#zr_zanwuxinxi").show();
+			};
+
+		})
+
+		$("#dypCancle1").click(function() {
+
+			$(".paisheng-btnt-div").hide();
+			//$("#zr_zanwuxinxi").show();
+			$("#zr_quediquxiao").hide();
+		});
+		var res_baseline_rate = $("#jzlvz").html(); //基准利率
+		//动态改变利率值时发送请求
+		$("#zxlvz").blur(function() {
+			var params = {
+				"class" : "appNewCreditCustomerPricingDynamicCalculate",
+				"pricing_info_id" : $("#pricing_info_id").html(),//唯一标识号
+				"webservice_id" : $("#webservice_id").html(),//接口标识
+				"custpricingSheetId_id" : $("#pricingSheetId").html(),//定价单号
+				"excutePricingRate":$(this).val(),
+				"res_baseline_rate":res_baseline_rate,
+				"type":2
+			};
+			$.ajax({
+				url: port,
+				cache: false,
+				data: params,
+				dataType: 'json',
+				success: function(r) {
+					if(r.status) {
+						//$("#zxlvz").val(r.result.exercise_rate); //执行利率
+						$("#zxfdbl").val(r.result.exercise_rate_percent); //优惠利率基于基准利率百分比
+						$("#zxEVA").html(r.result.compositeEVA);//执行利率EVA
+						//$("#zxlpr").html(r.result.exerciseLPR);//执行利率LPR
+						$("#zxRAROC").html(r.result.compositeRAROC);//执行利率raroc
+
+					} else {
+						alert(r.message);
+					}
+
+				},
+				error: function(r) {
+					alert('请求失败!请稍后重试...');
+				}
+			});
+		});
+		//动态改变浮动比例时发送请求
+		$("#zxfdbl").blur(function(){
+			var params = {
+				"class" : "appNewCreditCustomerPricingDynamicCalculate",
+				"pricing_info_id" : $("#pricing_info_id").html(),//唯一标识号
+				"webservice_id" : $("#webservice_id").html(),//接口标识
+				"custpricingSheetId_id" : $("#pricingSheetId").html(),//定价单号
+				"exercise_rate_percent":$(this).val(),
+				"res_baseline_rate":res_baseline_rate,
+				"type":3
+			};
+			$.ajax({
+				url: port,
+				cache: false,
+				data: params,
+				dataType: 'json',
+				success: function(r) {
+					if(r.status) {
+						$("#zxlvz").val(r.result.exercise_rate); //执行利率
+						//$("#zxfdbl").val(r.result.exercise_rate_percent); //优惠利率基于基准利率百分比
+						$("#zxEVA").html(r.result.compositeEVA);//执行利率EVA
+						//$("#zxlpr").html(r.result.exerciseLPR);//执行利率LPR
+						$("#zxRAROC").html(r.result.compositeRAROC);//执行利率raroc
+
+					} else {
+						alert(r.message);
+					}
+
+				},
+				error: function(r) {
+					alert('请求失败!请稍后重试...');
+				}
+			});
+		})
+		//class转字符串
+
+        function class2Str(objName){
+            var objArr = document.getElementsByClassName(objName);
+            var retStr = "";
+            if(objArr!=null && objArr!=undefined && objArr.length>0){
+                for(var i =0;i<objArr.length;i++){
+                    if(i==0){
+                        retStr = objArr[i].innerHTML;
+                    }else{
+                        retStr = retStr + "," + objArr[i].innerHTML;
+                    }
+                }
+            }
+            return retStr;
+
+        }
+
+		//计算 价格调整
+		$("#zr_jisuan").click(function() {
+			var params={};
+			var infoJson = {
+				"ckpsywlxID":class2Str("ckpsywlxID"),//存款派生类型
+				"cktxID":class2Str("cktxID"),//条线
+				"ckqx":class2Str("ckqx"),//期限
+				"psywje":class2Str("psywje"),//派生业务金额
+				"ck_khll":class2Str("ck_khll"),//承诺客户利率(%)
+				"ck_qxr":class2Str("ck_qxr"),//起息日
+				"zjywpslbID":class2Str("zjywpslbID"),//中间业务派生类别
+				"zj_txID":class2Str("zj_txID"), //条线
+				"zjpsywje":class2Str("zjpsywje"),//派生业务金额(元)
+				"zxtzlxID":class2Str("zxtzlxID"),//专项调整类型
+				"zxtzpf":class2Str("zxtzpf"),//专项调整评分
+				"textArea":class2Str("textArea"), //专项调整理由
+				"baobll":$("#baobll").html(),//保本利率值
+				"cust_id" :$("#cust_id").html(),//客户号
+				"pricing_info_id" : $("#pricing_info_id").html(),//唯一标识号
+				"webservice_id" : $("#webservice_id").html(),//接口标识
+				"custpricingSheetId_id" : $("#pricingSheetId").html()//定价单号
+			};
+			params.custInfo = JSON.stringify(infoJson);
+			params.class = "appNewCreditCustomerPricingDynamicCalculate";
+			params.type = 1;
+			$.ajax({
+				url: port,
+				cache: false,
+				data: params,
+				dataType: 'json',
+				success: function(r) {
+					if(r.status) {
+						console.log(JSON.stringify(r.result))
+						$("#discount_total").html(r.result.discount_total); //价格调整总计bp
+						$("#discount_special").html(r.result.discount_special); //专项调整BP
+						$("#discount_derived").html(r.result.discount_derived); //派生优惠bp
+						$("#yhlvz").html(r.result.favorate_rate); //优惠利率
+						$("#yhEVA").html(r.result.compositeEVA); //优惠利率EVA
+						$("#yhRAROC").html(r.result.compositeRAROC); //优惠利率RAROC
+						$("#yhfdbl").html(r.result.favorate_rate_percent);//优惠利率浮动比例
+						//$("#yhlpr").html(r.result.favorateLPR);//优惠利率LPR
+
+						$("#zxlvz").val(r.result.favorate_rate); //执行利率
+						$("#zxfdbl").val(r.result.favorate_rate_percent); //优惠利率基于基准利率百分比
+						$("#zxEVA").html(r.result.compositeEVA);//执行利率EVA
+						//$("#zxlpr").html(r.result.exerciseLPR);//执行利率LPR
+						$("#zxRAROC").html(r.result.exerciseRAROC);//执行利率raroc
+
+
+					} else {
+						alert(r.message);
+					}
+
+				},
+				error: function(r) {
+					alert('请求失败!请稍后重试...');
+				}
+			});
+
+		});
+
+		//点击保存蒙板和弹出框
+		$("#cli").click(function(event) {
+			$('#mengbanbeij').show();
+			$('#tanchuk').show();
+			return false;
+		});
+
+		$('#tank_yes').click(function() {
+			$('#tanchuk').hide();
+			$('.zr_main').show();
+			shisuan();
+			return false;
+
+		})
+
+		function closeModel() {
+			$('#mengbanbeij').hide();
+		}
+
+		function shisuan() {
+			var params = {
+				"class" : "appNewCreditCustomerPricingConfirm",
+				"pricing_info_id" : $("#pricing_info_id").html(),//唯一标识号
+				"webservice_id" : $("#webservice_id").html(),//接口标识
+				" lps_sht_id" : $("#pricingSheetId").html(),//定价单号
+			};
+			$.ajax({
+				url: port,
+				data: params,
+				dataType: 'json',
+				cache: false,
+				success: function(r) {
+					if(r.status) {
+						alert("保存成功!");
+						$('#mengbanbeij').hide();
+							//window.location.href = "theShisuanDetails.html?key=4"
+						/*setTimeout(function() {
+							alert(12)
+
+						}, 2000);*/
+					} else {
+						alert(r.message);
+					}
+				},
+
+				error: function(r) {
+					closeModel();
+					alert('保存失败，请检查网络是否正常连接！');
+					window.location.reload();//刷新当前页面
+				}
+			});
+
+		}
+	});
+	</script>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>新信贷贷款定价</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading scripts] -->
+
+    <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript">
+            var $ = jQuery.noConflict();
+            $(window).load(function() {
+                $('#slider').flexslider({
+                    animation: "slide",
+                    directionNav: true,
+                    animationLoop: false,
+                    controlNav: false,
+                    slideToStart: 1,
+                    slideshow: true,
+                    animationDuration: 300,
+                    start: function(){
+                         $('#slider').animate({opacity: 1}, 750);
+                    },
+                });
+            });
+    </script>
+    </head>
+
+    <body>
+
+        <section id="page-wrapper">
+
+            <section id="menu-wrapper">
+
+                <div id="menu-search">
+                    <input id="menu-search-input-text" type="text" placeholder="搜索" />
+                    <input id="menu-search-input-submit" type="submit" value="" />
+                </div>
+
+                <ul class="menu">
+
+                    <li id="a-submenu-1" class="icon plus">
+                        <a href="javascript:;">
+                            <span class="menu-li-title">客户管理</span>
+                            <img class="menu-li-arrow-submenu" src="../img/icons/submenu.png" alt="" />
+                        </a>
+                        <ul id="submenu-1">
+                          <li>
+                                <a href="../kehuxinxi.html">
+                                    <span class="menu-li-title">客户信息</span>
+                                    <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../shouye.html">
+                                    <span class="menu-li-title">派生承诺追踪</span>
+                                    <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../daikuandingjia.html">
+                                    <span class="menu-li-title">贷款定价</span>
+                                    <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="icon box"><!-- 公司贷款定价 -->
+                        <a href="../daikuanshisuan.html">
+                          <span class="menu-li-title">对公款定价</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+
+                    <li class="icon info"><!-- 小微贷款定价 -->
+                        <a href="../gerendaikuan.html">
+                          <span class="menu-li-title">个人贷款定价</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+
+                    <li class="icon book"><!--系统管理-->
+                        <a href="../cunkuandingjia.html">
+                          <span class="menu-li-title">存款定价</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+                    <li class="icon star"><!--系统管理-->
+                        <a href="../out.html">
+                          <span class="menu-li-title">退出系统</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+                </ul> <!-- .menu -->
+
+            </section> <!-- #menu-wrapper -->
+
+            <section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu"><img src="../img/icons/menu.png" alt="menu" /></a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>新信贷贷款定价</h1>
+                    </div>
+
+                    <div class="houtai-footert"></div>
+                    <div class="houtai-footer">
+                         <ul class="houtai-box">
+                            <li class="houtai-flex">
+                                <a href="xinxindaikehudingjia.html">
+                                    <p>信贷客户信息</p>
+                                </a>
+                            </li>
+                            <li class="houtai-flex">
+                                <a href="mubiaoshouyidingjia.html">
+                                    <p>目标收益定价</p>
+                                </a>
+                            </li>
+                            <li class="houtai-flex">
+                                 <a href="dongtaidingjia.html" >
+                                     <p>动态定价</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section> <!-- #header -->
+
+
+
+            <section id="content">
+
+                <!-- <div class="wrapper wrapper-divge">
+                <form action="#" method="get">
+                    <div class="wrapper-div-form1">
+                        <h2>客户信息</h2>
+
+                            <div class="wrapper-form-div">
+
+                            <label>
+                               客&nbsp&nbsp&nbsp户&nbsp&nbsp号&nbsp&nbsp：<input type="text" value="" name="id" placeholder="0079700342" required />
+                            </label></br>
+
+                            <label>
+                            客户名称&nbsp&nbsp&nbsp&nbsp：<input type="text" value="" name="name" placeholder="佛山市南海麻奢合成五金铸件厂" required /></label></br>
+
+                            <label>
+                               机&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp构&nbsp&nbsp&nbsp：<input type="text" value="" name="id" placeholder="沧州银行" required />
+                            </label></br>
+
+                            <label>
+                               客&nbsp户&nbsp规&nbsp模&nbsp：<input type="text" value="" name="id" placeholder="小型企业" required />
+                            </label></br>
+
+                            <label id="lblSelect">
+                                客户信用等级：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                    <option>D</option>
+                                    <option>E</option>
+                                    <option>F</option>
+                                    <option>G</option>
+                                    <option>H</option>
+                                </select>
+                            </label></br>
+
+                            <label id="lblSelect">
+                                客户行业名称：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                    <option>农 林 牧 渔业</option>
+                                    <option>农 林 牧 渔业</option>
+                                    <option>农 林 牧 渔业</option>
+                                    <option>农 林 牧 渔业</option>
+                                </select>
+                            </label></br>
+                            </div>
+
+                    </div>
+                    <div class="wrapper-div-form1">
+                        <h2>贷款信息</h2>
+
+                            <div class="wrapper-form-div">
+
+                                <label id="lblSelect">
+                                币&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp种：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                    <option>CNY</option>
+                                    <option>HKD</option>
+                                    <option>EUR</option>
+                                    <option>TWD</option>
+                                    <option>KRW</option>
+                                </select>
+                                </label></br>
+
+                                <label id="lblSelect">
+                                    产品名称：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>流动资金贷款1-3年</option>
+                                        <option>流动资金贷款1-3年</option>
+                                        <option>流动资金贷款1-3年</option>
+                                        <option>流动资金贷款1-3年</option>
+                                    </select>
+                                </label></br>
+
+                                <label>
+                                    贷款金额：<input type="text" value="" name="name" placeholder="贷款额(元)*" required />
+                                </label></br>
+
+                                <label>
+                                    期&nbsp限&nbsp月&nbsp：<input type="text" value="" name="id" placeholder="" required />
+                                </label></br>
+
+                               <label id="lblSelect">
+                                    利率类型：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                    <option>--请选择--</option>
+                                    <option>固定利率</option>
+                                    <option>浮动利率</option>
+                                </select>
+                                </label></br>
+
+                                <label id="lblSelect">
+                                    浮动利率：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                    <option>--请选择--</option>
+                                    <option>1月</option>
+                                    <option>3月</option>
+                                    <option>6月</option>
+                                    <option>12月</option>
+                                </select>
+                                </label></br>
+
+                                <label>
+                                    &nbsp起&nbsp息日&nbsp：<input id="meeting" type="date" value="2017-01-13"/>
+                                </label></br>
+                            </div>
+
+                    </div>
+                    <div class="wrapper-div-form1">
+                        <h2>还款方式</h2>
+
+                            <div class="wrapper-form-div">
+                                <label id="lblSelect">
+                                还款方式：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>--请选择--</option>
+                                        <option>等额本金</option>
+                                        <option>等额本息</option>
+                                        <option>到期还本分次付息</option>
+                                        <option>到期一次还本付息</option>
+                                        <option>还款计划</option>
+                                    </select>
+                                </label></br>
+
+                                <label id="lblSelect">
+                                    还款频率：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>--请选择--</option>
+                                        <option>1月</option>
+                                        <option>3月</option>
+                                        <option>6月</option>
+                                        <option>12月</option>
+                                    </select>
+                                </label></br>
+                            </div>
+
+                    </div>
+                    <div class="wrapper-div-form1">
+                        <h2>抵押品信息</h2>
+
+                            <div class="wrapper-form-div">
+
+                                <textarea name="message" placeholder="暂无信息*" required ></textarea></br>
+                                <input type="button" value="新增" class="wrapper-div-form1-btn1" />
+                            </div>
+                            <input type="submit" value="提交" class="wrapper-div-form1-btn1" />
+
+                    </div>
+                </form>
+                </div> -->
+            <div class="content-wrapper-div">
+                <a href="javascript:;">
+                    <ul>
+                        <li>目标利率：<span>5.7.39%</span></li>
+                        <li>资金成本率：<span>3.7823%</span></li>
+                        <li>运营成本率：<span>0.9%</span></li>
+                        <li>风险成本率：<span>0.06%</span></li>
+                        <li>税收成本率：<span>0.3616%</span></li>
+                        <li>资本成本率：<span>0.3%</span></li>
+                        <li>经济利润率：<span>0.3%</span></li>
+                    </ul>
+                </a>
+            </div>
+
+            <!-- <div class="content-wrapper-loan"></div> -->
+
+            </section> <!-- #content -->
+
+            </section> <!-- #content-wrapper -->
+
+        </section> <!-- #page-wrapper -->
+    </body>
+</html>

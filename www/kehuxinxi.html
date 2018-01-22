@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>廊坊银行</title>
+
+    <!-- [loading stylesheets] -->
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/flexslider.css" />
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <style type="text/css" media="screen">
+
+    </style>
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+
+               <!-- .menu -->
+
+          </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+            <section id="header">
+
+                <div id="header-left">
+                    <a href="#" id="a-menu">
+                        <img src="img/icons/menu.png" alt="menu" />
+                    </a>
+                </div>
+
+                <div id="header-title">
+                    <h1>客户信息</h1>
+                </div>
+
+            </section> <!-- #header -->
+                <!--查询条件-->
+            <section id="content">
+                <div class="wrapper"> <!---->
+                    <div class="wrapper-div-form1c">
+                        <h2>查询条件</h2>
+                        <form action="#" method="get">
+                            <div class="wrapper-form-div">
+                              <label>
+                               <span class="spnCls">日期</span>: <input id="dateInfo" type="date" value="" style="border:1px solid;width:1.67rem;height:0.22rem;margin-bottom:0.1rem;" /></label>
+                              </br>
+
+                               <label for="customerInfo">
+                                <span class="spnCls">客户名称</span>: <input type="text" name="" value="" id="customerInfo" placeholder="输入客户名称" style="width:1.6rem;height:0.14rem;" />
+                              </label>
+                             </br>
+                            </div>
+                            <div align="center">
+                                <input type="button" value="查询" class="chaxun" id="query" style="border:none;margin-left: 15%; width:30%;float: left;" />
+                               <input type="button" value="重置" class="chaxun" id="reset" style="border:none;margin-left: 15%; width:30%;float:left;" />
+                            </div>
+
+                        </form>
+                    </div>
+                <!---->
+                </div>
+                <!-- <div class="wrapper-kong"></div> -->
+
+            </section> <!-- #content-wrapper -->
+
+    	    </section> <!-- #page-wrapper -->
+          <div style="width:100%;height:0.45rem;">
+          </div>
+      </section>
+
+<!--       <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div>回到顶部
+       -->
+       <div id="x-goto-top">
+          <a href="#">
+            <div id="x-arrow">
+            </div>
+            <div id="x-stick">
+            </div>
+          </a>
+      </div>
+      <div class="houtai-footer">
+          <ul class="houtai-box">
+              <li class="houtai-flex">
+                  <a href="shouye.html">
+                      <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                      <p>公告信息</p>
+                  </a>
+              </li>
+              <li class="houtai-flex" id="public2">
+                  <a href="daikuanshisuan.html">
+                      <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                          <p>对公贷款定价</p>
+                  </a>
+              </li>
+              <li class="houtai-flex" id="person2">
+                   <a href="gerendaikuan.html" >
+                      <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                       <p>个人贷款定价</p>
+                  </a>
+              </li>
+              <li class="houtai-flex">
+                  <a href="kehuxinxi.html" >
+                      <img src="img/icons/20091003100600325.png" alt="客户信息" />
+                      <p>客户信息</p>
+                   </a>
+              </li>
+          </ul>
+      </div>
+    </body>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+
+    <script src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+        //重置
+        $("#reset").click(function(){
+              $("#dateInfo").val("");
+              $("#customerInfo").val("");
+        })
+
+        //获取系统日期
+       /* var nowDate=new Date();
+        var year=nowDate.getFullYear();
+        var mon =nowDate.getMonth()+1;
+        var day =nowDate.getDate();
+        var strDate=year+"-"+mon+"-"+day;
+        $("#dateInfo").val(strDate);*/
+
+        var count =1;
+       //取得整个地址栏
+       function p(s) {
+        return s < 10 ? '0' + s : s;
+      }
+
+      var myDate = new Date();
+      //获取当前年
+      var year = myDate.getFullYear();
+      //获取当前月
+      var month = myDate.getMonth() + 1;
+      //获取当前日
+      var date = myDate.getDate();
+
+      var shijian = year + '-' + p(month) + "-" + p(date)
+      $("#dateInfo").val(shijian);
+
+        var str=unescape(location.href);
+        var data;
+        if(str.indexOf("?") > -1){
+        var num=str.indexOf("?");
+        str=str.substr(num+1);
+        data = eval(str);
+        }
+       if(data!=undefined){
+           $("#dateInfo").val(data.dateValue);
+           $("#customerInfo").val(data.customerInfo);
+            searchInfo(1);
+        }else{
+           searchInfo(1);
+        }
+
+        $("#query").click(function(){
+            if($("#dateInfo").val() == ""){
+              alert("请输入查询日期");return;
+            }
+            searchInfo(1);
+        })
+        function searchInfo(data){
+           var dateVal;
+           if($("#dateInfo").val()==" "){
+              dateVal=$("#dateInfo").val();
+           }else{
+              dateVal=$("#dateInfo").val().split('-')[0]+'-'+$("#dateInfo").val().split('-')[1];
+           }
+
+           var params = JSON.parse(localStorage.getItem("home"));
+
+           params.class = "appCutomerInfoList";
+           params.dateInfo = dateVal;
+           params.customerInfo=$("#customerInfo").val();
+          if(data == 1){
+            $(".content-wrapper-div").remove();
+            params.pageId = 1;
+            count = 1;
+          }else{
+            params.pageId = count;
+          }
+
+           $.ajax({
+               url:port,
+               data:params,
+               dataType:'json',
+               cache:false,
+               success:function(r){
+                   if (r.status){
+                       $.each(r.result,function(i,v){
+                           $('<div class="content-wrapper-div">'
+                               +'<a href="#">'
+                                   +'<ul>'
+                                       +'<li>客户号：<span>'+v.cust_id+'</span></li>'
+                                       +'<li>客户名称：<span>'+v.cust_name+'</span></li>'
+                                       +'<li>信用等级：<span>'+v.ci_cust_level+'</span></li>'
+                                       +'<li>客户规模：<span>'+v.ci_cust_scale_name+'</span></li>'
+                                       +'<li>客户分类：<span>'+v.cust_classified_name+'</span></li>'
+                                       +'<li>行业：<span>'+v.industry_name+'</span></li>'
+                                       +'<li>净收入：<span>'+v.fcc_ni+'</span></li>'
+                                       +'<li>经济增加值：<span>'+v.fcc_eva_total+'</span></li>'
+                                       +'<li>贷款日均余额：<span>'+v.fci_l12_dep_avg_bal+'</span></li>'
+                                       +'<li>存款日均余额：<span>'+v.fci_l12_ln_avg_bal+'</span></li>'
+                                   +'</ul>'
+                               +'</a>'
+                           +'</div>').appendTo('#content-wrapper');
+                       });
+
+
+                        $("#content-wrapper").on('click','.content-wrapper-div',function(e){
+
+                        /*  window.location.href = 'cunkuanyewu.html?date='+a+'&name='+pms*/
+                            var custInfo={};
+                            custInfo.custID=$(this).find("ul li:eq(0)").find("span").html();
+                            custInfo.mon_flag=dateVal;
+                            custInfo.dateValue=$("#dateInfo").val();
+                            custInfo.customerInfo=$("#customerInfo").val();
+                            localStorage.setItem("custInfo",JSON.stringify(custInfo));
+                            window.location.href="daikuanyewu.html";
+                        })
+                       //window.location.href = "cunkuanyewu.html?data=" + escape(JSON.stringify(r.result));
+                   }else{
+
+                       alert(r.message);
+                   }
+
+               },error:function(r){
+                   alert('请求失败!请稍后重试...');
+               }
+           });
+        }
+
+        //连续  加载
+        $(window).scroll(function(event) {
+           var scrollB = $(window).height()+$(document).scrollTop();
+           var contentH = $(document).height();
+           if(contentH == scrollB){
+                count++;
+                searchInfo(2);
+           }
+        });
+
+       });
+
+    </script>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>存款价格发布</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/portfolio-default.css" />
+    <link type="text/css" rel="stylesheet" href="css/portfolio-component.css" />
+
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper" >
+
+        	<section id="menu-wrapper">
+             <!-- .menu -->
+
+          </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu">
+                          <img src="img/icons/menu.png" alt="menu" /></a>
+                    </div>
+                    <div id="header-title">
+                        <h1>存款价格发布</h1>
+                    </div>
+
+                </section> <!-- #header -->
+
+        	<section id="content">
+
+            <div class="wrapper">
+            <!---->
+            	<div class="wrapper-div-form1c">
+                  <h2>存款定价</h2>
+                  <form action="#" method="get">
+                      <div class="wrapper-form-div">
+                      <label>
+                       <span>日&nbsp&nbsp&nbsp&nbsp&nbsp期&nbsp</span>：<input id="meeting" type="date" value="2017-01-13" style="border:1px solid;width: 170px;height:24px;margin-bottom:10px;" /></label></br>
+                        <label>
+                            <span>机&nbsp构&nbsp名&nbsp</span>：<input type="text" value="" name="name" placeholder=".Q联社.B县社.H分社*" id="jgmc" style="width:170px;"/>
+
+                        </label></br>
+
+                         <label id="lblSelect">
+                          <span>条&nbsp&nbsp&nbsp&nbsp&nbsp线&nbsp</span>：<select id="tx" class="selectPointOfInterest" title="Select points of interest nearby" >
+                              <option value="">-----请选择-----</option>
+                              <option value="CREDIT">对公条线</option>
+                              <option value="RETAIL">零售条线</option>
+                              <option value="DESPOST">存款条线</option>
+                          </select>
+                          </label></br>
+                       <label id="lblSelect">
+                             <span>产&nbsp&nbsp&nbsp&nbsp&nbsp品&nbsp</span>：
+                             <select id="cp" class="selectPointOfInterest" title="Select points of interest nearby">
+                                 <option value="">-----请选择-----</option>
+                                <option value="200101">单位活期存款</option>
+                                <option value="20020123456">整存整取</option>
+                              </select>
+                        </label>
+
+                        </br>
+                      </div>
+                      <input type="button" value="查询" class="chaxun" id="clk" style="border:none;margin-left: 20%; width:30%" />
+                       <input type="button" value="重置" class="chaxun" id="clk" style="border:none;margin-left: 20%; width:30%"" />
+                  </form>
+              </div>
+            <!---->
+            </div>
+            <!--
+              这一块不要写东西，这是我要用的地方，谢谢！！！
+            -->
+            <div class="wrapper-kong">
+
+            </div>
+        </section> <!-- #content-wrapper -->
+
+    	</section> <!-- #page-wrapper -->
+
+         <!-- [loading scripts] -->
+
+        <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div><!--回到顶部-->
+        <div class="houtai-footer1"></div>
+          <div class="houtai-footer">
+            <ul class="houtai-box">
+
+                <li class="houtai-flex">
+
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                        <p>公告信息</p>
+                    </a>
+
+                </li>
+
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                        <p>对公贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html" >
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="cunkuandingjia.html" >
+                        <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                        <p>存款定价</p>
+                     </a>
+                </li>
+            </ul>
+        </div>
+       <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+       <script>
+           //var $ = jQuery.noConflict();
+               /*$(window).load(function() {
+                   Grid.init();
+               });*/
+
+			$(function(){
+        alert($(window).height())
+        $('#content-wrapper').css('min-height',$(window).height())
+			/*	$("#clk").click(function(){
+				var params = getCommonParams(document.cookie);
+                params.class = "depsoitfabupricingList";
+                params.RQ =$("#meeting").val();
+                params.TX =$("#tx option:selected").val();
+                params.JG1=params.S_organno;
+                params.CP =$("#cp option:selected").val();
+                  $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+                          debugger;
+                          if (r.status){
+                              $.each(r.result,function(i,v){
+                              $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                      +'<li>计算日期：<span>'+v.as_of_date+'</span></li>'
+                                      +'<li>机构号：<span>'+v.organno+'</span></li>'
+                                      +'<li>机构名称：<span>'+v.organname+'</span></li>'
+                                      +'<li>条线：<span>'+v.line_name+'</span></li>'
+                                      +'<li>产品名称：<span>'+v.item+'</span></li>'
+                                      +'<li>资金价值：<span>'+v.ftp_cost+'</span></li>'
+                                      +'<li>流动性成本：<span>'+v.ld_batch+'</span></li>'
+                                      +'<li>运营成本：<span>'+v.costs_rate_bm+'</span></li>'
+                                      +'<li>存款保险：<span>'+v.ckbx_batch+'</span></li>'
+                                      +'<li>目标收益率：<span>'+v.target_return+'</span></li>'
+                                      +'<li>存款价格：<span>'+v.ck_cost+'</span></li>'
+                                    +'</ul>'
+                            +'</div>').appendTo('#content');
+                         $(".wrapper-kong").css("height",0)
+
+                        });
+                        }else{
+                            alert(r.message);
+                          }
+                    },error:function(r){
+                      alert('请求失败，请稍候重试！！');
+                    }
+              });
+
+            })*/
+              $("#clk").click(function(){
+
+                              $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                      +'<li>计算日期：<span>2017-01-13</span></li>'
+                                      +'<li>机构号：<span>0001</span></li>'
+                                      +'<li>机构名称：<span>******</span></li>'
+                                      +'<li>条线：<span>对公条线</span></li>'
+                                      +'<li>产品名称：<span>整存整取</span></li>'
+                                      +'<li>资金价值：<span>150000</span></li>'
+                                      +'<li>流动性成本：<span>1000</span></li>'
+                                      +'<li>运营成本：<span>50000</span></li>'
+                                      +'<li>存款保险：<span>10000</span></li>'
+                                      +'<li>目标收益率：<span>100000</span></li>'
+                                      +'<li>存款价格：<span>30000</span></li>'
+                                    +'</ul>'
+                            +'</div>').appendTo('#content');
+                         $(".wrapper-kong").css("height",0)
+
+                        });
+
+
+    })
+       </script>
+       <script type="text/javascript" src="js/modernizr.custom.js"></script>
+       <script type="text/javascript" src="js/grid.js"></script>
+       <script type="text/javascript" src="js/main.js"></script>
+      <script src="js/cookie.js"></script>
+       <script type="text/javascript" src="js/public.js"></script>
+    </body>
+
+</html>

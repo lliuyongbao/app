@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>待审明细单</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading scripts] -->
+
+
+    </head>
+
+    <body>
+
+        <section id="page-wrapper">
+
+          <section id="menu-wrapper">
+
+             <!-- .menu -->
+
+          </section> <!-- #menu-wrapper -->
+
+          <section id="content-wrapper">
+
+            <section id="header">
+
+                <div id="header-left">
+                    <a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+                </div>
+
+                <div id="header-title">
+                    <h1>待审明细单</h1>
+                    <p style="font-size:.0.16rem;float: right;line-height:.5rem;margin-right: 0.1rem;" id="prevBtn">返 回
+                    </p>
+                </div>
+            </section> <!-- #header -->
+
+            <section id="content">            <!---->
+
+              <div class="content-divc">
+
+                <form action="#" method="get">
+                    <div class="content-div-form1g">
+                        <div class="content-wrapper-divkh">
+                            <h3>审批意见</h3>
+
+                             <div class="content-wrapper-div">
+                                <label for="spjl">
+                                    <span>审&nbsp;批&nbsp;结&nbsp;论&nbsp;</span>:
+                                    <select id="spjl" class="selectPointOfInterest" title="Select points of interest nearby" style="width:1.86rem;border-width: 0.01rem;border-color: #000;padding-right: 0;">
+                                          <option value="">-----请选择-----</option>
+                                          <option value="CREDIT">同意</option>
+                                          <option value="RETAIL">否决</option>
+                                          <option value="DESPOST">打回</option>
+                                    </select>
+                                </label>
+                                </br>
+                                <label for="spyj">
+                                    <span>审&nbsp;批&nbsp;意&nbsp;见&nbsp;</span>:
+                                    <textarea style="width:90%;height:2rem;border:0.01rem solid #000;resize: none;border-radius: 0.06rem;margin:0.05rem;">
+                                    </textarea>
+                                </label>
+
+                                <div class="content-wrapper-div">
+                                   <input type="button" name="" value="提交审批" style="border: 0.01rem solid #6cf; color:red;background: #ccc;width:97%;margin-right: 0.1rem;padding:0;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-wrapper-divkh">
+                            <h3>审批信息</h3>
+                            <div class="content-wrapper-div">
+                                <ul>
+                                    <li id="cust_id">审批人：<span id="djbh"></span></li>
+                                    <li id="ci_cust_level">审批状态：<span id="jg"></span></li>
+                                    <li id="ci_cust_level">审批意见：<span id="jg"></span></li>
+                                    <li id="cust_name">审批时间：<span id="djdzt"></span></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                          <div class="content-div-form1g">
+                              <h3>贷款定价单</h3>
+                                  <div class="content-wrapper-div">
+                                      <ul>
+                                         <li>定价编号：<span id="djbh"></span></li>
+                                          <li>定价单状态：<span id="djdzt"></span></li>
+                                          <li>机构：<span id="jg"></span></li>
+                                          <li>定价日期:<span id="djrq"></span></li>
+                                          <li>操作员：<span id="czy"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+
+                          <div class="wrapper-div-form1">
+                              <h3>客户信息</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>客户号：<span id="khh"></span></li>
+                                      <li>客户名称：<span id="khmc"></span></li>
+                                      <li>行业：<span id="hy"></span></li>
+                                      <li>客户规模: <span id="khgm"></span></li>
+                                      <li>信用等级：<span id="xydj"></span></li>
+                                      <li>条线: <span id="khtx"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>贷款信息</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>产品名称：<span id="cpmc"></span></li>
+                                       <li>起息日：<span id="qxr"></span></li>
+                                     <li>币种：<span id="bz"></span></li>
+                                      <li>贷款金额(元)：<span id="dkje"></span></li>
+                                      <li>贷款期限: <span id="dkqx"></span></li>
+                                       <li>期限单位: <span id="qxdw">月</span></li>
+
+                                       <li>利率类型: <span id="lvlx"></span></li>
+                                        <li>浮动频率: <span id="fdpl"></span></li>
+                                      <li>还款方式: <span id="hkfs"></span></li>
+                                      <li>还款频率: <span id="hkpl"></span></li>
+                                      <li>主担保方式：<span id="zdbfs"></span></li>
+                                      <li>通道费率: <span id="tdfl"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>定价结果</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>保本利率：<span id="bblv"></span></li>
+                                      <li>保本利率浮动比例：<span id="bblvfdbl"></span></li>
+                                      <li>保本利率EVA(元)：<span id="bblveva"></span></li>
+                                      <li>保本利率的RAROC：<span id="bblvraroc"></span></li>
+                                      <hr>
+                                  <!--     <li>基准利率: <span id="jzlv"></span></li>
+                                  <li>基准利率浮动比例: <span id="jzlvfdbl"></span></li>
+                                  <li>基准利率EVA(元)：<span id="jzlveca"></span></li> -->
+                                      <li>目标价格: <span id="mbjg"></span></li>
+                                      <li>目标利率浮动比例: <span id="mblvfdbl"></span></li>
+                                      <li>目标利率EVA(元)：<span id="mblveva"></span></li>
+                                       <li>目标利率RAROC：<span id="mblvraroc"></span></li>
+                                      <hr>
+                                      <li>优惠利率: <span id="yhlv"></span></li>
+                                      <li>优惠利率浮动比例: <span id="yhlvfdbl"></span></li>
+                                      <li>优惠利率EVA(元)：<span id="yhlveva"></span></li>
+                                      <li>优惠利率RAROC：<span id="yhlvraroc"></span></li>
+                                       <hr>
+                                      <li>执行利率: <span id="zxlv"></span></li>
+                                      <li>执行利率浮动比例: <span id="zxlvfdbl"></span></li>
+                                      <li>执行利率EVA(元)：<span id="zxlveva"></span></li>
+                                      <li>执行利率RAROC：<span id="zxlvraroc"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>过程参数</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>资金成本率：<span id="zjcbl"></span></li>
+                                      <li>运营成本率：<span id="yycbl"></span></li>
+                                      <li>风险成本率：<span id="fxcbl"></span></li>
+                                      <li>税收成本率: <span id="sscbl"></span></li>
+                                      <li>资本成本率: <span id="zbcbl"></span></li>
+                                      <li>目标收益率：<span id="jjlrl"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1 collateral">
+                              <h3>担保品</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                      <li>抵押名称：<span id="dymc"></span></li>
+                                      <li>担保类型：<span id="dblx"></span></li>
+                                      <li>抵押品类型：<span id="dyplx"></span></li>
+                                      <li">抵押品价值(元)：<span id="dypjz"></span></li>
+                                      <li>担保金额(元)：<span id="dbje"></span></li>
+                                      <li>担保总金额(元)：<span id="dbzje"></span></li>
+                                  </ul>
+                              </div>
+
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>历史优惠</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>客户分类信息：<span id="khflxx"></span></li>
+                                      <li>EVA贡献排序：<span id="evagxb"></span></li>
+                                      <li>EVA贡献总数：<span id="evagxb"></span></li>
+                                      <li>历史优惠BP：<span id="lsyh"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>存款业务派生承诺</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>存款派生业务类型：<span id="psywlx"></span></li><li id="cust_id">条线：<span id="psywlx"></span></li>
+                                     <li>期限(月)：<span id="psywlx"></span></li>
+                                      <li>派生业务金额(元)：<span id="psywje"></span></li>
+                                      <li>承诺客户利率(%)：<span id="psywje"></span></li>
+                                      <li>起息日：<span id="psywje"></span></li>
+
+                                  </ul>
+                              </div>
+                          </div>
+                           <div class="wrapper-div-form1">
+                              <h3>中间业务派生承诺</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>中间业务派生业务类型：<span id="psywlx"></span></li><li id="cust_id">条线：<span id="psywlx"></span></li>
+                                      <li>派生业务金额(元)：<span id="psywje"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="wrapper-div-form1">
+                              <h3>专项优惠</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>专项调整类型：<span id="zxtzlx"></span></li>
+                                      <li>专项调整评分：<span id="zxtz"></span></li>
+                                      <li>专项调整理由：<span id="zxtzly"></span></li>
+                                  </ul>
+                              </div>
+                          </div>
+                    </div>
+
+                </form>
+
+             </div>
+
+            </section>
+            <!-- #content -->
+          </section>
+          <div style="width:100%;height:.45rem;">
+
+          </div> <!-- #content-wrapper -->
+        </section> <!-- #page-wrapper -->
+  <!--     <div class="houtai-footer-ding"><a href="#"><img src="img/img1/shang.png" alt="回到顶部"></a></div> --><!--回到顶部-->
+        <div class="houtai-footer1"></div>
+          <div class="houtai-footer">
+            <ul class="houtai-box">
+                <li class="houtai-flex">
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                        <p>公告信息</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                        <p>对公贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html" >
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="kehuxinxi.html" >
+                        <img src="img/icons/20091003100600325.png" alt="客户信息" />
+                        <p>客户信息</p>
+                     </a>
+                </li>
+            </ul>
+          </div>
+    </body>
+   <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>       
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+    <script>
+
+       $(function (){
+            var localStoDetails = JSON.parse(localStorage.getItem("home"));
+            var trialInfo=JSON.parse(localStorage.getItem("trialInfo"));
+            var params={};
+            params.organno=localStoDetails.organno;
+            params.role_id=localStoDetails.role_id;
+            params.currentuserid=localStoDetails.user_id;
+            params.custID=trialInfo.custID; //待定
+            params.mon_flag=trialInfo.mon_flag;//待定
+            params.class = "appCutomerInfoListQuery2";
+            var infoJson={};
+            infoJson.dateValue=trialInfo.dateValue;
+            infoJson.customerInfo=trialInfo.customerInfo;
+            infoJson.productId=trialInfo.productId;
+            infoJson.operatorName=trialInfo.cust_name;
+            $("#prevBtn").click(function(){
+                window.location.href = "theTrialOrder.html?data="+escape(JSON.stringify(infoJson));
+            })
+          $.ajax({
+                url:port,
+                data:params,
+                dataType:'json',
+                cache:false,
+                success:function(r){
+                    if (r.status){
+                            $.each(r.result,function(i,v){
+                                $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                            +'<li>账号：<span>'+v.flp_account_id+'</span></li>'
+                                           +'<li>产品：<span>'+v.flp_product_name+'</span></li>'
+                                           +'<li>执行利率：<span>'+v.flp_cur_rate+'</span></li>'
+                                           +'<li>当前余额：<span>'+v.flp_cur_par_bal+'</span></li>'
+                                           +'<li>日均余额：<span>'+v.flp_month_avg_bal+'</span></li>'
+                                           +'<li>起息日：<span>'+v.flp_start_date+'</span></li>'
+                                           +'<li>到期日：<span>'+v.flp_maturity_date+'</span></li>'
+                                           +'<li>NI：<span>'+v.flp_month_ni+'</span></li>'
+                                           +'<li>EVA：<span>'+v.flp_month_eva+'</span></li>'
+                                           +'<li>RATOC：<span>'+v.flp_month_raroc+'</span></li>'
+                                    +'</ul>'
+                                +'</div>').appendTo('#content-wrapper');
+                            });
+                   }
+                   else{
+                        alert(r.message);
+                    }
+
+                },error:function(r){
+                    alert('请求失败！请稍后重试...');
+                }
+            });
+        });
+
+
+    </script>
+</html>

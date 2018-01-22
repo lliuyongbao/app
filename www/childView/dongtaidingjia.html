@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>新信贷贷款定价</title>
+
+    <!-- [loading stylesheets] -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <!-- [loading scripts] -->
+
+    <script type="text/javascript" src="../js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript">
+            var $ = jQuery.noConflict();
+            $(window).load(function() {
+                $('#slider').flexslider({
+                    animation: "slide",
+                    directionNav: true,
+                    animationLoop: false,
+                    controlNav: false,
+                    slideToStart: 1,
+                    slideshow: true,
+                    animationDuration: 300,
+                    start: function(){
+                         $('#slider').animate({opacity: 1}, 750);
+                    },
+                });
+            });
+    </script>
+    </head>
+
+    <body>
+
+        <section id="page-wrapper">
+
+            <section id="menu-wrapper">
+
+                <div id="menu-search">
+                    <input id="menu-search-input-text" type="text" placeholder="搜索" />
+                    <input id="menu-search-input-submit" type="submit" value="" />
+                </div>
+
+                <ul class="menu">
+
+                    <li id="a-submenu-1" class="icon plus">
+                        <a href="javascript:;">
+                            <span class="menu-li-title">客户管理</span>
+                            <img class="menu-li-arrow-submenu" src="../img/icons/submenu.png" alt="" />
+                        </a>
+                        <ul id="submenu-1">
+                          <li>
+                                <a href="../kehuxinxi.html">
+                                    <span class="menu-li-title">客户信息</span>
+                                    <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="../daikuandingjia.html">
+                                    <span class="menu-li-title">贷款定价</span>
+                                    <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="icon box"><!-- 公司贷款定价 -->
+                        <a href="../daikuanshisuan.html">
+                          <span class="menu-li-title">对公款定价</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+
+                    <li class="icon info"><!-- 小微贷款定价 -->
+                        <a href="../gerendaikuan.html">
+                          <span class="menu-li-title">个人贷款定价</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+
+                    <li class="icon book"><!--系统管理-->
+                        <a href="../cunkuandingjia.html">
+                          <span class="menu-li-title">存款定价</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+                    <li class="icon star"><!--系统管理-->
+                        <a href="../out.html">
+                          <span class="menu-li-title">退出系统</span>
+                          <img class="menu-li-arrow" src="../img/icons/arrow-forward.png" alt="" />
+                        </a>
+                    </li>
+                </ul> <!-- .menu -->
+
+            </section> <!-- #menu-wrapper -->
+
+            <section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu"><img src="../img/icons/menu.png" alt="menu" /></a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1>新信贷贷款定价</h1>
+                    </div>
+
+                    <div class="houtai-footert"></div>
+                    <div class="houtai-footer">
+                         <ul class="houtai-box">
+                             <li class="houtai-flex">
+                                <a href="xinxindaikehudingjia.html">
+                                    <p>信贷客户信息</p>
+                                </a>
+                            </li>
+                            <li class="houtai-flex">
+                                <a href="mubiaoshouyidingjia.html">
+                                    <p>目标收益定价</p>
+                                </a>
+                            </li>
+                            <li class="houtai-flex">
+                                 <a href="dongtaidingjia.html" >
+                                     <p>动态定价</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section> <!-- #header -->
+
+
+
+            <section id="content">
+                <!--历史优惠信息-->
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>历史优惠信息</h2>
+                            <div class="wrapper-form-div">
+                                <ul>
+                                    <li>客户分类信息：<span>核心客户</span></li>
+                                    <li>EVA贡献排序：<span>440</span></li>
+                                    <li>历史优惠BP：<span>30</span></li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <!--客户派生业务列表-->
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>客户派生业务列表<input type="button" class="xinzen-btn" value="新增" /> </h2>
+                        <div class="xinzen-btnt-div" style="display: none;">
+                            <h2>新增抵押品信息</h2>
+                            <label>
+                                <form action="#" method="get">
+                                <ul>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp信&nbsp息&nbsp</span>&nbsp：<input type="text" /></li>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp类&nbsp型&nbsp</span>&nbsp：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                    </select></li>
+                                    <li><span>&nbsp抵押品价值(元)：</span><input type="text" /></li>
+                                    <li class="xinzen-btnt-div-li">
+                                        <input type="button" value="取消" class="xinzen-btn1" /><input type="button" value="确定" class="xinzen-btn1" />
+                                    </li>
+                                </ul>
+                                </form>
+                            </label>
+                        </div>
+                        <ul>
+                            <li class="li-xinxi"><span>暂无数据</span></li>
+                            <li>派生优惠BP：<span></span></li>
+                        </ul>
+                        <!-- <input type="button" value="提交" class="btnv" /> -->
+                    </div>
+                </div>
+                <!--专项调整信息-->
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>专项调整信息<input type="button" class="xinzen-btn" value="新增" /> </h2>
+                        <div class="xinzen-btnt-div" style="display: none;">
+                            <h2>新增抵押品信息</h2>
+                            <label>
+                                <form action="#" method="get">
+                                <ul>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp信&nbsp息&nbsp</span>&nbsp：<input type="text" /></li>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp类&nbsp型&nbsp</span>&nbsp：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                    </select></li>
+                                    <li><span>&nbsp抵押品价值(元)：</span><input type="text" /></li>
+                                    <li class="xinzen-btnt-div-li">
+                                        <input type="button" value="取消" class="xinzen-btn1" /><input type="button" value="确定" class="xinzen-btn1" />
+                                    </li>
+                                </ul>
+                                </form>
+                            </label>
+                        </div>
+                        <ul>
+                            <li class="li-xinxi"><span>暂无数据</span></li>
+                            <li>派生优惠BP：<span></span></li>
+                        </ul>
+                        <!-- <input type="button" value="提交" class="btnv" /> -->
+                    </div>
+                </div>
+                <!--客户派生业务列表-->
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>客户派生业务列表<input type="button" class="xinzen-btn" value="新增" /> </h2>
+                        <div class="xinzen-btnt-div" style="display: none;">
+                            <h2>新增客户派生业务信息</h2>
+                            <label>
+                                <form action="#" method="get">
+                                <ul>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp信&nbsp息&nbsp</span>&nbsp：<input type="text" /></li>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp类&nbsp型&nbsp</span>&nbsp：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                    </select></li>
+                                    <li><span>&nbsp抵押品价值(元)：</span><input type="text" /></li>
+                                    <li class="xinzen-btnt-div-li">
+                                        <input type="button" value="取消" class="xinzen-btn1" /><input type="button" value="确定" class="xinzen-btn1" />
+                                    </li>
+                                </ul>
+                                </form>
+                            </label>
+                        </div>
+                        <ul>
+                            <li class="li-xinxi"><span>暂无数据</span></li>
+                            <li>派生优惠BP：<span></span></li>
+                        </ul>
+                        <!-- <input type="button" value="提交" class="btnv" /> -->
+                    </div>
+                </div>
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>专项调整信息<input type="button" class="xinzen-btn" value="新增" /> </h2>
+                        <div class="xinzen-btnt-div" style="display: none;">
+                            <h2>新增专项调整</h2>
+                            <label>
+                                <form action="#" method="get">
+                                <ul>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp信&nbsp息&nbsp</span>&nbsp：<input type="text" /></li>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp类&nbsp型&nbsp</span>&nbsp：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                    </select></li>
+                                    <li><span>&nbsp抵押品价值(元)：</span><input type="text" /></li>
+                                    <li class="xinzen-btnt-div-li">
+                                        <input type="button" value="取消" class="xinzen-btn1" /><input type="button" value="确定" class="xinzen-btn1" />
+                                    </li>
+                                </ul>
+                                </form>
+                            </label>
+                        </div>
+                        <ul>
+                            <li class="li-xinxi"><span>暂无数据</span></li>
+                            <li>派生优惠BP：<span></span></li>
+                        </ul>
+                        <!-- <input type="button" value="提交" class="btnv" /> -->
+                    </div>
+                </div>
+                <!--价格调整-->
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>价格调整<input type="button" class="xinzen-btn" value="计算" /> </h2>
+                        <div class="xinzen-btnt-div" style="display: none;">
+                            <h2>价格调整</h2>
+                            <label>
+                                <form action="#" method="get">
+                                <ul>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp信&nbsp息&nbsp</span>&nbsp：<input type="text" /></li>
+                                    <li><span>&nbsp抵&nbsp押&nbsp品&nbsp类&nbsp型&nbsp</span>&nbsp：<select id="selectPointOfInterest" title="Select points of interest nearby">
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                        <option>房地产抵押-住宅-公寓</option>
+                                    </select></li>
+                                    <li><span>&nbsp抵押品价值(元)：</span><input type="text" /></li>
+                                    <li class="xinzen-btnt-div-li">
+                                        <input type="button" value="取消" class="xinzen-btn1" /><input type="button" value="确定" class="xinzen-btn1" />
+                                    </li>
+                                </ul>
+                                </form>
+                            </label>
+                        </div>
+                        <ul>
+                            <li class="li-xinxi"><span>暂无数据</span></li>
+                            <li>派生优惠BP：<span></span></li>
+                        </ul>
+                        <!-- <input type="button" value="提交" class="btnv" /> -->
+                    </div>
+                </div>
+                <!--利率信息汇总-->
+                <div class="wrapper wrapper-divge">
+                    <div class="wrapper-div-form1g">
+                        <h2>利率信息汇总</h2>
+                            <div class="wrapper-form-div">
+                                <p>基准利率</p>
+                                <p>&nbsp&nbsp利率值/优惠BP：<span>6.0%</span></p>
+                                <p>&nbsp浮动比例:<span>1.4%</span></p>
+                                <p>&nbsp&nbspEVA:<span>6.0%</span></p>
+                            </div>
+                            <div class="wrapper-form-div">
+                                <p>目标利率利率</p>
+                                <p>&nbsp&nbsp利率值/优惠BP：<span>6.0%</span></p>
+                                <p>&nbsp浮动比例:<span>1.4%</span></p>
+                                <p>&nbsp&nbspEVA:<span>6.0%</span></p>
+                            </div>
+                            <div class="wrapper-form-div">
+                                <p>价格调整</p>
+                                <p>&nbsp&nbsp利率值/优惠BP：<span>6.0%</span></p>
+                                <p>&nbsp浮动比例；<span>1.4%</span></p>
+                                <p>&nbsp&nbspEVA:57730.16%</p>
+                            </div>
+                            <div class="wrapper-form-div">
+                                <p>优惠利率</p>
+                                <p>&nbsp&nbsp利率值/优惠BP：<span>6.0%</span></p>
+                                <p>&nbsp浮动比例；<span>1.4%</span></p>
+                                <p>&nbsp&nbspEVA:<span>6.0%</span></p>
+                            </div>
+                    </div>
+                </div>
+            </section> <!-- #content -->
+
+            </section> <!-- #content-wrapper -->
+        </section> <!-- #page-wrapper -->
+    </body>
+    <script>
+        ;{//新增抵押信息的按钮
+            $(function (){
+
+                $(".xinzen-btn").click(function(){
+
+                    if($(".xinzen-btnt-div").css("display")=="none"){
+                        $(".xinzen-btnt-div").show();
+                    }else{
+                        $(".xinzen-btnt-div").hide();
+                    }
+                });
+
+             });
+        }
+        ;{
+
+        }
+    </script>
+</html>

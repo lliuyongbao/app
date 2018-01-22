@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+
+		<!-- [portable options] -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta name="telephone=no" content="format-detection">
+
+		<title>对公贷款定价试算</title>
+
+		<!-- [loading stylesheets] -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/icon.css">
+		<style type="text/css">
+
+            .wrapper-form-div input{
+                width:1.48rem;
+                height:0.24rem;
+                border:0.02rem solid #ccc;
+                margin-bottom:0.1rem;
+                padding:0;
+            }
+            .wrapper-form-div select{
+                height:0.26rem;
+                border:0.02rem solid #ccc;
+                padding:0;
+            }
+            .wrapper-form-div span{
+                display:inline-block;
+                width:0.9rem;
+                text-align:left;
+                overflow:hidden;
+                letter-spacing:0.05rem;
+                vertical-align:middle;
+            }
+             .wrapper-form-div label{
+                margin-bottom:0.02rem;
+             }
+            #lblSelect .selectPointOfInterest{
+                font-size:.13rem;
+                width:1.48rem;
+            }
+            label#lblSelect{
+                margin-bottom:0;
+            }
+            #x-goto-top{
+                bottom:1.2rem;
+            }
+		</style>
+		<!-- [loading scripts] -->
+
+	</head>
+
+	<body>
+		<section id="page-wrapper">
+            <div id="mengbanbeij">
+                <!--加载动画-->
+                <div class="zr_main">
+                    <div class="loadEffect">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+			<section id="menu-wrapper">
+				<!-- .menu -->
+			</section>
+			<!-- #menu-wrapper -->
+
+			<section id="content-wrapper">
+
+				<section id="header">
+
+					<div id="header-left">
+						<a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+					</div>
+
+					<div id="header-title">
+						<h1>对公贷款定价试算</h1>
+					</div>
+				</section>
+				<!-- #header -->
+
+				<section id="content" style="height:100%;">
+					<!---->
+					<div class="content-divc">
+
+						<form action="#" method="get" id="formId">
+                            <!-- 客户信息 -->
+                            <div class="content-div-form1g">
+                                <h2 style="border-radius: 0.1rem 0.1rem 0 0;">客户信息</h2>
+                                <div class="wrapper-form-div">
+                                    <label class="label-1 zr_duiqi1">
+                                        <span id="clientNum">
+                                        客户号
+                                        </span>:
+                                        <input id="khh" type="text" value="" name="" placeholder="点击客户号获取客户列表" class="infoCheck" />
+                                    </label></br>
+
+                                    <label class="label-2 zr_duiqi1">
+                                        <span>客户名称</span>:
+                                        <input type="text" id="khmc" value="" name="name" placeholder="请输入客户名称" required class="infoCheck" />
+                                    </label></br>
+                                    <label class="label-3 zr_duiqi1">
+                                        <span>机构名</span>:
+                                        <input type="text" id="branchId" class="infoCheck"/>
+                                        <input type="text" id="jgm" style="border:none" required hidden />
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-4 zr_duiqi1">
+                                        <span>客户规模</span>:
+                                        <select class="zr_duiqi2 selectPointOfInterest infoCheck" id="khgm" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-4 zr_duiqi1">
+                                        <span>信用等级</span>:
+                                        <select class="zr_duiqi2 selectPointOfInterest infoCheck" id="khxydj" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-5 zr_duiqi1">
+                                        <span>条线</span>:
+                                        <select class="zr_duiqi2 selectPointOfInterest infoCheck" id="khtx" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+                                    <label id="lblSelect" class="label-6 zr_duiqi1">
+                                        <span style="letter-spacing:0rem;width:1rem;">客户行业名称</span>:
+                                        <select class="selectPointOfInterest zr_duiqi2 infoCheck" id="khhymc" title="Select points of interest nearby">
+                                            <option>--请选择--</option>
+                                        </select>
+                                    </label></br>
+                                </div>
+                            </div>
+                            <!-- 贷款信息 -->
+                            <div class="wrapper-div-form1g">
+                                <h2>贷款信息</h2>
+                                <div class="wrapper-form-div">
+
+                                    <label id="lblSelect" class="label-7 zr_duiqi1">
+                                        <span>使用币种</span>:
+                                        <input class="zr_duiqi2 infoCheck" type="text" id="sybz" value="人民币" name="id" placeholder="人民币" style="color:#ccc" disabled="true" value="人民币" />
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-8 zr_duiqi1">
+                                        <span>产品名称</span>:
+                                        <input class="zr_duiqi2 infoCheck" type="text" id="productId" value="" name="id" placeholder="点击选择产品" required />
+                                    </label></br>
+
+
+                                    <label id="lblSelect" class="label-4 zr_duiqi1 labelHidden" style="display:none;">
+                                        <span style="letter-spacing:0rem;">通道费率(%)</span>:
+                                        <input type="text" id="tdfl" value="" name="name" placeholder="请输入费率值" />
+                                    </label>
+
+                                    <label class="label-9 zr_duiqi1">
+                                        <span style="letter-spacing:0rem;">贷款金额(元)</span>:
+                                        <input class="zr_duiqi2 infoCheck" type="text" id="dkje" value="" name="id" placeholder="请输入贷款金额" required />
+                                    </label>
+                                    <label class="label-9 zr_duiqi1">
+                                        <span>期限</span>:<input class="zr_duiqi2 infoCheck" placeholder="请输入贷款期限" type="text" id="qx" value="" />
+                                    </label>
+                                    <label id="lblSelect" class="label-10 zr_duiqi1">
+                                        <span>期限单位</span>:
+                                        <select class="selectPointOfInterest zr_duiqi2 infoCheck" id="qxdw" title="Select points of interest nearby">
+                                            <option value=''>--请选择--</option>
+                                        </select>
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-12 zr_duiqi1">
+                                        <span>利率类型</span>:
+                                        <select class="selectPointOfInterest zr_duiqi2 infoCheck" id="lvlx" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+                                    <label id="lblSelect" class="label-15 zr_duiqi1">
+                                        <span>浮动频率</span>:
+                                        <select class="selectPointOfInterest" id="fdpl" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+
+                                    <label class="label-13 zr_duiqi1">
+                                        <span>起息日</span>:
+                                        <input class="infoCheck" id="qxr" type="date" value="2017-01-13" style="height:0.26rem;border-width: 0.02rem;" />
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-6 zr_duiqi1">
+                                        <span style="letter-spacing:0rem;">主担保方式</span>:
+                                        <select class="zr_duiqi2 selectPointOfInterest infoCheck" id="zdbfs" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+                                </div>
+                            </div>
+                            <!-- 还款方式 -->
+                            <div class="wrapper-div-form1">
+                                <h2>还款方式</h2>
+                                <div class="wrapper-form-div">
+                                    <label id="lblSelect" class="label-14 zr_duiqi1">
+                                        <span class="spnCls">还款方式</span>:
+                                        <select class="selectPointOfInterest infoCheck" id="hkfs" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                            <!--<option value="DEBJ">等额本金</option>
+                                            <option value="DEBX">等额本息</option>
+                                            <option value="DQHBFCFX">到期还本分次付息</option>
+                                            <option value="DQYCHBFX">到期一次还本付息</option>
+                                            <option value="HKJH">还款计划</option>-->
+                                        </select>
+                                    </label></br>
+
+                                    <label id="lblSelect" class="label-15 zr_duiqi1">
+                                        <span class="spnCls">还款频率</span>:
+                                        <select class="selectPointOfInterest" id="hkpl" title="Select points of interest nearby">
+                                            <option value="">--请选择--</option>
+                                        </select>
+                                    </label></br>
+                                </div>
+                            </div>
+                            <!-- 还款计划 -->
+                            <div class="wrapper-div-form1" id="zr_hkjh">
+                                <h2>还款计划</h2>
+                                <div class="wrapper-form-div-btng" id="xzhkjh">
+                                    <form action="#" method="get">
+                                        <div class="xinzen-btnt-div wrapper-form-div" style="display: none;">
+                                            <h2>新增还款计划</h2>
+                                            	<label id="lblSelec" class="label-14 zr_duiqi1" style="margin-left:0.15rem;">
+	                                                <span class="spnClsC">还款日期</span>:
+	                                                <input class="hkrq" id="hkrq" type="date" value="" />
+                                                </label></br>
+                                                <label id="lblSelec" class="label-14 zr_duiqi1" style="margin-left:0.15rem;">
+	                                                <span class="spnClsC">还款金额</span>:
+	                                                <input class="zr_duiqi2 zr_hkje" type="text" id="hkje" value="" name="id" placeholder="" style="vertical-align: middle;"/>
+	                                            </label>
+                                                </br>
+                                            <div align="center" style="overflow:hidden">
+                                                <input type="button" id="hkCancle" value="取消" class="xinzen-btn1" style="height:0.24rem; float:none;display: inline-block;" />
+                                                <input type="button" id="planConfirm" value="确定" class="xinzen-btn1" style="height:0.24rem; float:none; display: inline-block;" />
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                                    <input style="margin-top: 0rem;" type="button" class="xinzen-btn" value="新增" />
+                                </div>
+
+                            </div>
+                            <!-- 抵押品 -->
+                            <div class="wrapper-div-form1" id="zr_a_yangshi">
+                                <h2>抵押品信息</h2>
+                                <div class="wrapper-form-div-btng" id="xzdypxx">
+                                    <form action="#" method="get">
+                                        <div class="xinzen-btnt-div wrapper-form-div" style="display: none;">
+                                            <h2>新增抵押品信息</h2>
+                                            <label id="lblSelect" class="label-9" style="margin-left:0.15rem;">
+                                                <span style="width:0.9rem;letter-spacing:0rem;">抵押品名称</span>: <input id="dypxx" class="dypCheck" type="text" style="width:1.48rem;vertical-align: middle;" />
+                                            </label></br>
+                                            <label id="lblSelect" class="label-9" style="margin-left:0.15rem;">
+                                                <span style="width:0.9rem;">担保方式</span>:
+                                                <select id="dbfs" class="selectPointOfInterest dypCheck" title="Select points of interest nearby" style="margin-left:0;">
+                                                    <option value="">-----请选择-----</option>
+                                                </select>
+                                            </label></br>
+                                            <label id="lblSelect" class="label-9" style="margin-left:0.15rem;">
+                                                <span style="width:0.9rem;vertical-align: middle;letter-spacing:0rem;">抵押品类型
+                                                </span>:
+                                                <select id="dyplx" class="selectPointOfInterest dypCheck" title="Select points of interest nearby" style="margin-left:0;">
+                                                    <option value="">-----请选择-----</option>
+                                                </select>
+                                            </label></br>
+                                            <label id="lblSelect" class="label-9" style="margin-left:0.15rem;">
+                                                <span style="width:0.9rem;vertical-align: middle;letter-spacing:0rem;">抵押品价值</span>:</span>
+                                                <input id="dypjz" class="dypCheck" type="text" style="width:1.48rem;vertical-align: middle;"/>
+                                            </label></br>
+                                            <label id="lblSelect" class="label-9" style="margin-left:0.15rem;">
+                                                <span style="width:0.9rem;vertical-align: middle;letter-spacing:0rem;">担保金额(元)</span>:</span>
+                                                <input id="dbje" class="dypCheck" type="text" style="width:1.48rem;vertical-align: middle;"/>
+                                            </label></br>
+                                            <label id="lblSelect" class="label-9" style="margin-left:0.15rem;">
+                                                <span style="width:0.9rem;vertical-align: middle;letter-spacing:0rem;">担保总金额</span>:</span>
+                                                <input id="dbzje" type="text" class="dypCheck" style="width:1.48rem;vertical-align: middle;"/>
+                                            </label></br>
+                                            <div align="center" style="overflow:hidden">
+                                                <input type="button" id="dypCancle" value="取消" class="xinzen-btn1" style="height:0.24rem; float:none;display: inline-block;" />
+                                                <input type="button" id="dypConfirm" value="确定" class="xinzen-btn1" style="height:0.24rem; float:none; display: inline-block;" />
+                                            </div>
+
+                                        </div>
+									</form>
+
+									<input style="margin-top: 0rem;" type="button" class="xinzen-btn" value="新增" />
+								</div>
+							</div>
+                                 <input type="button" value="下一步" class="btn1" style="margin-left: 0.7rem; background: #6cf;line-height: 0.1rem;width:1.6rem;display:block;margin-bottom:0.1rem;" onclick="shisuan()" id="submit" />
+                            <div style="width:100;height:0.1rem;">
+
+                                  </div>
+					   </form>
+                    </div>
+				</section>
+				<!-- #content -->
+			</section>
+			<!-- #content-wrapper -->
+		</section>
+		<!-- #page-wrapper -->
+		<div id="x-goto-top">
+          <a href="#">
+            <div id="x-arrow">
+            </div>
+            <div id="x-stick">
+            </div>
+          </a>
+        </div>
+		<!--回到顶部-->
+            <!-- 机构模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius:0.1rem;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size:0.15rem">选择机构</h4>
+            </div>
+            <div class="modal-body">
+              <section>
+                    <label id="lblSelect" class="label-12">
+                      <span class="modalSpn">机构</span>:
+                        <select class="selectPointOfInterest" id="organ" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+                    <label id="lblSelect" class="label-12">
+                      <span class="modalSpn">支行机构</span>:
+                        <select class="selectPointOfInterest" id="organBranch" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+                    <label id="lblSelect" class="label-12">
+                      <span class="modalSpn">二级支行</span>:
+                        <select class="selectPointOfInterest" id="organBranchTwo" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+              </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+      </div>
+
+    <!-- 产品模态框 -->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius:0.1rem;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size:0.15rem">选择产品</h4>
+            </div>
+            <div class="modal-body">
+              <section>
+                    <label id="lblSelect" class="label-12">
+                        <span class="modalSpn">产品</span>:
+                        <select class="selectPointOfInterest" id="product" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+                    <label id="lblSelect" class="label-12">
+                      <span class="modalSpn">子产品</span>:
+                        <select class="selectPointOfInterest" id="productBranch" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+                    <label id="lblSelect" class="label-12">
+                      <span class="modalSpn">三级产品</span>:
+                        <select class="selectPointOfInterest" id="productBranchTwo" title="Select points of interest nearby">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </label></br>
+
+              </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm2" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+      </div>
+	</body>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+	<script>
+
+	$(function(){
+        //显示默认机构
+            var zr_dt = JSON.parse(localStorage.getItem("home"));
+
+            $("#branchId").val(zr_dt.organname);
+            $("#branchId").attr("name",zr_dt.branch_id);
+            //机构模态框选择
+            $("#branchId").click(function(event) {
+                $("#myModal").modal();
+            });
+
+            //产品模态框选择
+            $("#productId").click(function(event) {
+                $("#myModal2").modal();
+            });
+
+              //弹出机构模态框
+            $('#myModal').on('shown.bs.modal', function () {
+                $("#organ").children('option[value!=""]').remove();
+                $("#organBranch").children('option[value!=""]').remove();
+                $("#organBranchTwo").children('option[value!=""]').remove();
+                    var params={};
+                    params.class="appGetOrgList";
+                    $.ajax({
+                        url:port,
+                        data:params,
+                        dataType:'json',
+                        cache:false,
+                        success:function(r){
+                          if (r.status){
+                            for(var i=0;i<r.result.length;i++){
+                                var organno=r.result[i].organno;
+                                var organname=r.result[i].organname;
+                                var opt="<option value='" +organno +"'>"+organname+"</option>";
+                                $("#organ").append(opt);
+                            }
+                          }else{
+                            alert(r.message);
+                          }
+                        },error:function(r){
+                          alert('请求失败，请稍候重试！！');
+                        }
+                    });
+            });
+
+              //弹出产品模态框
+            $('#myModal2').on('shown.bs.modal', function () {
+                $("#product").children('option[value!=""]').remove();
+                $("#productBranch").children('option[value!=""]').remove();
+                $("#productBranchTwo").children('option[value!=""]').remove();
+                    var params={};
+                    params.class="appGetProductPubList";
+                    params.dp_prod_type=0;
+                    $.ajax({
+                        url:port,
+                        data:params,
+                        dataType:'json',
+                        cache:false,
+                        success:function(r){
+                          if (r.status){
+                            for(var i=0;i<r.result.length;i++){
+                                 var dp_prod_id=r.result[i].dp_prod_id;
+                                 var dp_prod_name=r.result[i].dp_prod_name;
+                                 var opt="<option value='" +dp_prod_id +"'>"+dp_prod_name+"</option>";
+                                 $("#product").append(opt);
+                             }
+                          }else{
+                            alert(r.message);
+                          }
+                        },error:function(r){
+                          alert('请求失败，请稍候重试！！');
+                        }
+                    });
+            });
+
+              //请求产品二级菜单
+            $("#product").change(function(){
+                $("#productBranchTwo").val("");
+                    productChioce(this,"appGetProductPubList2","productBranch");
+
+            })
+            //请求产品三级菜单
+            $("#productBranch").change(function(){
+                productChioce(this,"appGetProductPubList2","productBranchTwo");
+            })
+            //请求机构二级菜单
+            $("#organ").change(function(){
+                $("#organBranchTwo").val("");
+                linkageChioce(this,"appGetOrgList2","organBranch");
+
+            })
+            //请求机构三级菜单
+            $("#organBranch").change(function(){
+                linkageChioce(this,"appGetOrgList2","organBranchTwo");
+            })
+              //机构封装调用
+            function linkageChioce(obj,cls,id){
+                $("#"+id).children('option[value!=""]').remove();
+                var electVal=$(obj).children('option:selected').val();
+                var params={};
+                 params.class=cls;
+                 params.organno=electVal;
+                if(electVal!=""){
+                   $.ajax({
+                        url:port,
+                        data:params,
+                        dataType:'json',
+                        cache:false,
+                        success:function(r){
+
+                          if (r.status){
+                            for(var i=0;i<r.result.length;i++){
+                                var organno=r.result[i].organno;
+                                var organname=r.result[i].organname;
+                                var opt="<option value='" +organno +"'>"+organname+"</option>";
+                                $("#"+id).append(opt);
+                            }
+                          }else{
+                            alert(r.message);
+                          }
+                        },error:function(r){
+                          alert('请求失败，请稍候重试！！');
+                        }
+                    });
+                }else{
+                  alert("请选择机构")
+                }
+            }
+
+              //产品封装调用
+            function productChioce(obj,cls,id){
+                $("#"+id).children('option[value!=""]').remove();
+                var electVal=$(obj).children('option:selected').val();
+                var params={};
+                 params.class=cls;
+                 params.up_dp_prod_id=electVal;
+                 params.dp_prod_type=0;
+                if(electVal!=""){
+                   $.ajax({
+                        url:port,
+                        data:params,
+                        dataType:'json',
+                        cache:false,
+                        success:function(r){
+                          if (r.status){
+                            for(var i=0;i<r.result.length;i++){
+                                var dp_prod_id=r.result[i].dp_prod_id;
+                                var dp_prod_name=r.result[i].dp_prod_name;
+                                var opt="<option value='" +dp_prod_id +"'>"+dp_prod_name+"</option>";
+                                $("#"+id).append(opt);
+                            }
+                          }else{
+                            alert(r.message);
+                          }
+                        },error:function(r){
+                          alert('请求失败，请稍候重试！！');
+                        }
+                    });
+                }else{
+                  alert("请选择产品")
+                }
+            }
+              //机构模态框关闭时返显数据
+            $("#confirm").click(function(){
+                var organVal=$("#organ option:selected").val();//机构value
+                var organTxt=$("#organ option:selected").text();//机构文本
+
+                var organBranchVal=$("#organBranch option:selected").val();//支行value
+                var organBranchTxt=$("#organBranch option:selected").text();//支行文本
+
+                var organBranchTwoVal=$("#organBranchTwo option:selected").val();//二级支行value
+                var organBranchTwoTxt=$("#organBranchTwo option:selected").text();//二级支行文本
+
+                if(organBranchTwoVal!=""){
+                 $("#branchId").val(organBranchTwoTxt);
+                 $("#branchId").attr("name",organBranchTwoVal);
+                }
+                if(organBranchTwoVal=="" && organBranchVal!=""){
+                 $("#branchId").val(organBranchTxt);
+                 $("#branchId").attr("name",organBranchVal);
+                }
+
+                if(organBranchTwoVal=="" && organBranchVal=="" && organVal!=""){
+                 $("#branchId").val(organTxt);
+                 $("#branchId").attr("name",organVal);
+                }
+                if(organBranchTwoVal=="" && organBranchVal=="" && organVal==""){
+                   $("#branchId").val("");
+                }
+
+            });
+              //产品模态框关闭时返显数据
+            $("#confirm2").click(function(){
+                var productVal=$("#product option:selected").val();//机构value
+                var productTxt=$("#product option:selected").text();//机构文本
+
+                var productBranchVal=$("#productBranch option:selected").val();//支行value
+                var productBranchTxt=$("#productBranch option:selected").text();//支行文本
+
+                var productBranchTwoVal=$("#productBranchTwo option:selected").val();//二级支行value
+                var productBranchTwoTxt=$("#productBranchTwo option:selected").text();//二级支行文本
+
+                if(productBranchTwoVal!=""){
+                 $("#productId").val(productBranchTwoTxt);
+                 $("#productId").attr("name",productBranchTwoVal);
+                }
+                if(productBranchTwoVal=="" && productBranchVal!=""){
+                 $("#productId").val(productBranchTxt);
+                 $("#productId").attr("name",productBranchVal);
+                }
+
+                if(productBranchTwoVal=="" && productBranchVal=="" && productVal!=""){
+                 $("#productId").val(productTxt);
+                 $("#productId").attr("name",productVal);
+                }
+                if(productBranchTwoVal=="" && productBranchVal=="" && productVal==""){
+                   $("#productId").val("");
+                }
+                //产品名称为某些值时 判断通道频率的显示隐藏
+                    if($("#productId").attr("name") == "LXDYW" || $("#productId").attr("name") == "1020022"){
+                        $(".labelHidden").show();
+                    }else{
+                        $(".labelHidden").hide();
+                    }
+
+            });
+            var zt_kaiguan = true;
+            //动态下拉框生成
+			var paramsOne = {};
+			paramsOne.class = "appCreditcalculaParmter";
+
+			$.ajax({
+				url: port,
+				data: paramsOne,
+				dataType: 'json',
+				cache: false,
+				success: function(r) {
+					if(r.status) {
+                        /*客户规模;*/
+                        $.each(r.result.custScaleIColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.dcs_scale_id + "'>" + v.dcs_scale_desc + "</option>").appendTo('#khgm');
+                        });
+                        /*条线*/
+                        $.each(r.result.custLineiColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.line_id + "'>" + v.line_name + "</option>").appendTo('#khtx');
+                        });
+                        /*客户行业名称*/
+                        $.each(r.result.custIndustryIColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.dci_up_indu_id + "'>" + v.dci_up_indu_name + "</option>").appendTo('#khhymc');
+                        });
+						/*信用等级;*/
+						$.each(r.result.custLeveliColl, function(i, v) {
+							//console.log(v.optionid)
+							$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#khxydj');
+						});
+                        /*期限单位;*/
+                        $.each(r.result.termTypeiColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#qxdw');
+                        });
+                         $("#qxdw option[value='M']").attr("selected",true);
+                        /*利率类型;*/
+                        $.each(r.result.interestRateicoll, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#lvlx');
+                        });
+
+                        /*浮动频率;*/
+                        $.each(r.result.floatPrIColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#fdpl');
+                        });
+						/*还款方式;*/
+						$.each(r.result.payTypefrIColl, function(i, v) {
+							//console.log(v.optionid)
+							$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#hkfs');
+						});
+                        /*还款频率;*/
+                        $.each(r.result.repaymentFreIColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#hkpl');
+                        });
+                        /*主担保方式;*/
+                        $.each(r.result.loanValueMaxPriceIColl, function(i, v) {
+                            //console.log(v.optionid)
+                            $("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#zdbfs');
+                        });
+						/*抵押品类型;*/
+						$.each(r.result.pledgeTypeIColl, function(i, v) {
+							//console.log(v.optionid)
+							$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#dyplx');
+						});
+						/*担保方式；*/
+						$.each(r.result.dblexIColl, function(i, v) {
+							//console.log(v.optionid)
+							$("<option value='" + v.optionid + "'>" + v.optionname + "</option>").appendTo('#dbfs');
+						});
+                        var str = unescape(location.href);
+                        //取得整个地址栏
+                        var data = {};
+                        if(str.indexOf("?") > -1) {
+                            var num = str.indexOf("?");
+                            str = str.substr(num + 1);
+                            data = eval(str);
+                        }
+                        if(JSON.stringify(data)!="{}"){
+                            $("#khh").val(data.cust_id); //客户号
+                            $("#khmc").val(data.cust_name); //客户名称
+                            $("#khxydj").val(data.ci_cust_level); //信用等级
+                            $("select#khhymc").val(data.ci_cust_indu); //行业名称
+                            $("#khgm").val(data.ci_cust_scale_id); //规模
+                        }
+				    }
+				},
+				error: function(r) {
+					//alert('请求失败，请稍候重试！！');
+				}
+			});
+
+            $("#zr_hkjh").hide();
+			//还款计划显示隐藏
+			$("#hkfs").change(function() {
+				var opt = $("#hkfs").val();
+                if(opt == 'DQYCHBFX' || opt == "HKJH"){
+                    $("#hkpl").val('');
+                    $("#hkpl").attr("disabled", "disabled");
+                    $("#hkpl").css("color", "#999");
+                }else{
+                    $("#hkpl").removeAttr("disabled");
+                    $("#hkpl").css("color", "#000099");
+                }
+				if(opt == "HKJH") {
+                    $("#zr_hkjh").show();
+				}else{
+                    $("#zr_hkjh").hide();
+				}
+			});
+            //利率类型显示隐藏
+			$("#lvlx").on('change', function() {
+				var opt = $("#lvlx").val();
+				if(opt == 'GDLL') {
+					$("#fdpl").val('');
+					$("#fdpl").attr("disabled", "disabled");
+                    $("#fdpl").css("color", "#999");
+				} else {
+					$("#fdpl").removeAttr("disabled");
+                    $("#fdpl").css("color", "#000099");
+				}
+			});
+
+			//起息日获取系统时间
+			function p(s) {
+				return s < 10 ? '0' + s : s;
+			}
+
+			var myDate = new Date();
+			//获取当前年
+			var year = myDate.getFullYear();
+			//获取当前月
+			var month = myDate.getMonth() + 1;
+			//获取当前日
+			var date = myDate.getDate();
+
+			var start_date = year + '-' + p(month) + "-" + p(date);
+			$("#qxr").val(start_date);
+            //起息日不能小于当前日期
+            $("#qxr").change(function(event) {
+               var changeTime = new Date($(this).val().replace(/\-/g,"\/")).getTime();
+               var mydateTime = myDate.getTime();
+               if(changeTime < mydateTime){
+                    alert("起息日不能小于当前日期");
+                    $("#qxr").val(start_date);
+               }
+            });
+
+            //点击弹出客户选择
+            $("#clientNum").click(function() {
+                window.open('kehuhao.html?parent="daikuanshisuan"', '_parent');
+            });
+            //新增还款计划
+            $(".xinzen-btn").eq(0).click(function() {
+                if($(this).parent().find("div.xinzen-btnt-div").css("display") == "none") {
+                    $(this).parent().find("#hkrq").val("");
+                    $(this).parent().find("#hkje").val("");
+                    $(this).parent().find("div.xinzen-btnt-div").show();
+                } else {
+                    $(this).parent().find("div.xinzen-btnt-div").hide();
+                }
+            });
+            //新增还款计划信息
+            $("#planConfirm").click(function() {
+                if($("#hkrq").val()==""){
+                    alert("还款日期不能为空");
+                    return;
+                };
+                if($("#hkje").val()==""){
+                    alert("还款金额不能为空");
+                    return;
+                };
+                //校验还款金额
+                var reg = /^[1-9]\d*(\,\d{3})*(\.\d{2})?$/;
+                var hkje = $("#hkje").val();
+                if(!reg.test(hkje)){
+                    alert('还款金额请输入数字');
+                    return;
+                }
+                //校验日期
+                var beginTime = new Date($("#qxr").val().replace(/\-/g,"\/")).getTime();
+                var endTime = new Date($("#hkrq").val().replace(/\-/g,"\/")).getTime();
+                if(endTime <= beginTime){
+                    alert("还款日期不能低于起息日");return;
+                }
+                $(".xinzen-btnt-div").eq(0).hide();
+                $("#xzhkjh").before('<div class="content-wrapper-div">'+
+                    '<ul>' +
+                    '<li>还款日期:<span class="hkrqList">' + $("#hkrq").val() + '</span></li>' +
+                    '<li class="hkjexlist">还款金额:<span class="hkjeList">' + $("#hkje").val() + '</span></li>' +
+                    '<li class=""><a href="javascript:;" class="zr_a_yangshi">删除</a></li>' +
+                    '<li class=""><div style="border:0.01rem solid #ccc"></div></li>' +
+                    '</ul>' +
+                    '</div>');
+            });
+
+
+            //冒泡删除还款计划信息
+            $("#zr_hkjh").on('click', 'a', function() {
+                $(this).parents(".content-wrapper-div").remove();
+            })
+
+            $("#hkCancle").click(function() {
+                $(".xinzen-btnt-div").eq(0).hide();
+            });
+           //新增抵押品信息
+           $(".xinzen-btn").eq(1).click(function() {
+                    if($(this).parent().find("div.xinzen-btnt-div").css("display") == "none") {
+                        $("#dypxx").val("");
+                        $("#dyplx").val("");
+                        $("#dypjz").val("");
+                        $("#dbje").val("");
+                        $("#dbzje").val("");
+                        $("#dbfs").val("");
+                        $(this).parent().find("div.xinzen-btnt-div").show();
+                    } else {
+                        $(this).parent().find("div.xinzen-btnt-div").hide();
+                    }
+                });
+
+    		//新增抵押品信息确认
+    		$("#dypConfirm").click(function() {
+                var arr = ['抵押品名称','担保方式','抵押品类型','抵押品价值','担保金额','担保总金额']
+                for(var i=0;i<$(".dypCheck").length;i++){
+                    if($(".dypCheck").eq(i).val()==""){
+                        alert(arr[i]+"不能为空");return;
+                    }
+                };
+                if($("#dbje").val() > $("#dbzje").val()){
+                    alert("担保金额不能大于担保总金额");
+                    return;
+                }
+    			$(".xinzen-btnt-div").eq(1).hide();
+
+    			$("#xzdypxx").before('<div class="content-wrapper-div">' +
+    				'<ul>' +
+    				'<li class="dyplxlistId" style="display:none">抵押品类型ID:<span>' + $("#dyplx").val() + '</span></li>' +
+    				'<li>抵押品名称:<span class="dypxxList">' + $("#dypxx").val() + '</span></li>' +
+                    '<li>担保方式:<span class="dbfsList">' + $("#dbfs").find("option:selected").text() + '</span></li>' +
+                    '<li style="display:none">担保方式ID:<span class="dbfsIdList">' + $("#dbfs").find("option:selected").val() + '</span></li>' +
+    				'<li>抵押品类型:<span class="dyplxList">' + $("#dyplx").find("option:selected").text() + '</span></li>' +
+                    '<li style="display:none">抵押品类型ID:<span class="dyplxIdList">' + $("#dyplx").find("option:selected").val() + '</span></li>' +
+    				'<li>抵押品价值:<span class="dypjzList">' + $("#dypjz").val() + '</span></li>' +
+                    '<li>担保金额:<span class="dbjeList">' + $("#dbje").val() + '</span></li>' +
+                    '<li>担保总金额:<span class="dbzjeList">' + $("#dbzje").val() + '</span></li>' +
+    				'<li class="dyplxval" style="display:none"><span>' + $("#dyplx").val() + '</span></li>' +
+                    '<li class=""><a href="javascript:;" class="zr_a_yangshi">删除</a></li>' +
+                    '<li class=""><div style="border:0.01rem solid #ccc"></div></li>' +
+    				'</ul>' +
+    				'</div>');
+    		});
+
+    		//冒泡删除抵押品信息
+    		$("#zr_a_yangshi").on('click', 'a', function() {
+    			$(this).parents(".content-wrapper-div").remove();
+    		})
+
+    		$("#dypCancle").click(function() {
+    			$(".xinzen-btnt-div").eq(1).hide();
+    		});
+
+
+
+
+    });
+
+        //class转字符串
+
+        function class2Str(objName){
+            var objArr = document.getElementsByClassName(objName);
+            var retStr = "";
+            if(objArr!=null && objArr!=undefined && objArr.length>0){
+                for(var i =0;i<objArr.length;i++){
+                    if(i==0){
+                        retStr = objArr[i].innerHTML;
+                    }else{
+                        retStr = retStr + "," + objArr[i].innerHTML;
+                    }
+                }
+            }
+            return retStr;
+
+        }
+		//ajax获取信息
+		function shisuan() {
+            var arr = ['客户号','客户名称','机构名','客户规模','信用等级','条线','客户行业名称','使用币种','产品名称','贷款金额','期限','期限单位','利率类型','起息日','主担保方式','还款方式']
+            for(var i=0;i<$(".infoCheck").length;i++){
+                if($(".infoCheck").eq(i).val()==""){
+                    alert(arr[i]+"不能为空");return;
+                }
+            };
+            //当还款频率不为还款计划和 到期一次还本时
+            if($("#hkfs").val() != "DQYCHBFX" && $("#hkfs").val() != "HKJH" && $("#hkpl").val() == ""){
+                alert("还款频率不能为空");return;
+            }
+            //当利率类型为浮动利率时
+            if($("#lvlx option:selected").val() == "FDLL"){
+                if($("#fdpl").val() ==""){
+                    alert("浮动频率不能为空");return;
+                }
+            }
+            //校验金额、期限为数字
+            var reg = /^[1-9]\d*(\,\d{3})*(\.\d{2})?$/;
+            var shur_je = $("#dkje").val();
+            if(!reg.test(shur_je)){
+                alert('贷款金额请输入数字');
+                return false
+            }
+            if(isNaN($("#qx").val())){
+                alert('期限请输入数字');return;
+            }
+            if(isNaN($("#tdfl").val())){
+                alert('通道费率请输入数字');return;
+            }
+
+                var prev = 0;
+                var next = 0;
+             //还款日期和起息日作比较
+            $('.hkrqList').each(function(i) {
+                prev = new Date($(this).html().replace(/\-/g,"\/")).getTime();
+                if(prev > next) {
+                    next = prev;
+
+                } else {
+                    alert("还款日期顺序有误!");
+                    return;
+                }
+            });
+            //当选择还款计划是判断还款日期
+            if($("#hkfs option:selected").val() == "HKJH"){
+                //起息日加期限和最后一次还款计划比较
+                var qx = $("#qx").val(); //期限
+                var qxdw= $("#qxdw").val(); //期限单位
+                var begin_date = $("#qxr").val().split("-");
+                var begin_time = new Date(begin_date[0]+'/'+begin_date[1]+'/'+begin_date[2]).getTime();
+                var len = $('.hkrqList').length-1;
+                var end_date = $('.hkrqList').eq(len).html().split("-");
+                var end_time = new Date(end_date[0]+'/'+end_date[1]+'/'+end_date[2]).getTime();
+                var date_time;
+                switch(qxdw){
+                    case "D":
+                        date_time=Number(qx)*24*60*60*1000;
+                        break;
+                    case "M":
+                        date_time=Number(qx)*30*24*60*60*1000;
+                        break;
+                    case "Y" :
+                         date_time=Number(qx)*365*30*24*60*60*1000;
+                }
+                if(end_time > (begin_time+date_time)){
+                    alert('还款日期超出期限日期');return;
+                };
+
+                //还款金额与贷款金额比较
+                var dkje = $("#dkje").val();
+                var count=0;
+                if($(".hkjeList").length == 1){
+                    if($(".hkjeList").html() < dkje){
+                        alert("还款金额与贷款金额不符");
+                        return;
+                    }
+                }else{
+                    $(".hkjeList").each(function(i, v) {
+                        count+=Number($(this).html());
+                    });
+                    if(count < dkje){
+                        alert("还款金额与贷款金额不符");
+                        return;
+                    }
+                }
+            }
+			var params = JSON.parse(localStorage.getItem("home"));
+			params.class = "appNewCreditCustomerPricingCalculateQuery";
+			var custInfo = {
+				"cust_id": $("#khh").val(), //客户号
+				"cust_name": $("#khmc").val(), //客户名称
+				"cust_branch_id": $("#branchId").attr("name"), //机构编码
+				"cust_scale_code": $("#khgm option:selected").val(),//客户规模
+				"cust_credit_level": $("#khxydj option:selected").val(), //客户信用等级
+                "channel_rate": $("#tdfl").val(), //通道费率
+                "line_id": $("#khtx option:selected").val(), //条线
+                "cust_industry": $("#khhymc option:selected").val(), //客户行业名称
+				"loan_currency": "CNY", //币种
+				"loan_product_id": $("#productId").attr("name"), //产品名称
+				"loan_bal": $("#dkje").val(), //贷款金额
+				"loan_termdetail": $("#qx").val(), //期限
+                "loan_termdetailtype": $("#qxdw option:selected").val(), //期限单位
+				"loan_interest_id": $("#lvlx option:selected").val(), //利率类型
+                "loan_floating_frequency": $("#fdpl option:selected").val(), //浮动频率
+				"loan_value_date": $("#qxr").val(), //起息日
+                "loan_value_max_price": $("#zdbfs option:selected").val(), //主担保方式
+				"loan_repayment_type": $("#hkfs option:selected").val(), //还款方式
+				"loan_repayment_frequency": $("#hkpl option:selected").val(), //还款频率
+                "lap_amort_bal_Arr": class2Str("hkrqList"), //还款日期
+                "lap_amort_date_Arr": class2Str("hkjeList"), //还款金额
+                "loan_mortgage_name": class2Str("dypxxList"), //抵押品名称
+                "loan_mortgage_max_price": class2Str("dbfsIdList"), //担保方式ID
+                "loan_mortgage_type": class2Str("dyplxIdList"), //抵押品类型ID
+                "loan_mortgage_bal": class2Str("dypjzList"), //抵押品价值
+                "total_guarantee_amount_price": class2Str("dbjeList"), //担保金额
+                "total_guarantee_amount_price2": class2Str("dbzjeList"), //担保总金额
+				//"pricing_info_id":"20170331173419280301kXs168uu731d" //唯一标识号
+			};
+            params.custInfo=JSON.stringify(custInfo);
+			$.ajax({
+				url: port,
+				data: params,
+				dataType: 'json',
+				cache: false,
+                beforeSend:function(){
+                    $("#submit").attr("disabled",true);
+
+                },
+				success: function(r) {
+					if(r.status) {
+							window.location.href = "shisuanjieguo.html?data=" + escape(JSON.stringify(r.result));
+
+					} else {
+						alert(r.message);
+					}
+				},
+                complete:function(){
+                    $("#submit").removeAttr('disabled')
+                },
+				error: function(r) {
+					alert('请求失败!请稍后重试...');
+				}
+			});
+
+		};
+
+
+	</script>
+
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+    <!-- [portable options] -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>零售定价单明细</title>
+
+    <!-- [loading stylesheets] -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+
+    <!-- [loading scripts] -->
+        <style type="text/css" media="screen">
+      #myModal .modal-body label{
+          font-size:0.12rem;
+      }
+      #myModal .modal-body label .sp{
+           display:inline-block; width:1rem;letter-spacing:0.01rem;vertical-align:middle;
+      }
+      #myModal .modal-body label input{
+           vertical-align:middle;margin:0 0.02rem;
+      }
+      #myModal .modal-body label ul li{
+           float:left;margin-right: 0.02rem;font-size:0.12rem;
+      }
+      #approvalBox span{
+           margin-bottom: 0.02rem;display: inline-block;font-size:0.15rem;letter-spacing:0.05rem;font-weight:100;
+      }
+      #approvalBox select{
+         width:1.7rem;border-width: 0.01rem;border-color: #000;padding-right: 0;font-size:0.15rem;margin-bottom:0rem;
+      }
+      #approvalBox p{
+          font-size:0.12rem;width: 100%; color:#ccc;margin-bottom: 0.02rem;
+      }
+      #approvalBox textarea{
+          width:100%;height:2rem;border:0.01rem solid #000;resize: none;border-radius: 0.06rem;
+      }
+      #approvalBox input{
+          border: 0.01rem solid #6cf; color:red;background: #ccc;margin-left: -0.1rem;padding:0;
+      }
+    </style>
+
+
+    </head>
+
+    <body>
+
+    	<section id="page-wrapper">
+
+        	<section id="menu-wrapper">
+
+               <!-- .menu -->
+
+            </section> <!-- #menu-wrapper -->
+
+        	<section id="content-wrapper">
+
+                <section id="header">
+
+                    <div id="header-left">
+                        <a href="#" id="a-menu"><img src="img/icons/menu.png" alt="menu" /></a>
+                    </div>
+
+                    <div id="header-title">
+                        <h1 style="margin-left:0.4rem">零售详情</h1>
+                        <p style="font-size:.0.16rem;float: right;line-height:.5rem;margin-right: 0.1rem;" id="prevBtn"><返 回
+                        </p>
+                    </div>
+                </section> <!-- #header -->
+
+                <section id="content">
+                  <!---->
+                  <div class="content-divc">
+
+                    <form action="#" method="get">
+                    	<div class="wrapper-div-form1" id="approvalBox">
+                              <h3>审批意见</h3>
+                               <div class="content-wrapper-div" style="margin:0.15rem;margin-right:0rem;">
+                                  <label for="spjl">
+                                      <span>审批结论</span>:
+                                      <select id="spjl" class="selectPointOfInterest" title="Select points of interest nearby">
+                                      </select>
+                                  </label>
+                                  <br />
+                                  <label for="spyj" style="width:100%;">
+                                      <span>审批意见</span>:
+                                      <p>您可以输入150个字,现在还剩余 <span id="word" style="color:#666;font-size:0.12rem;">148</span> 个</p>
+                                      <textarea id="contentLen" style="width:90%;"></textarea>
+                                  </label>
+
+                                  <div class="content-wrapper-div">
+                                     <input type="button" name="" value="提交审批" id="subApproval">
+                                  </div>
+                              </div>
+                          </div>
+                          <!--<div class="wrapper-div-form1 approval">
+                              <h3>审批信息</h3>
+                              <div class="content-wrapper-div">
+                                  <ul>
+                                     <li>审批人信息:<span id="sprxx"></span></li>
+                                      <li>审批状态:<span id="spzt"></span></li>
+                                      <li>审批意见:<span id="spyj"></span></li>
+                                      <li>审批时间:<span id="spsj"></span></li>
+                                  </ul>
+                              </div>
+                          </div>-->
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                    	
+                        <div class="content-div-form1g">
+                            <div class="content-wrapper-divkh">
+								<h3>客户基本信息</h3>
+								<div class="content-wrapper-div">
+									<ul>
+										<!--<li id="cust_id">定价单号：<span id="djbh">SHT201710310003350387</span></li>-->
+										<li id="">机构：<span id="cust_branch_name"></span></li>
+										<!--<li id="cust_name">客户编号：<span id="djdzt">010000000068527</span></li>-->
+										<li id="">客户名称：<span id="cust_name1"></span></li>
+                                        <!--<li id="cust_name">性别:<span id="djrq">男</span></li>-->
+                                        <!--<li id="ci_cust_level">信用等级：<span id="czy">AAA</span></li>-->
+                                        <!--<li id="ci_cust_level">证件类型：<span id="czy">身份证</span></li>
+                                        <li id="ci_cust_level">证件号码：<span id="czy">120103199999999999</span></li>
+                                        <li id="ci_cust_level">联系电话：<span id="czy">10086</span></li>
+                                        <li id="ci_cust_level">移动号码：<span id="czy">10010</span></li>-->
+									</ul>
+								</div>
+							</div>
+                            <div class="wrapper-div-form1">
+                                <h3>贷款信息</h3>
+								<div class="content-wrapper-div">
+									<ul class='hkjh'>
+										<li id="">贷款种类：<span id="loan_product_name"></span></li>
+										<li id="">条线：<span id="line_name"></span></li>
+										<li id="">币种：<span id="loan_currency"></span></li>
+										<li id="">贷款金额(元): <span id="loan_bal"></span></li>
+										<li id="">期限: <span id="loan_term"></span></li>
+										<li id="">期限单位：<span id="term_type_name"></span></li>
+										<li id="">利率特性：<span id="loan_interest_name"></span></li>
+										<li id="">利率调整周期(月)：<span id="loan_floating_frequency"></span></li>
+										<li id="">还款方式：<span id="loan_repayment_type_name"></span></li>
+										<li id="">还款频率(月)：<span id="loan_repayment_frequency"></span></li>
+										<li id="">起息日：<span id="loan_value_date"></span></li>
+										<li id="">主担方式：<span id="loan_value_max_price_name"></span></li>
+										<!--<li id="">还款日期：<span id="xydj"></span></li>
+										<li id="">还款金额：<span id="xydj"></span></li>
+										<li id="">还款日期：<span id="xydj"></span></li>
+										<li id="">还款金额：<span id="xydj"></span></li>-->
+									</ul>
+								</div>
+							</div>
+                            <div class="wrapper-div-form1">
+                                <h3>定价结果</h3>
+                                <div class="content-wrapper-div">
+                                    <ul>
+                                        <li id="">保本利率：<span id="res_breakeven_price"></span></li>
+                                        <li id="">保本利率浮动比例：<span id="res_breakeven_price_percent"></span></li>
+                                        <li id="">保本利率EVA(元)：<span id="res_breakeven_price_eva"></span></li>
+                                        <li id="">保本利率RAROC: <span id="res_breakeven_price_raroc"></span></li>
+                                        <li style="width: 100%;height: 2px;background: #C0C0C0;"></li>
+                                        <li id="">基准利率：<span id="res_baseline_rate"></span></li>
+                                        <li id="">基准利率浮动比例：<span id="">0</span></li>
+                                        <li id="">基准利率EVA(元)：<span id="res_baseline_rate_eva"></span></li>
+                                        
+                                        <li style="width: 100%;height: 2px;background: #C0C0C0;"></li>
+                                        <li id="">目标价格：<span id="res_target_price"></span></li>
+                                        <li id="">目标利率浮动比例：<span id="res_target_price_percent"></span></li>
+                                        <li id="">目标利率EVA(元)：<span id="res_target_price_eva"></span></li>
+                                        <li id="">目标利率RAROC: <span id="res_target_price_raroc"></span></li>
+                                        <li style="width: 100%;height: 2px;background: #C0C0C0;"></li>
+                                        <li id="">执行利率：<span id="res_exercise_rate"></span></li>
+                                        <li id="">执行利率浮动比例：<span id="res_exercise_rate_percent"></span></li>
+                                        <li id="">执行利率EVA(元)：<span id="res_exercise_rate_eva"></span></li>
+                                        <li id="">执行利率RAROC: <span id="res_exercise_rate_raroc"></span></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="wrapper-div-form1">
+                                <h3>过程参数</h3>
+                                <div class="content-wrapper-div">
+                                    <ul>
+                                        <li id="">资金成本率：<span id="res_ftp_cost"></span></li>
+                                        <li id="">运营成本率：<span id="res_oper_rate"></span></li>
+                                        <li id="">风险成本率：<span id="res_el_rate"></span></li>
+                                        <li id="">税收成本率: <span id="res_tax_rate"></span></li>
+                                        <li id="">资本成本率: <span id="res_minimum_returns"></span></li>
+                                        <li id="">目标收益率：<span id="res_target_returns"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                              <div class="wrapper-div-form1" style="display: none;">
+                                <h3>过程参数1</h3>
+                                <div class="content-wrapper-div">
+                                    <ul>
+                                        <li id="">资金成本率(扣除资本利息回扣前)：<span id="zjcbl"></span></li>
+                                        <li id="">违约概率：<span id="yycbl"></span></li>
+                                        <li id="">违约损失率：<span id="fxcbl"></span></li>
+                                        <li id="">经济资本系数: <span id="sscbl"></span></li>
+                                        <li id="">最低回报要求: <span id="zjcbl"></span></li>
+                                        <li id="">目标收益率：<span id="jjlrl"></span></li>
+                                        <li id="">资本利息回扣：<span id="jjlrl"></span></li>
+                                        <li id="">增值税率：<span id="jjlrl"></span></li>
+                                        <li id="">增值税附加率：<span id="jjlrl"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                             <div class="wrapper-div-form1 collateral">
+                                <h3>担保品</h3>
+                                
+                             </div>
+                             
+                             
+                            <div class="wrapper-div-form1 shenpxinxi" id="shenpixinxi" style="display: none;">
+                                <h3>审批信息</h3>
+                                <!--<div class="content-wrapper-div">
+                                    <ul>
+                                      <li>审批人信息:<span id="sprxx"></span></li>
+                                      <li>审批状态:<span id="spzt"></span></li>
+                                      <li>审批意见:<span id="spyj"></span></li>
+                                      <li>审批时间:<span id="spsj"></span></li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                            
+                            
+
+							</div>
+                        </div>
+                    </form>
+
+                 </div>
+
+                </section> <!-- #content -->
+               <div class="wrapper-kong"></div>
+            </section> <!-- #content-wrapper -->
+    	</section> <!-- #page-wrapper -->
+      <div id="x-goto-top">
+          <a href="#">
+            <div id="x-arrow">
+            </div>
+            <div id="x-stick">
+            </div>
+          </a>
+      </div><!--回到顶部-->
+      <!-- 同意时模态框 -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+      <div class="modal-dialog">
+        <div class="modal-content" style="border-radius:0.1rem;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size:0.15rem">路由选择</h4>
+            	<span id="identifier" style="display:none;"></span>
+            </div>
+            <div class="modal-body">
+            	<section id="modal-white" style="text-align:center;line-height:1.22rem">
+                    加载中...
+              </section>
+              <section id="modal-body" style="display:none">
+                    <label id="lblSelect" class="label-12">
+                      <span class="sp">下一流程选择</span>:<br/>
+                           <input type="radio" name="" value="" style="vertical-align: middle;margin:0 0.02rem;" checked="true"><span style="vertical-align: middle;" id="nextProcess"></span><span id="nextProcessNum" style="display:none;"></span>
+                    </label><br />
+                    <label id="lblSelect" class="label-12">
+                      <span class="sp">下一审批人选择</span>:
+                        <div style="vertical-align:middle;">
+                            <ul style="overflow:hidden" id="nextApprover">
+                            </ul>
+                        </div>
+                    </label><br />
+
+              </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+      </div>
+      
+      
+      
+        <div class="houtai-footer1"></div>
+          <div class="houtai-footer">
+            <ul class="houtai-box">
+                <li class="houtai-flex">
+                    <a href="shouye.html">
+                        <img src="img/icons/20091003100600258.png" alt="客户管理" />
+                        <p>公告信息</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="public2">
+                    <a href="daikuanshisuan.html">
+                        <img src="img/icons/20091003100559341.png" alt="对公贷款定价" />
+                        <p>对公贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex" id="person2">
+                     <a href="gerendaikuan.html" >
+                        <img src="img/icons/20091003100600651.png" alt="个人贷款定价" />
+                         <p>个人贷款定价</p>
+                    </a>
+                </li>
+                <li class="houtai-flex">
+                    <a href="cunkuandingjia.html" >
+                        <img src="img/icons/20091003100600325.png" alt="存款定价" />
+                        <p>存款定价</p>
+                     </a>
+                </li>
+            </ul>
+          </div>
+          
+                 <!-- 打回时模态框 -->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+        <div class="modal-content" style="border-radius:0.1rem;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="font-size:0.15rem">打回选择</h4>
+            </div>
+            <div class="modal-body">
+            	<section id="modal-white2" style="text-align:center;line-height:1.22rem">
+                    加载中...
+              </section>
+              <section id="modal-body2" style="display:none">
+                    <label id="lblSelect" class="label-12">
+                        <span style="display:inline-block; width:1rem;font-size:0.12rem;">请选择下一节点</span>:
+                        <select class="selectPointOfInterest" id="product" title="Select points of interest nearby" style="width:1.6rem;">
+                        </select>
+                    </label><br/>
+                    <label id="lblSelect" class="label-12">
+                      <span style="display:inline-block; width:1rem;font-size:0.12rem;">请选择下一处理人</span>:
+                        <select class="selectPointOfInterest" id="productBranch" title="Select points of interest nearby" style="width:1.6rem;">
+                        </select>
+                    </label><br/>
+
+              </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="confirm3" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm2" data-dismiss="modal" style="padding: 0 0.1rem;border-radius:0.05rem">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal -->
+      </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+    </body>
+   <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>   
+    <script src="js/mui.js"></script>
+    <script src="js/muiBack.js"></script>
+   <script>
+	$(function(){
+		var localStoDetails = JSON.parse(localStorage.getItem("home"));
+		var custInfo=JSON.parse(localStorage.getItem("custInfo2"));
+		var params={};
+            params.pricing_info_id=custInfo.pricing_info_id;
+            params.webservice_id=custInfo.webservice_id;
+            params.pricing_sheet_id=custInfo.lps_sht_id;
+            params.lps_bs_status=custInfo.lps_bs_status;
+            params.class = "appRetailPricingBillDetail";
+            
+            var infoJson={};
+            infoJson.dateValue=custInfo.dateValue;
+            infoJson.customerInfo=custInfo.customerInfo;
+            infoJson.branchId=custInfo.branchId;
+            infoJson.productId=custInfo.productId;
+            infoJson.operatorName=custInfo.operatorName;
+            console.log(custInfo);
+            var str = unescape(location.href);
+			
+			//取得整个地址栏  (返回键)
+
+              var data1 = {};
+              if(str.indexOf("?") > -1) {
+                var num = str.indexOf("?");
+                str = str.substr(num + 1); //提取
+                data1 = eval(str);
+              }
+              if(data1==1){
+              	$("#approvalBox").hide();
+              	$("#header-title h1").html("零售贷款试算单明细");
+                $("#prevBtn").click(function(){
+                	//alert(1);
+                    window.location.href = "lingshoudaikshisuan.html?data="+escape(JSON.stringify(infoJson));
+                })
+              }else if(data1==2){
+              	$("#approvalBox").hide();
+              	$("#header-title h1").html("用信定价单明细");
+                $("#prevBtn").click(function(){
+                    window.location.href = "lingshoudingjdan.html?data="+escape(JSON.stringify(infoJson));
+                })
+              }else if(data1==3){
+              	$("#approvalBox").show();
+              	$("#header-title h1").html("待审用信定价单明细");
+              	$("#prevBtn").click(function(){
+                    window.location.href = "daishenkehudingjlieb.html?data="+escape(JSON.stringify(infoJson));
+                })
+              }
+			$.ajax({
+                url:port,
+                data:params,
+                dataType:'json',
+                cache:false,
+                success:function(r){
+                    if (r.status){
+                         var data=r.result;
+                         console.log(data);
+                           //客户基本信息
+                          $("#cust_branch_name").html(data.loanBillInfoiColl[0].cust_branch_name);
+                          $("#cust_name1").html(data.loanBillInfoiColl[0].cust_name);
+                         
+                          //贷款信息
+                          $("#loan_product_name").html(data.loanBillInfoiColl[0].loan_product_name);
+                          $("#line_name").html(data.loanBillInfoiColl[0].line_name);
+                          $("#loan_currency").html('人民币');
+                          $("#loan_bal").html(data.loanBillInfoiColl[0].loan_bal);
+                          $("#loan_term").html(data.loanBillInfoiColl[0].loan_term);
+                          $("#term_type_name").html(data.loanBillInfoiColl[0].term_type_name);
+                          $("#loan_interest_name").html(data.loanBillInfoiColl[0].loan_interest_name);
+                          $("#loan_floating_frequency").html(data.loanBillInfoiColl[0].loan_floating_frequency);
+                          $("#loan_repayment_type_name").html(data.loanBillInfoiColl[0].loan_repayment_type_name);
+                          $("#loan_repayment_frequency").html(data.loanBillInfoiColl[0].loan_repayment_frequency);
+                          $("#loan_value_date").html(data.loanBillInfoiColl[0].loan_value_date);
+                          $("#loan_value_max_price_name").html(data.loanBillInfoiColl[0].loan_value_max_price_name);
+                          //定价结果
+                          //保本
+                          $("#res_breakeven_price").html(data.loanBillInfoiColl[0].res_breakeven_price);
+                          $("#res_breakeven_price_percent").html(data.loanBillInfoiColl[0].res_breakeven_price_percent);
+                          $("#res_breakeven_price_eva").html(data.loanBillInfoiColl[0].res_breakeven_price_eva);
+                          $("#res_breakeven_price_raroc").html(data.loanBillInfoiColl[0].res_breakeven_price_raroc);
+                          //基准
+                          $("#res_baseline_rate").html(data.loanBillInfoiColl[0].res_baseline_rate);
+                          $("#res_baseline_rate_eva").html(data.loanBillInfoiColl[0].res_baseline_rate_eva);
+                          //目标
+                          $("#res_target_price").html(data.loanBillInfoiColl[0].res_target_price);
+                          $("#res_target_price_percent").html(data.loanBillInfoiColl[0].res_target_price_percent);
+                          $("#res_target_price_eva").html(data.loanBillInfoiColl[0].res_target_price_eva);
+                          $("#res_target_price_raroc").html(data.loanBillInfoiColl[0].res_target_price_raroc);
+                          //执行
+                          $("#res_exercise_rate").html(data.loanBillInfoiColl[0].res_exercise_rate);
+                          $("#res_exercise_rate_percent").html(data.loanBillInfoiColl[0].res_exercise_rate_percent);
+                          $("#res_exercise_rate_eva").html(data.loanBillInfoiColl[0].res_exercise_rate_eva);
+                          $("#res_exercise_rate_raroc").html(data.loanBillInfoiColl[0].res_exercise_rate_raroc);
+						// 过程参数
+                          $("#res_ftp_cost").html(data.loanBillInfoiColl[0].res_ftp_cost);
+                          $("#res_oper_rate").html(data.loanBillInfoiColl[0].res_oper_rate);
+                          $("#res_el_rate").html(data.loanBillInfoiColl[0].res_el_rate);
+                          $("#res_tax_rate").html(data.loanBillInfoiColl[0].res_tax_rate);
+                          $("#res_minimum_returns").html(data.loanBillInfoiColl[0].res_minimum_returns);
+                          $("#res_target_returns").html(data.loanBillInfoiColl[0].res_target_returns);
+						  //还款计划
+						   if(data.hkjhicoll.length!=0){
+                              $(".hkjh").find('.hkjh222').remove();
+                              $.each(data.hkjhicoll,function(i,v){
+                                 $('<div class="hkjh222">'
+                                      +'<li>还款时间:<span id="dblx">'+ v.lp_loan_plan_date+'</span></li>'
+                                      +'<li>还款金额:<span id="dblx">'+ v.lp_loan_plan_bal+'</span></li>'
+                                    +'</div>'
+                               +'</div>').appendTo('.hkjh');
+                             });
+                          }
+						
+                          //担保品
+                          if(data.loanMortgageIColl.length!=0){
+                              $(".collateral").find('.content-wrapper-div').remove();
+                              $.each(data.loanMortgageIColl,function(i,v){
+                                 $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                      +'<li>抵押名称('+(i+1)+'):<span id="dymc">'+ v.lm_mtg_name+'</span></li>'
+                                      +'<li>担保类型:<span id="dblx">'+ v.lm_mtg_max_price_name+'</span></li>'
+                                      +'<li>抵押品类型:<span id="dyplx">'+ v.lm_mtg_type_name+'</span></li>'
+                                      +'<li>抵押品价值(元):<span id="dypjz">'+ v.lm_mtg_appraise+'</span></li>'
+                                      +'<li>担保金额(元):<span id="dbje">'+ v.total_guarantee_amount_price+'</span></li>'
+                                      +'<li>担保总金额(元):<span id="dbzje">'+ v.total_guarantee_amount_price2+'</span></li>'
+                                    +'</ul>'
+                                    +'</div>'
+                               +'</div>').appendTo('.collateral');
+                             });
+                          }else{
+                              $(".collateral").find('.content-wrapper-div').remove();
+                             $('<div style="color:#999;text-align:center;line-height:0.8rem;font-size:.18rem;">暂无担保品!</div>').appendTo('.collateral');
+
+                          }
+                          
+                      //审批信息
+                          if(data.WorkFlowRecordInfoIColl.length!=0){
+                          	  $('#shenpixinxi').show();
+                              $(".shenpxinxi").find('.content-wrapper-div').remove();
+                              $.each(data.WorkFlowRecordInfoIColl,function(i,v){
+                              	if(v.app_advice == undefined){
+                              		v.app_advice = ''
+                              	}
+                              	if(v.nodeendtimes == undefined || v.nodeendtimes == 'null'){
+                              		v.nodeendtimes = ''
+                              	}
+                              	
+                                 $('<div class="content-wrapper-div">'
+                                    +'<ul>'
+                                      +'<li>审批人信息:<span id="dblx">'+ v.nodename+'</span></li>'
+                                      +'<li>审批状态:<span id="dyplx">'+ v.status+'</span></li>'
+                                      +'<li>审批意见:<span id="dypjz">'+ v.app_advice+'</span></li>'
+                                      +'<li>审批时间:<span id="dbje">'+ v.nodeendtimes+'</span></li>'
+                                    +'</ul>'
+                                    +'</div>'
+                               +'</div>').appendTo('.shenpxinxi');
+                             });
+                          }else{
+                             $(".shenpxinxi").find('.content-wrapper-div').remove();
+                        	$('#shenpixinxi').hide();
+
+                          }
+                          
+                        //审批结论
+                          $.each(data.selIColl,function(i, v) {
+                             $("<option value='" + v.enname + "'>" + v.cnname + "</option>").appendTo('#spjl');
+                          });
+                          $("#spjl option[value='10']").attr("selected",true);
+                          $("#contentLen").val("同意");
+                          //审批意见改变时文本域值改变
+                          $("#spjl").change(function(event) {
+                            var arg = $(this).val();
+                                switch(Number(arg)){
+                                    case 10:
+                                       $("#contentLen").val("同意");
+                                       break;
+                                    case 20:
+                                       $("#contentLen").val("否决");
+                                       break;
+                                    case 30:
+                                       $("#contentLen").val("打回");
+                                      break;
+                                    default:
+                                      return;
+                                }
+                          });
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                          //  审批信息
+//                  if(data.WorkFlowRecordInfoIColl.length!=0){
+//                  	$('#shenpixinxi').show();
+//                  	
+//                  	$("#sprxx").html(data.WorkFlowRecordInfoIColl[0].nodename);
+//                      $("#spzt").html(data.WorkFlowRecordInfoIColl[0].status);
+//                      $("#spyj").html(data.WorkFlowRecordInfoIColl[0].app_advice);
+//                      $("#spsj").html(data.WorkFlowRecordInfoIColl[0].nodeendtimes);
+//                  }else{
+//                  	$('#shenpixinxi').hide();
+//                  }
+
+
+                   }else{
+                        alert(r.message);
+                    }
+
+                },error:function(r){
+                    alert('请求失败，请稍候重试！！');
+                }
+            
+			})
+			//可输入字数
+            $("#contentLen").keyup(function() {
+              var len = $(this).val().length;
+              if(len>149){
+                  $(this).val($(this).val().substring(0,150));
+              }
+              var num = 150 - len;
+              if(num < 0)num=0;
+              $("#word").html(num);
+            });
+            
+            //提交审批判断
+            $("#subApproval").click(function(event) {
+              var info = $("#spjl option:selected").val();
+              switch(Number(info)){
+                  case 10:
+                     $("#myModal").modal();
+                     break;
+                  case 20:
+                     if(confirm("确定要否决吗？")){
+                        disagree();
+                     }
+                     break;
+                  case 30:
+                     $("#myModal2").modal();
+                    break;
+                  default:
+                    return;
+              }
+
+            });
+            
+            var params2={};
+                params2.instanceid = custInfo.instanceid;
+                params2.wfsign = custInfo.wfsign;
+                params2.wfname = custInfo.wfname;
+                params2.wfstatus = custInfo.wfstatus;
+                params2.nodeid = custInfo.nodeid;
+                params2.lps_bs_status = custInfo.lps_bs_status;
+                params2.currentnodeuser = custInfo.currentnodeuser;
+                params2.pkVal = custInfo.lps_sht_id;
+                params2.wfistatus = "111";
+                params2.pkCol ="pricing_sheet_id";
+                params2.modelid = "pri_retail_pricing_sheet";
+                params2.branch_id = localStoDetails.branch_id;
+                console.log(params2);
+            //同意时发送请求
+            $('#myModal').on('shown.bs.modal', function (){
+                $("#nextApprover li").remove();
+                 params2.opinion = $("#contentLen").val();
+                params2.result = $("#spjl option:selected").val();
+                var params ={};
+                params.custInfo = JSON.stringify(params2);
+                params.class="appToWorkSelectNextPage";
+                $.ajax({
+                    url:port,
+                    data:params,
+                    dataType:'json',
+                    cache:false,
+                    success:function(r){
+                      if (r.status){
+                      		if(r.result.nodeId){
+                      		  $("#modal-white").css('display', 'none');
+                              $("#modal-body").css({
+                                "display":"block",
+                                "text-align":"center",
+                                "line-height":"1.22rem"
+                              });
+                              $("#identifier").html(r.result.nodeId)
+                              $("#modal-body").html(r.result.status);
+                              $("#confirm3").hide();
+                      		}else{
+                      		for(var item in r.result.nextNodeKColl){
+                            $("#nextProcess").html(r.result.nextNodeKColl[item]);
+                            $("#nextProcessNum").html(item);
+                          }
+                          $.each(r.result.nextUserKColl,function(i, v) {
+                              $('<li>'
+                                    +'<label for="'+v.userId+'">'
+                                      +'<input type="radio" name="a" id="'+v.userId+'" class="radioChoose"><span style="vertical-align:middle;">'+v.userName+'</span>'
+                                    +'</label>'
+                              +'</li>').appendTo('#nextApprover')
+                          });
+							$("#modal-white").css('display', 'none');
+                             $("#modal-body").css('display', 'block');
+                     		 $("#nextApprover li").eq(0).find('input').attr("checked",true);
+                     	}
+              
+                      }else{
+                        alert(r.message);
+                      }
+                    },error:function(r){
+                      alert('请求失败！请稍后重试...');
+                    }
+                });
+            });
+            //同意模态框确认发送请求
+            $("#confirm").click(function(){
+            	var params={};
+            	if($("#identifier").html() == ""){
+            		$(".radioChoose").each(function() {
+                    if($(this).is(":checked")){
+                        params2.nextNodeId = $("#nextProcessNum").html();
+                        params2.nextnodename = $("#nextProcess").html();
+                        params2.nextNodeUser = $(this).attr("id");
+                        params2.opinion = $("#contentLen").val();
+                        params.custInfo = JSON.stringify(params2);
+                        params.class = "appToWorkDoSubmit";
+                        $.ajax({
+                          url:port,
+                          data:params,
+                          dataType:'json',
+                          cache:false,
+                          success:function(r){
+                            if (r.status){
+                              window.location.href="daishenkehudingjlieb.html";
+                            }else{
+                              alert(r.message);
+                            }
+                          },error:function(r){
+                            alert('请求失败！请稍后重试...');
+                          }
+                      });
+                    }
+                });
+            	}else{
+            		window.location.href="daishenkehudingjlieb.html"
+//          	 params.user_id = localStoDetails.user_id;
+//               params.class = "appCreditGetToWorkListPage";
+//              $.ajax({
+//                    url:port,
+//                    data:params,
+//                    dataType:'json',
+//                    cache:false,
+//                    success:function(r){
+//                      if (r.status){
+//                        window.location.href="daishenkehudingjlieb.html";
+//                      }else{
+//                        alert(r.message);
+//                      }
+//                    },error:function(r){
+//                      alert('请求失败！请稍后重试...');
+//                    }
+//              });
+            	}
+                
+            });
+            //确认否决
+            function disagree(){
+                        params2.opinion = $("#contentLen").val();
+                        params2.nextNodeId = $("#nextProcessNum").html();
+                        params2.nextnodename = $("#nextProcess").html();
+                        params2.result = $("#spjl option:selected").val();
+                        var params ={};
+                        //alert(JSON.stringify(params2));
+                        params.custInfo = JSON.stringify(params2);
+                        params.class = "appOverback";
+                        $.ajax({
+                          url:port,
+                          data:params,
+                          dataType:'json',
+                          cache:false,
+                          success:function(r){
+                            if (r.status){
+                               window.location.href="daishenkehudingjlieb.html";
+                            }else{
+                              alert(r.message);
+                            }
+                          },error:function(r){
+                            alert('请求失败！请稍后重试...');
+                          }
+                        });
+
+            }
+            //打回时第一节点请求
+            $('#myModal2').on('shown.bs.modal', function () {
+                    $("#product").children('option[value!=""]').remove();
+                    $("#productBranch").children('option[value!=""]').remove();
+                    var params ={};
+                    params2.opinion = $("#contentLen").val();
+                    params2.result = $("#spjl option:selected").val();
+                    params.custInfo = JSON.stringify(params2);
+                    params.class = "appToWorkCallBack";
+                    $.ajax({
+                        url:port,
+                        data:params,
+                        dataType:'json',
+                        cache:false,
+                        success:function(r){
+                          if (r.status){
+                                var arr = r.result.nodeiColl;
+                                var arr2 = r.result.useriColl;
+                                console.log(arr2);
+                                for(var i=0;i<arr.length;i++){
+                                                 var dp_prod_id=arr[i].nodeId;
+                                                 var dp_prod_name=arr[i].nodeName;
+                                                 var opt="<option value='" +dp_prod_id +"'>"+dp_prod_name+"</option>";
+                                                 $("#product").append(opt);
+                                }
+                                var opt="<option value='" +arr2[0].userId +"'>"+arr2[0].userName+"</option>";
+                                $("#productBranch").append(opt);
+                                $("#product").change(function(){
+                                  $("#productBranch").children('option[value!=""]').remove();
+                                  var arg = $(this).val();
+                                    for (var i = 0; i < arr.length; i++) {
+                                      if(arr[i].nodeId == arg){
+                                            $("#productBranchTwo").val("");
+                                             var dp_prod_id=arr2[i].userId;
+                                             var dp_prod_name=arr2[i].userName;
+                                             var opt="<option value='" +dp_prod_id +"'>"+dp_prod_name+"</option>";
+                                             $("#productBranch").append(opt);
+                                      }
+                                    };
+                                })
+                                $("#modal-white2").css('display', 'none');
+                               $("#modal-body2").css('display', 'block');
+                          }else{
+                            alert(r.message);
+                          }
+                        },error:function(r){
+                          alert('请求失败!请稍后重试...');
+                        }
+                    });
+            });
+
+             //确认打回
+            $("#confirm2").click(function(){
+                        var params={};
+                        params2.nextNodeId = $("#product option:selected").val();
+                        params2.nextnodename = $("#product option:selected").html();
+                        params2.nextNodeUser = $("#productBranch option:selected").val();
+                        params2.opinion = $("#contentLen").val();
+                        params2.result = $("#spjl option:selected").val();
+                        alert(JSON.stringify(params2))
+                        params.custInfo = JSON.stringify(params2);
+                        params.class = "appToWorkCallBackDoSubmit";
+                        alert(JSON.stringify(params));
+                       $.ajax({
+                          url:port,
+                          data:params,
+                          dataType:'json',
+                          cache:false,
+                          success:function(r){
+                            if (r.status){
+                              console.log(r)
+                              window.location.href="daishenkehudingjlieb.html";
+                            }else{
+                              alert(r.message);
+                            }
+                          },error:function(r){
+                            alert('请求失败！请稍后重试...');
+                          }
+                        });
+
+            });
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+		
+		
+	})
+
+	</script>
+</html>
