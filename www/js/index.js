@@ -137,7 +137,7 @@ $(function(){
                             });
                             return false;
                 });
-				、// 连续点击返回按键，退出app 
+				// 连续点击返回按键，退出app 
 			var backClick=0;// 退出点击次数，默认为0
 			function backbutton () {
 					var time=new Date(); // 2s内再次点击就退出
