@@ -1,0 +1,245 @@
+
+@media screen and (min-width: 320rem) {
+    html {
+        font-size: 100rem;
+    }
+}
+
+@media screen and (min-width: 360rem) {
+    html {
+        font-size: 112.5rem;
+    }
+}
+
+@media screen and (min-width: 400rem) {
+    html {
+        font-size: 125rem;
+    }
+}
+
+@media screen and (min-width: 440rem) {
+    html {
+        font-size: 137.5rem;
+    }
+}
+
+@media screen and (min-width: 480rem) {
+    html {
+        font-size: 150rem;
+    }
+}
+
+@media screen and (min-width: 640rem) {
+    html {
+        font-size: 200rem;
+    }
+}
+
+html {
+    font-size: 31.25vw;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.page-container {
+    margin: 1rem auto 0 auto;
+}
+
+h1 {
+    font-size: 0.03rem;
+    font-weight: 700;
+    height: .45rem;
+    text-shadow: 0 0.01rem 0.04rem rgba(0,0,0,.2);
+    width: 2.38rem;
+    background: url(../img/logo-1.png) no-repeat;
+    background-size:cover;
+    z-index: -9999;
+    margin: auto;
+}
+.page-container h1 a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -9999;
+}
+
+form {
+    position: relative;
+    width: 3.05rem;
+    margin: .15rem auto 0 auto;
+    text-align: left;
+    font-size:0.14rem;
+}
+p{
+    text-align:left;color:#f00;margin-top:0.1rem;text-indent:0.72rem;display:none;
+}
+label span{
+    display:inline-block;width: 0.62rem;letter-spacing:0.03rem;
+}
+input {
+    width: 2.00rem;
+    height: .42rem;
+    margin-top: .15rem;
+    padding: 0 .15rem;
+    background: #2d2d2d; /* browsers that don't support rgba */
+    background: rgba(45,45,45,.15);
+    -moz-border-radius: 0.06rem;
+    -webkit-border-radius: 0.06rem;
+    border-radius: 0.06rem;
+    border: 0.01rem solid #3d3d3d; /* browsers that don't support rgba */
+    border: 0.01rem solid rgba(255,255,255,.15);
+    -moz-box-shadow: 0 0.02rem 0.03rem 0 rgba(0,0,0,.1) inset;
+    -webkit-box-shadow: 0 0.02rem 0.03rem 0 rgba(0,0,0,.1) inset;
+    box-shadow: 0 0.02rem 0.03rem 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: .14rem;
+    color: #000;
+    text-shadow: 0 0.01rem 0.02rem rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
+}
+#verifica{width:1.1rem;}
+input:-moz-placeholder { color: #000; }
+input:-ms-input-placeholder { color: #000; }
+input::-webkit-input-placeholder { color: #000; }
+
+input:focus {
+    outline: none;
+    -moz-box-shadow:
+        0 0.02rem 0.03rem 0 rgba(0,0,0,.1) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 0.02rem 0.03rem 0 rgba(0,0,0,.1) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 0.02rem 0.03rem 0 rgba(0,0,0,.1) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+}
+
+button {
+    cursor: pointer;
+    width: 3.00rem;
+    height: .44rem;
+    margin-top: .25rem;
+    padding: 0;
+    background: #ef4300;
+    -moz-border-radius: 0.06rem;
+    -webkit-border-radius: 0.06rem;
+    border-radius: 0.06rem;
+    border: 0.01rem solid #ff730e;
+    -moz-box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.25) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.25) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.25) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: .14rem;
+    font-weight: 700;
+    color: #000;
+    text-shadow: 0 0.01rem 0.02rem rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
+}
+
+button a{
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    line-height: .44rem;
+}
+
+button:hover {
+    -moz-box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.15) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.15) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.15) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+}
+
+button:active {
+    -moz-box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.15) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 .15rem .30rem 0 rgba(255,255,255,.15) inset,
+        0 0.02rem 0.07rem 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 0.05rem 0.08rem 0 rgba(0,0,0,.1) inset,
+        0 0.01rem 0.04rem 0 rgba(0,0,0,.1);
+
+    border: 0rem solid #ef4300;
+}
+
+.error {
+    display: none;
+    position: absolute;
+    top: .27rem;
+    right: -.55rem;
+    width: .40rem;
+    height: .40rem;
+    background: #2d2d2d; /* browsers that don't support rgba */
+    background: rgba(45,45,45,.25);
+    -moz-border-radius: 0.08rem;
+    -webkit-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+}
+
+.error span {
+    display: inline-block;
+    margin-left: 0.02rem;
+    font-size: .40rem;
+    font-weight: 7.00;
+    line-height: .40rem;
+    text-shadow: 0 0.01rem 0.02rem rgba(0,0,0,.1);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+
+}
+
+.connect {
+    width: 3.05rem;
+    margin: .35rem auto 0 auto;
+    font-size: .18rem;
+    font-weight: 700;
+    text-shadow: 0 0.01rem 0.03rem rgba(0,0,0,.2);
+}
+
+/*
+.connect a {
+    display: inline-block;
+    width: 32rem;
+    height: 35rem;
+    margin-top: 15rem;
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
+}
+
+.connect a.facebook { background: url(../img/facebook.png) center center no-repeat; }
+.connect a.twitter { background: url(../img/twitter.png) center center no-repeat; }
+
+.connect a:hover { background-position: center bottom; } */
+
+
+
