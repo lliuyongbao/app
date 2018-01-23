@@ -137,5 +137,32 @@ $(function(){
                             });
                             return false;
                 });
-
+				、// 连续点击返回按键，退出app 
+			var backClick=0;// 退出点击次数，默认为0
+			function backbutton () {
+					var time=new Date(); // 2s内再次点击就退出
+					// 监听返回按钮
+					document.addEventListener('backbutton', function(evt) {
+						var url = location.href.split('/views/')[1].split('.')[0];
+						// var urlList = location.href
+						if(url=='index'){  // 处于app首页,满足退出app操作
+							if(backClick){  // 不为0时
+								navigator.app.exitApp();  // app退出
+							}else{
+								alert('再按一次退出廊坊银行');  // 提示信息
+							  
+								if(new Date()-time<2000){// 小于2s,退出程序
+									backClick++;
+								}else{   // 大于2s，重置时间戳，
+									time = new Date();
+								}
+							}
+							return;
+						}
+							return;
+						}
+					   
+						history.back();  // 不满足退出操作，，返回上一页
+					}, false);
+				},
             })
