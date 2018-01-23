@@ -137,5 +137,6 @@ $(function(){
                             });
                             return false;
                 });
-			
+				// 连续点击返回按键，退出app 
+		
             })
